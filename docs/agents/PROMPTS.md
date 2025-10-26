@@ -18,6 +18,10 @@ To start I want you to create a docs folder and inside it add an agents folder. 
 After you've done that, let me know.
 ```
 
+**Changes:**
+- Created `docs/agents/` folder structure
+- Created `docs/agents/PROMPTS.md` with initial prompt logged
+
 ---
 
 ## Prompt 2
@@ -29,6 +33,10 @@ After you've done that, let me know.
 ```
 Modify the instructions in AGENTS.md to only include prompts that lead to file changes. For example if I ask a question or ask to run a git command, this should not be included as an entry in prompts.md.
 ```
+
+**Changes:**
+- Modified `AGENTS.md` instructions to only log prompts with file changes
+- Updated `PROMPTS.md` with this prompt entry
 
 ---
 
@@ -46,6 +54,9 @@ As I said before, I want to host this as a static site using Github pages. I als
 I want you to start with the simplest possible design and focus on the tech. Break down the plan in multiple milestones and I want the first milestone to be that the site works and can be built and deployed using Github pages, but leave the rest (styling, content, design, animation, etc.) to later.
 ```
 
+**Changes:**
+- Created `docs/agents/SITE_PLAN.md` with 7 milestones and future enhancements
+
 ---
 
 ## Prompt 4
@@ -58,6 +69,17 @@ I want you to start with the simplest possible design and focus on the tech. Bre
 Okay, let's get started with milestone 1. Once that's done, stop and let me review and test.
 ```
 
+**Changes:**
+- Initialized React project with Vite
+- Installed and configured Tailwind CSS v4 with `@tailwindcss/postcss`
+- Created `tailwind.config.js` and `postcss.config.js`
+- Modified `src/index.css` to include Tailwind directives
+- Simplified `src/App.jsx` to a Hello World page with Tailwind classes
+- Configured `vite.config.js` with base path for GitHub Pages
+- Created `.github/workflows/deploy.yml` for automated deployment
+- Updated `README.md` with project information
+- Verified build works locally
+
 ---
 
 ## Prompt 5
@@ -69,5 +91,25 @@ Okay, let's get started with milestone 1. Once that's done, stop and let me revi
 ```
 Deploying the site using the deploy.yml file seems to have been successful but when going to the site it is just a blank white screen and there is this error in the dev console: "(index):1 Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of "text/html". Strict MIME type checking is enforced for module scripts per HTML spec."
 ```
+
+**Changes:**
+- Modified `vite.config.js` base path from `/oscarbennich.github.io/` to `/` for correct GitHub Pages root domain deployment
+
+---
+
+## Prompt 6
+**Date & Time:** 2025-10-26 20:57:48 UTC  
+**Tool:** GitHub Copilot CLI  
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+I want you to modify the PROMPTS.md file and the instructions in AGENTS.md to include a brief summary of additions and modifications following each prompt.
+```
+
+**Changes:**
+- Modified `AGENTS.md` format template to include **Changes** section
+- Modified `AGENTS.md` instructions to require changes summary
+- Updated all entries in `docs/agents/PROMPTS.md` with **Changes** sections
 
 ---

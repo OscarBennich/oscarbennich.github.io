@@ -22,6 +22,11 @@ After executing each user command/prompt, you must add an entry to `docs/agents/
 [Full text of the user's prompt]
 ```
 
+**Changes:**
+- Brief summary of files added
+- Brief summary of files modified
+- Brief summary of key changes made
+
 ---
 ```
 
@@ -33,5 +38,6 @@ After executing each user command/prompt, you must add an entry to `docs/agents/
    - Execute read-only operations (viewing, searching, etc.)
 3. Always log **after** successfully executing the requested task
 4. Use the exact prompt text provided by the user
-5. Maintain chronological order
-6. Keep formatting consistent across all entries
+5. Include a **Changes** section with brief summary of additions and modifications
+6. Maintain chronological order
+7. Keep formatting consistent across all entries
