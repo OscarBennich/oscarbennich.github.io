@@ -59,3 +59,15 @@ Okay, let's get started with milestone 1. Once that's done, stop and let me revi
 ```
 
 ---
+
+## Prompt 5
+**Date & Time:** 2025-10-26 20:53:24 UTC  
+**Tool:** GitHub Copilot CLI  
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+Deploying the site using the deploy.yml file seems to have been successful but when going to the site it is just a blank white screen and there is this error in the dev console: "(index):1 Failed to load module script: Expected a JavaScript-or-Wasm module script but the server responded with a MIME type of "text/html". Strict MIME type checking is enforced for module scripts per HTML spec."
+```
+
+---

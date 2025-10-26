@@ -6,7 +6,7 @@ function App() {
           Hello World
         </h1>
         <p className="text-lg text-gray-600">
-          Welcome to my personal site
+          Welcome to my personal site TEST
         </p>
       </div>
     </div>
