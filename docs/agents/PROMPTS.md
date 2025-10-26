@@ -47,3 +47,15 @@ I want you to start with the simplest possible design and focus on the tech. Bre
 ```
 
 ---
+
+## Prompt 4
+**Date & Time:** 2025-10-26 20:31:58 UTC  
+**Tool:** GitHub Copilot CLI  
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+Okay, let's get started with milestone 1. Once that's done, stop and let me review and test.
+```
+
+---
