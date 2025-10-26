@@ -1,0 +1,33 @@
+# Agent Prompts Log
+
+This file contains a chronological record of all prompts used to build this site.
+
+---
+
+## Prompt 1
+**Date & Time:** 2025-10-26 20:03:47 UTC  
+**Tool:** GitHub Copilot CLI  
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+I want you to help me create a personal site that I can host on Github pages. I'm work as a software engineer and I want the site to be place to show my skills (like a CV/portfolio) as well as write some thoughts and blogposts.
+
+To start I want you to create a docs folder and inside it add an agents folder. Inside of that folder I want you to create a "PROMPTS.md" file where you will store all prompts I've used to build this site (including this one) in chronological order. Please include date and time as well as the tool (Github Copilot CLI) and the model being used.
+
+After you've done that, let me know.
+```
+
+---
+
+## Prompt 2
+**Date & Time:** 2025-10-26 20:12:36 UTC  
+**Tool:** GitHub Copilot CLI  
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+Modify the instructions in AGENTS.md to only include prompts that lead to file changes. For example if I ask a question or ask to run a git command, this should not be included as an entry in prompts.md.
+```
+
+---
