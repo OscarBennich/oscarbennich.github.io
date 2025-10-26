@@ -31,3 +31,19 @@ Modify the instructions in AGENTS.md to only include prompts that lead to file c
 ```
 
 ---
+
+## Prompt 3
+**Date & Time:** 2025-10-26 20:21:12 UTC  
+**Tool:** GitHub Copilot CLI  
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+Okay, now I want you to make a plan for the site that I can review. Add it as a "SITE_PLAN.md" file under docs/agents.
+
+As I said before, I want to host this as a static site using Github pages. I also want the tech stack to include React and Tailwind as I want to take the opporunity to learn and refresh my skills with these libraries.
+
+I want you to start with the simplest possible design and focus on the tech. Break down the plan in multiple milestones and I want the first milestone to be that the site works and can be built and deployed using Github pages, but leave the rest (styling, content, design, animation, etc.) to later.
+```
+
+---
