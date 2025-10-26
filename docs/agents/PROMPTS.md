@@ -113,3 +113,20 @@ I want you to modify the PROMPTS.md file and the instructions in AGENTS.md to in
 - Updated all entries in `docs/agents/PROMPTS.md` with **Changes** sections
 
 ---
+
+## Prompt 7
+**Date & Time:** 2025-10-26 20:58:56 UTC  
+**Tool:** GitHub Copilot CLI  
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+I'm getting this lineending issue in git: "warning: in the working copy of 'src/App.jsx', LF will be replaced by CRLF the next time Git touches it".
+
+Please add a .gitattribute file to fix this.
+```
+
+**Changes:**
+- Created `.gitattributes` to enforce LF line endings for text files across all platforms
+
+---
