@@ -12,7 +12,7 @@ A personal portfolio and blog site for a software engineer, built with React and
 
 ---
 
-## Milestone 1: Basic Infrastructure ✅ (Target)
+## Milestone 1: Basic Infrastructure ✅
 **Goal**: Get a minimal React site building and deploying to GitHub Pages
 
 ### Tasks:
@@ -30,133 +30,101 @@ A personal portfolio and blog site for a software engineer, built with React and
 
 ---
 
-## Milestone 2: Basic Structure & Routing
-**Goal**: Set up navigation and basic page structure
+## Milestone 2: Basic Home Page Structure
+**Goal**: Create a simple home page with basic structure
 
 ### Tasks:
-1. Install React Router
-2. Create basic page components:
-   - Home/Landing page
-   - About/CV page
-   - Blog listing page
-   - Individual blog post page (template)
-3. Implement basic navigation/header
-4. Set up routing between pages
-5. Add basic footer with links
+1. Create basic home page component
+2. Add simple hero section with name and title
+3. Basic layout structure (no styling yet)
 
 ### Deliverables:
-- Multi-page site with working navigation
-- Basic page layouts (no styling yet)
-- Routing structure in place
+- Simple home page with basic content
+- Basic page structure in place
 
 ---
 
-## Milestone 3: Content Structure
-**Goal**: Define and implement content architecture
+## Milestone 3: Add Styling
+**Goal**: Apply dark mode, monospace coding font, and style the hero section
 
 ### Tasks:
-1. Set up data structure for CV/skills information
-2. Create markdown support for blog posts
-3. Implement blog post metadata (date, title, tags)
-4. Create data files or JSON for:
-   - Work experience
-   - Skills/technologies
-   - Projects
-   - Education
-5. Build components to display this data (unstyled)
+1. Implement dark mode
+2. Configure monospace coding font
+3. Style the hero section
+4. Apply basic Tailwind styling
 
 ### Deliverables:
-- CV data rendering on About page
-- Blog posts stored as markdown files
-- Dynamic blog listing from post metadata
-- Project showcase structure
+- Dark mode working
+- Monospace font applied
+- Styled hero section
+- Professional appearance
 
 ---
 
-## Milestone 4: Core Styling
-**Goal**: Apply professional, clean design with Tailwind
+## General Todo (To be split into milestones later)
 
-### Tasks:
-1. Define color scheme and typography
-2. Style navigation and footer
-3. Style Home page with introduction/hero section
-4. Style About/CV page:
-   - Experience timeline
-   - Skills grid
-   - Education section
-5. Style Blog listing and individual post pages
-6. Ensure responsive design (mobile, tablet, desktop)
-7. Add dark mode support (optional)
+### Structure & Routing
+- Install React Router
+- Create basic page components:
+  - About/CV page
+  - Blog listing page
+  - Individual blog post page (template)
+- Implement basic navigation/header
+- Set up routing between pages
+- Add basic footer with links
 
-### Deliverables:
-- Professional, cohesive design
-- Fully responsive layout
-- Readable and accessible typography
+### Content Structure
+- Set up data structure for CV/skills information
+- Create markdown support for blog posts
+- Implement blog post metadata (date, title, tags)
+- Create data files or JSON for:
+  - Work experience
+  - Skills/technologies
+  - Projects
+  - Education
+- Build components to display this data
 
----
+### Additional Styling
+- Define complete color scheme and typography
+- Style navigation and footer
+- Style About/CV page:
+  - Experience timeline
+  - Skills grid
+  - Education section
+- Style Blog listing and individual post pages
+- Ensure responsive design (mobile, tablet, desktop)
 
-## Milestone 5: Enhanced Features
-**Goal**: Add interactive elements and polish
+### Enhanced Features
+- Add smooth scrolling and transitions
+- Implement tag/category filtering for blog posts
+- Add search functionality for blog
+- Create animated hero section
+- Add "Back to top" button
+- Implement code syntax highlighting for blog posts
+- Add social media links
+- Create contact section/form (mailto or form service)
 
-### Tasks:
-1. Add smooth scrolling and transitions
-2. Implement tag/category filtering for blog posts
-3. Add search functionality for blog
-4. Create animated hero section
-5. Add "Back to top" button
-6. Implement code syntax highlighting for blog posts
-7. Add social media links
-8. Create contact section/form (mailto or form service)
+### SEO & Performance
+- Add meta tags for SEO
+- Implement Open Graph tags for social sharing
+- Create sitemap.xml
+- Add robots.txt
+- Optimize images (lazy loading, compression)
+- Code splitting and bundle optimization
+- Add Google Analytics or alternative (optional)
+- Test with Lighthouse and optimize score
 
-### Deliverables:
-- Smooth animations and transitions
-- Interactive blog filtering
-- Enhanced user experience
+### Content & Polish
+- Write actual CV/portfolio content
+- Create initial blog posts
+- Add project descriptions and links
+- Add professional headshot/avatar
+- Proofread all content
+- Add 404 page
+- Create README with site information
+- Final cross-browser testing
 
----
-
-## Milestone 6: SEO & Performance
-**Goal**: Optimize for search engines and performance
-
-### Tasks:
-1. Add meta tags for SEO
-2. Implement Open Graph tags for social sharing
-3. Create sitemap.xml
-4. Add robots.txt
-5. Optimize images (lazy loading, compression)
-6. Code splitting and bundle optimization
-7. Add Google Analytics or alternative (optional)
-8. Test with Lighthouse and optimize score
-
-### Deliverables:
-- SEO-optimized site
-- Fast load times
-- Social media preview support
-- Analytics tracking (optional)
-
----
-
-## Milestone 7: Content & Polish
-**Goal**: Add real content and final touches
-
-### Tasks:
-1. Write actual CV/portfolio content
-2. Create initial blog posts
-3. Add project descriptions and links
-4. Add professional headshot/avatar
-5. Proofread all content
-6. Add 404 page
-7. Create README with site information
-8. Final cross-browser testing
-
-### Deliverables:
-- Complete, production-ready site
-- Real content in all sections
-- Polished and professional presentation
-
----
-
-## Future Enhancements (Post-Launch)
+### Future Enhancements (Post-Launch)
 - RSS feed for blog
 - Newsletter subscription
 - Comments system for blog posts
