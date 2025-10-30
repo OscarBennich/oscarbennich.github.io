@@ -4,7 +4,7 @@ function Header() {
       <div className="max-w-6xl mx-auto px-4 py-6">
         <nav className="flex items-center justify-between">
           <div className="text-xl font-bold text-gray-100 font-mono">
-            Oscar Bennich-Björkman
+            /
           </div>
           <ul className="flex gap-6 font-mono">
             <li>
