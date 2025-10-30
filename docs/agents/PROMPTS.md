@@ -223,3 +223,44 @@ Please generate an appropriate favicon and add it to the site.
 - Verified build succeeds
 
 ---
+
+## Prompt 13
+**Date & Time:** 2025-10-30 22:00:30 UTC  
+**Tool:** GitHub Copilot CLI  
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+Implement milestone 4 from @docs\agents\SITE_PLAN.md and mark it as done afterwards.
+```
+
+**Changes:**
+- Created `src/components/Header.jsx` with site branding and navigation links (Home, About, Blog)
+- Created `src/components/Footer.jsx` with copyright and social links (GitHub, LinkedIn)
+- Modified `src/pages/Home.jsx` to include Header and Footer with flex layout
+- Styled both components with dark theme matching existing design
+- Marked Milestone 4 as complete (✅) in `docs/agents/SITE_PLAN.md`
+- Verified build succeeds
+
+---
+
+## Prompt 14
+**Date & Time:** 2025-10-30 22:05:06 UTC  
+**Tool:** GitHub Copilot CLI  
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+- Remove the copyright from the footer.
+- Make the LinkedIn link go here: https://www.linkedin.com/in/oscar-bennich-bjorkman/
+- Add GitHub and LinkedIn logos next to the links
+- Change all instances of "Oscar Bennich" with "Oscar Bennich-Björkman"
+```
+
+**Changes:**
+- Modified `src/components/Footer.jsx` to remove copyright, center links, add GitHub/LinkedIn SVG icons, and update LinkedIn URL
+- Modified `src/components/Header.jsx` to change branding to "Oscar Bennich-Björkman"
+- Modified `index.html` to update page title to "Oscar Bennich-Björkman - Software Engineer"
+- Verified build succeeds
+
+---

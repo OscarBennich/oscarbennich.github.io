@@ -61,7 +61,7 @@ A personal portfolio and blog site for a software engineer, built with React and
 
 ---
 
-## Milestone 4: Add Navigation & Footer
+## Milestone 4: Add Navigation & Footer ✅
 **Goal**: Create navigation and footer UI structure
 
 ### Tasks:
