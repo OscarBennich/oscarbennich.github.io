@@ -130,3 +130,23 @@ Please add a .gitattribute file to fix this.
 - Created `.gitattributes` to enforce LF line endings for text files across all platforms
 
 ---
+
+## Prompt 8
+**Date & Time:** 2025-10-30 21:27:34 UTC  
+**Tool:** GitHub Copilot CLI  
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+Please implement milestone 2 from @docs\agents\SITE_PLAN.md
+```
+
+**Changes:**
+- Created `src/components/` directory
+- Created `src/pages/` directory
+- Created `src/components/Hero.jsx` with basic hero section (name and title)
+- Created `src/pages/Home.jsx` home page component
+- Modified `src/App.jsx` to use the new Home page component
+- Verified build succeeds
+
+---

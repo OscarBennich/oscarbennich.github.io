@@ -30,7 +30,7 @@ A personal portfolio and blog site for a software engineer, built with React and
 
 ---
 
-## Milestone 2: Basic Home Page Structure
+## Milestone 2: Basic Home Page Structure ✅
 **Goal**: Create a simple home page with basic structure
 
 ### Tasks:
