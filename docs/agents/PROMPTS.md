@@ -340,3 +340,21 @@ When you hover over the page links I want them to have the same effect as the na
 - Verified build succeeds
 
 ---
+
+## Prompt 19
+**Date & Time:** 2025-10-30 22:45:32 UTC  
+**Tool:** GitHub Copilot CLI  
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+Please add something to clearly indicate that the site is under construction.
+```
+
+**Changes:**
+- Modified `src/components/Hero.jsx` to add "UNDER CONSTRUCTION" warning banner above the name
+- Styled banner with yellow border, yellow text, and warning emojis
+- Used semi-transparent yellow background for visibility
+- Verified build succeeds
+
+---
