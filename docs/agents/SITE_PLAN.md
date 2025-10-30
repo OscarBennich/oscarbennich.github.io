@@ -44,7 +44,7 @@ A personal portfolio and blog site for a software engineer, built with React and
 
 ---
 
-## Milestone 3: Style the Home Page
+## Milestone 3: Style the Home Page ✅
 **Goal**: Apply dark mode, monospace coding font, and style the hero section
 
 ### Tasks:
