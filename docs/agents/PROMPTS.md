@@ -264,3 +264,21 @@ Implement milestone 4 from @docs\agents\SITE_PLAN.md and mark it as done afterwa
 - Verified build succeeds
 
 ---
+
+## Prompt 15
+**Date & Time:** 2025-10-30 22:24:15 UTC  
+**Tool:** GitHub Copilot CLI  
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+I would like you to implement the purple and green color from option 4 but for the "Tech Lead | Full Stack Developer" subtitle. And then I would *also* like you to implement the shadow effect from option two but only when the user hovers over the text.
+```
+
+**Changes:**
+- Modified `src/components/Hero.jsx` to apply purple color to "Tech Lead" and green color to "Full Stack Developer"
+- Added hover effect with dual-color cyberpunk shadow (purple and green) to the name heading
+- Added smooth transition animation for the hover effect
+- Verified build succeeds
+
+---
