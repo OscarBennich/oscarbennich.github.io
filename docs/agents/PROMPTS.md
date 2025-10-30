@@ -206,3 +206,20 @@ It doesn't seem to be working. It's just a white unstyled page with the text in 
 - Verified build generates proper CSS output (5.65 kB vs previous 0.40 kB)
 
 ---
+
+## Prompt 12
+**Date & Time:** 2025-10-30 21:52:50 UTC  
+**Tool:** GitHub Copilot CLI  
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+Please generate an appropriate favicon and add it to the site.
+```
+
+**Changes:**
+- Created `public/favicon.svg` with custom "OB" initials favicon matching site's dark theme
+- Modified `index.html` to use new favicon and updated page title to "Oscar Bennich - Software Engineer"
+- Verified build succeeds
+
+---
