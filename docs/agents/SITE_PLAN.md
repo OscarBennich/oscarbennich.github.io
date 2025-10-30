@@ -78,7 +78,7 @@ A personal portfolio and blog site for a software engineer, built with React and
 
 ---
 
-## Milestone 5: Set Up Routing
+## Milestone 5: Set Up Routing ✅
 **Goal**: Implement React Router and basic page navigation
 
 ### Tasks:

@@ -282,3 +282,61 @@ I would like you to implement the purple and green color from option 4 but for t
 - Verified build succeeds
 
 ---
+
+## Prompt 16
+**Date & Time:** 2025-10-30 22:36:42 UTC  
+**Tool:** GitHub Copilot CLI  
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+Implement milestone 5 from @docs\agents\SITE_PLAN.md and mark it as done afterwards.
+```
+
+**Changes:**
+- Installed `react-router-dom` package
+- Created `src/pages/About.jsx` placeholder page with heading
+- Created `src/pages/Blog.jsx` placeholder page with heading
+- Created `src/components/Layout.jsx` to wrap pages with Header and Footer
+- Modified `src/App.jsx` to set up React Router with routes for Home, About, and Blog
+- Modified `src/pages/Home.jsx` to remove Header/Footer (now in Layout)
+- Modified `src/components/Header.jsx` to use React Router Link components for navigation
+- Added hover effect to header branding link
+- Marked Milestone 5 as complete (✅) in `docs/agents/SITE_PLAN.md`
+- Verified build succeeds
+
+---
+
+## Prompt 17
+**Date & Time:** 2025-10-30 22:37:51 UTC  
+**Tool:** GitHub Copilot CLI  
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+Change the left side of the header to indicate what page the user is on with /home, /about, or /blog
+```
+
+**Changes:**
+- Modified `src/components/Header.jsx` to use `useLocation` hook to track current route
+- Replaced site branding with dynamic route indicator showing "/home", "/about", or "/blog"
+- Verified build succeeds
+
+---
+
+## Prompt 18
+**Date & Time:** 2025-10-30 22:39:45 UTC  
+**Tool:** GitHub Copilot CLI  
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+When you hover over the page links I want them to have the same effect as the name in the hero section.
+```
+
+**Changes:**
+- Modified `src/components/Header.jsx` to add dual-color cyberpunk shadow hover effect to navigation links (Home, About, Blog)
+- Added smooth transition animation matching the hero section style
+- Verified build succeeds
+
+---
