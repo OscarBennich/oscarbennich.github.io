@@ -44,14 +44,14 @@ A personal portfolio and blog site for a software engineer, built with React and
 
 ---
 
-## Milestone 3: Add Styling
+## Milestone 3: Style the Home Page
 **Goal**: Apply dark mode, monospace coding font, and style the hero section
 
 ### Tasks:
-1. Implement dark mode
+1. Implement dark mode with Tailwind
 2. Configure monospace coding font
-3. Style the hero section
-4. Apply basic Tailwind styling
+3. Style the hero section (centering, spacing, typography)
+4. Make it look professional
 
 ### Deliverables:
 - Dark mode working
@@ -61,76 +61,217 @@ A personal portfolio and blog site for a software engineer, built with React and
 
 ---
 
-## General Todo (To be split into milestones later)
+## Milestone 4: Add Navigation & Footer
+**Goal**: Create navigation and footer UI structure
 
-### Structure & Routing
-- Install React Router
-- Create basic page components:
-  - About/CV page
-  - Blog listing page
-  - Individual blog post page (template)
-- Implement basic navigation/header
-- Set up routing between pages
-- Add basic footer with links
+### Tasks:
+1. Create basic Header component with site title
+2. Create basic Footer component with copyright/links
+3. Add Header and Footer to the Home page layout
+4. Style navigation and footer components
 
-### Content Structure
-- Set up data structure for CV/skills information
-- Create markdown support for blog posts
-- Implement blog post metadata (date, title, tags)
-- Create data files or JSON for:
-  - Work experience
-  - Skills/technologies
-  - Projects
-  - Education
-- Build components to display this data
+### Deliverables:
+- Header component with site branding
+- Footer component with basic links
+- Consistent layout structure
+- No routing yet, just UI framework
 
-### Additional Styling
-- Define complete color scheme and typography
-- Style navigation and footer
-- Style About/CV page:
-  - Experience timeline
-  - Skills grid
-  - Education section
-- Style Blog listing and individual post pages
-- Ensure responsive design (mobile, tablet, desktop)
+---
 
-### Enhanced Features
-- Add smooth scrolling and transitions
-- Implement tag/category filtering for blog posts
-- Add search functionality for blog
-- Create animated hero section
-- Add "Back to top" button
-- Implement code syntax highlighting for blog posts
-- Add social media links
-- Create contact section/form (mailto or form service)
+## Milestone 5: Set Up Routing
+**Goal**: Implement React Router and basic page navigation
 
-### SEO & Performance
-- Add meta tags for SEO
-- Implement Open Graph tags for social sharing
-- Create sitemap.xml
-- Add robots.txt
-- Optimize images (lazy loading, compression)
-- Code splitting and bundle optimization
-- Add Google Analytics or alternative (optional)
-- Test with Lighthouse and optimize score
+### Tasks:
+1. Install React Router
+2. Create placeholder About and Blog pages (just headings)
+3. Set up routing between Home, About, and Blog
+4. Update navigation to use routing links
+5. Test navigation works
 
-### Content & Polish
-- Write actual CV/portfolio content
-- Create initial blog posts
-- Add project descriptions and links
-- Add professional headshot/avatar
-- Proofread all content
-- Add 404 page
-- Create README with site information
-- Final cross-browser testing
+### Deliverables:
+- React Router installed and configured
+- Three pages accessible via navigation
+- Working links in header
 
-### Future Enhancements (Post-Launch)
+---
+
+## Milestone 6: Build About/CV Page Structure
+**Goal**: Create the structural layout for the About/CV page
+
+### Tasks:
+1. Create sections for: Skills, Experience, Education, Projects
+2. Use placeholder/minimal content
+3. Basic layout structure with semantic HTML
+4. Component organization
+
+### Deliverables:
+- About page with all major sections
+- Clean component structure
+- Placeholder content in each section
+
+---
+
+## Milestone 7: Style About/CV Page
+**Goal**: Apply styling to make the About/CV page look professional
+
+### Tasks:
+1. Style skills grid/list
+2. Style experience timeline
+3. Style education section
+4. Style projects section
+5. Ensure responsive design (mobile, tablet, desktop)
+
+### Deliverables:
+- Professionally styled About page
+- Responsive layout working on all screen sizes
+- Consistent with home page design
+
+---
+
+## Milestone 8: Add Real CV Content
+**Goal**: Populate the About/CV page with actual information
+
+### Tasks:
+1. Create JSON data files for experience, skills, education, projects
+2. Build components to consume and display data
+3. Add real work experience, skills, education, and project information
+4. Add professional photo/avatar
+5. Proofread content
+
+### Deliverables:
+- Complete CV content
+- Data-driven components
+- Professional photo added
+- All information accurate and proofread
+
+---
+
+## Milestone 9: Blog Infrastructure
+**Goal**: Set up the technical foundation for the blog
+
+### Tasks:
+1. Set up markdown support (react-markdown or similar)
+2. Create blog post data structure/metadata (title, date, tags, content)
+3. Build BlogList component to display post summaries
+4. Build BlogPost component to render individual posts
+5. Create 1-2 test markdown posts
+6. Set up routing for individual blog posts
+
+### Deliverables:
+- Markdown rendering working
+- Blog listing page functional
+- Individual blog post pages functional
+- Test posts display correctly
+
+---
+
+## Milestone 10: Style Blog Pages
+**Goal**: Apply styling to blog listing and post pages
+
+### Tasks:
+1. Style blog listing page (post cards/summaries)
+2. Style individual blog post page (typography, spacing)
+3. Add code syntax highlighting for code blocks
+4. Ensure responsive design
+5. Style post metadata (date, tags, reading time)
+
+### Deliverables:
+- Professional blog listing page
+- Readable, well-formatted blog posts
+- Code syntax highlighting working
+- Responsive blog layout
+
+---
+
+## Milestone 11: Blog Features
+**Goal**: Add functionality to make the blog more useful
+
+### Tasks:
+1. Add tag/category filtering to blog list
+2. Add basic search functionality
+3. Add reading time estimates
+4. Sort posts by date (newest first)
+5. Add pagination or "load more" if needed
+
+### Deliverables:
+- Tag filtering working
+- Search functionality
+- Reading time displayed
+- Posts properly sorted
+
+---
+
+## Milestone 12: Enhanced Features
+**Goal**: Add polish and interactivity to the site
+
+### Tasks:
+1. Add smooth scrolling and transitions
+2. Add social media links (GitHub, LinkedIn, etc.)
+3. Create contact section (mailto or form)
+4. Add "Back to top" button
+5. Add hover effects and animations
+
+### Deliverables:
+- Smooth, polished interactions
+- Social media links functional
+- Contact method available
+- Enhanced user experience
+
+---
+
+## Milestone 13: SEO & Performance
+**Goal**: Optimize for search engines and performance
+
+### Tasks:
+1. Add meta tags for SEO
+2. Implement Open Graph tags for social sharing
+3. Create sitemap.xml
+4. Add robots.txt
+5. Optimize images (lazy loading, compression)
+6. Run Lighthouse and fix performance issues
+7. Add 404 page
+8. Test across browsers
+
+### Deliverables:
+- SEO meta tags in place
+- Good Lighthouse scores
+- Optimized images
+- 404 page
+- Cross-browser compatibility verified
+
+---
+
+## Milestone 14: Content & Launch
+**Goal**: Final content and polish before considering site complete
+
+### Tasks:
+1. Write initial blog posts (3-5 posts)
+2. Final content proofread
+3. Update README with site information
+4. Final cross-browser testing
+5. Announce/share the site
+
+### Deliverables:
+- Multiple blog posts published
+- All content proofread and polished
+- README updated
+- Site ready for public sharing
+
+---
+
+## Future Enhancements (Post-Launch)
+**Goal**: Ideas for future improvements (not in initial launch scope)
+
+### Potential Features:
 - RSS feed for blog
 - Newsletter subscription
 - Comments system for blog posts
 - Multi-language support
 - Blog series/collections
 - Related posts suggestions
-- Reading time estimates
 - Table of contents for long posts
 - Print-friendly CV version
+- Dark/light mode toggle
+- Analytics integration (Google Analytics or alternative)
+- Animated hero section
+- Project case studies with more detail
