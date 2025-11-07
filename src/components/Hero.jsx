@@ -1,15 +1,14 @@
 function Hero() {
   const techStack = [
-    { name: '.NET (C#)', icon: '🔷' },
-    { name: 'JavaScript', icon: '🟨' },
-    { name: 'TypeScript', icon: '🔷' },
-    { name: 'React', icon: '⚛️' },
-    { name: 'Azure', icon: '☁️' },
-    { name: 'CI/CD', icon: '🔄' },
-    { name: 'Docker', icon: '🐳' },
-    { name: 'Git', icon: '🔀' },
-    { name: 'Team Leadership', icon: '👥' }
-  ]
+    { name: ".NET (C#)", icon: "🔷" },
+    { name: "Azure", icon: "☁️" },
+    { name: "React", icon: "⚛️" },
+    { name: "TypeScript & JavaScript", icon: "🟨" },
+    { name: "CI/CD pipelines", icon: "🔄" },
+    { name: "Docker", icon: "🐳" },
+    { name: "Git", icon: "🔀" },
+    { name: "Team Leadership", icon: "👥" },
+  ];
 
   return (
     <section className="flex flex-col items-center justify-center min-h-screen text-center px-4">
@@ -22,7 +21,7 @@ function Hero() {
           <span className="text-gray-400"> | </span>
           <span className="text-green-500">Full Stack Developer</span>
         </p>
-        
+
         {/* Tech Stack Badges */}
         <div className="flex flex-wrap justify-center gap-2 max-w-2xl mx-auto">
           {techStack.map((tech) => (
@@ -36,7 +35,7 @@ function Hero() {
           ))}
         </div>
       </div>
-      
+
       <style>{`
         @keyframes fadeIn {
           from { opacity: 0; transform: translateY(20px); }
@@ -44,7 +43,7 @@ function Hero() {
         }
       `}</style>
     </section>
-  )
+  );
 }
 
-export default Hero
+export default Hero;
