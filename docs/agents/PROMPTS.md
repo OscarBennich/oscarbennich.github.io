@@ -514,3 +514,22 @@ Can you find a simpler solution to this?
 - Verified build succeeds
 
 ---
+
+## Prompt 28
+**Date & Time:** 2025-11-07 22:34:15 UTC  
+**Tool:** GitHub Copilot CLI  
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+Add badges for .NET (C#), JavaScript and TypeScript, React, Azure, CI/CD, Docker, Git, Team Leadership. I also want you to add some visual part of the badge if possible, for example the official icons for each langauge/framework and then whatever fits best for the rest.
+```
+
+**Changes:**
+- Modified `src/components/Hero.jsx` to update tech stack badges with new technologies
+- Added emoji icons for each technology (.NET 🔷, JavaScript 🟨, TypeScript 🔷, React ⚛️, Azure ☁️, CI/CD 🔄, Docker 🐳, Git 🔀, Team Leadership 👥)
+- Updated badge styling to include icons with flexbox layout
+- Increased badge text size from xs to sm for better readability
+- Verified build succeeds
+
+---
