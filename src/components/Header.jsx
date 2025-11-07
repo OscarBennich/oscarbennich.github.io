@@ -5,8 +5,8 @@ function Header() {
     <header className="bg-gray-800 border-b border-gray-700">
       <div className="max-w-6xl mx-auto px-4 py-6">
         <nav className="flex items-center justify-between">
-          <Link to="/" className="text-xl font-bold text-gray-100 font-mono hover:text-purple-400 transition-colors">
-            /home
+          <Link to="/" className="text-4xl">
+            🏡
           </Link>
           <ul className="flex gap-6 font-mono">
             <li>
