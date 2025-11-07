@@ -2,13 +2,6 @@ function Hero() {
   return (
     <section className="flex flex-col items-center justify-center min-h-screen text-center px-4">
       <div className="relative z-10 animate-[fadeIn_1s_ease-in]">
-        <div className="mb-8 px-6 py-3 border-2 border-yellow-500 bg-yellow-500/10 rounded-lg">
-          <p className="text-yellow-500 font-mono text-sm md:text-base flex items-center gap-2">
-            <span>⚠️</span>
-            <span>UNDER CONSTRUCTION</span>
-            <span>⚠️</span>
-          </p>
-        </div>
         <h1 className="text-5xl md:text-7xl font-bold text-gray-100 mb-4 font-mono transition-all duration-300 hover:[text-shadow:3px_3px_0_rgba(168,85,247,0.8),-3px_-3px_0_rgba(16,185,129,0.8)]">
           Oscar Bennich-Björkman
         </h1>
