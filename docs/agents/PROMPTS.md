@@ -435,3 +435,22 @@ Also, the purple part of the box-shadow hover effect is slightly visible even wh
 - Verified build succeeds
 
 ---
+
+## Prompt 24
+**Date & Time:** 2025-11-07 21:52:15 UTC  
+**Tool:** GitHub Copilot CLI  
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+Add functionality to change the title of the page to indicate what page the user is one, e.g "> Home" or "> About"
+```
+
+**Changes:**
+- Modified `src/pages/Home.jsx` to set document title to "> Home" using useEffect
+- Modified `src/pages/About.jsx` to set document title to "> About" using useEffect
+- Modified `src/pages/Blog.jsx` to set document title to "> Blog" using useEffect
+- Page titles now update dynamically when navigating between pages
+- Verified build succeeds
+
+---

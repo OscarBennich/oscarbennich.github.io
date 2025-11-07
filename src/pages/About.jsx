@@ -1,4 +1,10 @@
+import { useEffect } from 'react'
+
 function About() {
+  useEffect(() => {
+    document.title = 'Oscar Bennich-Björkman > About'
+  }, [])
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen px-4 py-12">
       <div className="max-w-4xl w-full text-center">
