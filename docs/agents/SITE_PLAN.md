@@ -95,7 +95,7 @@ A personal portfolio and blog site for a software engineer, built with React and
 
 ---
 
-## Milestone 6: Add PDF CV to About Page
+## Milestone 6: Add PDF CV to About Page ✅
 **Goal**: Allow viewing/downloading a PDF CV on the About page
 
 ### Tasks:

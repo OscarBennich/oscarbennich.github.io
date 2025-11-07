@@ -376,3 +376,23 @@ Let's change the site plan so that milestone 6, 7, 8 are simply one milestone th
 - Adjusted total milestones from 14 to 12
 
 ---
+
+## Prompt 21
+**Date & Time:** 2025-11-07 20:46:30 UTC  
+**Tool:** GitHub Copilot CLI  
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+Implement milestone 6 using the CV that I've put in the docs directory
+```
+
+**Changes:**
+- Copied `docs/CV_OscarBennichBjorkman_2025_en.pdf` to `public/` folder for web access
+- Modified `src/pages/About.jsx` to display CV section with view and download buttons
+- Added styled card layout with purple "View CV" button (opens in new tab) and green "Download CV" button
+- Applied cyberpunk shadow hover effect to buttons matching site theme
+- Marked Milestone 6 as complete (✅) in `docs/agents/SITE_PLAN.md`
+- Verified build succeeds
+
+---
