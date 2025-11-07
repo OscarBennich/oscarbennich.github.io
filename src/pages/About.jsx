@@ -3,7 +3,7 @@ function About() {
     <div className="flex flex-col items-center justify-center min-h-screen px-4 py-12">
       <div className="max-w-4xl w-full text-center">
         <h1 className="text-4xl md:text-6xl font-bold text-gray-100 font-mono mb-8">
-          About
+          /about
         </h1>
         
         <div className="bg-gray-800 border border-gray-700 rounded-lg p-8 mb-8">
