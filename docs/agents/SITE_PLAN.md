@@ -95,58 +95,23 @@ A personal portfolio and blog site for a software engineer, built with React and
 
 ---
 
-## Milestone 6: Build About/CV Page Structure
-**Goal**: Create the structural layout for the About/CV page
+## Milestone 6: Add PDF CV to About Page
+**Goal**: Allow viewing/downloading a PDF CV on the About page
 
 ### Tasks:
-1. Create sections for: Skills, Experience, Education, Projects
-2. Use placeholder/minimal content
-3. Basic layout structure with semantic HTML
-4. Component organization
+1. Create a simple About page layout
+2. Add a PDF CV file to the project
+3. Add a link/button to view or download the PDF CV
+4. Style the About page to be consistent with site design
 
 ### Deliverables:
-- About page with all major sections
-- Clean component structure
-- Placeholder content in each section
+- About page with PDF CV accessible
+- Download/view button styled and functional
+- Clean, professional layout
 
 ---
 
-## Milestone 7: Style About/CV Page
-**Goal**: Apply styling to make the About/CV page look professional
-
-### Tasks:
-1. Style skills grid/list
-2. Style experience timeline
-3. Style education section
-4. Style projects section
-5. Ensure responsive design (mobile, tablet, desktop)
-
-### Deliverables:
-- Professionally styled About page
-- Responsive layout working on all screen sizes
-- Consistent with home page design
-
----
-
-## Milestone 8: Add Real CV Content
-**Goal**: Populate the About/CV page with actual information
-
-### Tasks:
-1. Create JSON data files for experience, skills, education, projects
-2. Build components to consume and display data
-3. Add real work experience, skills, education, and project information
-4. Add professional photo/avatar
-5. Proofread content
-
-### Deliverables:
-- Complete CV content
-- Data-driven components
-- Professional photo added
-- All information accurate and proofread
-
----
-
-## Milestone 9: Blog Infrastructure
+## Milestone 7: Blog Infrastructure
 **Goal**: Set up the technical foundation for the blog
 
 ### Tasks:
@@ -165,7 +130,7 @@ A personal portfolio and blog site for a software engineer, built with React and
 
 ---
 
-## Milestone 10: Style Blog Pages
+## Milestone 8: Style Blog Pages
 **Goal**: Apply styling to blog listing and post pages
 
 ### Tasks:
@@ -183,7 +148,7 @@ A personal portfolio and blog site for a software engineer, built with React and
 
 ---
 
-## Milestone 11: Blog Features
+## Milestone 9: Blog Features
 **Goal**: Add functionality to make the blog more useful
 
 ### Tasks:
@@ -201,7 +166,7 @@ A personal portfolio and blog site for a software engineer, built with React and
 
 ---
 
-## Milestone 12: Enhanced Features
+## Milestone 10: Enhanced Features
 **Goal**: Add polish and interactivity to the site
 
 ### Tasks:
@@ -219,7 +184,7 @@ A personal portfolio and blog site for a software engineer, built with React and
 
 ---
 
-## Milestone 13: SEO & Performance
+## Milestone 11: SEO & Performance
 **Goal**: Optimize for search engines and performance
 
 ### Tasks:
@@ -241,7 +206,7 @@ A personal portfolio and blog site for a software engineer, built with React and
 
 ---
 
-## Milestone 14: Content & Launch
+## Milestone 12: Content & Launch
 **Goal**: Final content and polish before considering site complete
 
 ### Tasks:

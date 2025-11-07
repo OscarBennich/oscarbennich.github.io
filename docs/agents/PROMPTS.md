@@ -358,3 +358,21 @@ Please add something to clearly indicate that the site is under construction.
 - Verified build succeeds
 
 ---
+
+## Prompt 20
+**Date & Time:** 2025-11-07 20:40:07 UTC  
+**Tool:** GitHub Copilot CLI  
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+Let's change the site plan so that milestone 6, 7, 8 are simply one milestone that's about being able to add a PDF CV to the about page (for now) and adjust the other milestone numbers accordingly.
+```
+
+**Changes:**
+- Modified `docs/agents/SITE_PLAN.md` to consolidate Milestones 6, 7, and 8 into a single Milestone 6: "Add PDF CV to About Page"
+- Renumbered subsequent milestones (Blog Infrastructure is now Milestone 7, etc.)
+- Updated new Milestone 6 to focus on simple PDF CV display/download functionality
+- Adjusted total milestones from 14 to 12
+
+---
