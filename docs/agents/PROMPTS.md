@@ -396,3 +396,42 @@ Implement milestone 6 using the CV that I've put in the docs directory
 - Verified build succeeds
 
 ---
+
+## Prompt 22
+**Date & Time:** 2025-11-07 20:54:59 UTC  
+**Tool:** GitHub Copilot CLI  
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+Let's remove the "home" link in the right-side menu and have it be in the left-side corner always. Also, change the style of the hover effects on the menu items to be more like the CV links on the "About" page.
+```
+
+**Changes:**
+- Modified `src/components/Header.jsx` to make left-side route indicator a clickable link to home
+- Removed "Home" link from right-side navigation menu
+- Changed hover effect on About and Blog links from text-shadow to box-shadow (matching CV button style)
+- Verified build succeeds
+
+---
+
+## Prompt 23
+**Date & Time:** 2025-11-07 20:59:31 UTC  
+**Tool:** GitHub Copilot CLI  
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+I don't want the name of the page to be displayed in the upper-left corner, I want it to always say "/home".
+
+Also, the purple part of the box-shadow hover effect is slightly visible even when not hovering the links. Can you fix that?
+```
+
+**Changes:**
+- Modified `src/components/Header.jsx` to always display "/home" in upper-left corner instead of dynamic route
+- Removed useLocation hook (no longer needed)
+- Added padding and inline-block display to navigation links to contain box-shadow effect properly
+- Fixed box-shadow bleed by ensuring proper element display context
+- Verified build succeeds
+
+---
