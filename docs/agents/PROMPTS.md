@@ -750,3 +750,21 @@ There is a bug I need help solving: When deploying this site to Github pages, th
 - Implemented GitHub Pages SPA routing workaround using history.replaceState()
 
 ---
+
+## Prompt 39
+**Date & Time:** 2025-11-09 22:52:25 UTC  
+**Tool:** GitHub Copilot CLI v0.0.354  
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+Is there no "non-hacky" way that doesn't involve redirecting the user to solve this? I can still see that the 404 error flashes in the console whenever I go to the /about or /blog page.
+```
+
+**Changes:**
+- Replaced `BrowserRouter` with `HashRouter` in `src/App.tsx` for clean SPA routing
+- Removed `public/404.html` redirect workaround file
+- Removed sessionStorage redirect script from `index.html`
+- URLs now use hash-based routing (e.g., `/#/about`, `/#/blog`) which works perfectly on GitHub Pages without server configuration
+
+---
