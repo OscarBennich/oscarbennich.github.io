@@ -593,3 +593,30 @@ Please go through the TypeScript files and add appropriate types.
 - All components now have proper, explicit TypeScript type annotations
 
 ---
+
+## Prompt 31
+**Date & Time:** 2025-11-09 20:52:29 UTC  
+**Tool:** GitHub Copilot CLI v0.0.354  
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+Can you add these explanations as markdown files in the docs/ folder for future reference?
+```
+
+**Changes:**
+- Created `docs/LINTING_AND_TYPE_CHECKING.md` with comprehensive explanation of:
+  - TypeScript, ESLint, and typescript-eslint roles
+  - How the tools work together
+  - When each tool runs
+  - Key differences and why you need both
+  - Workflow and analogies
+- Created `docs/VITE_EXPLAINED.md` with detailed explanation of:
+  - Vite's role as build tool and dev server
+  - How Vite works in development vs production
+  - Integration with other tools (esbuild, TypeScript, PostCSS)
+  - Comparison with older tools (Webpack)
+  - Common commands and their behavior
+- Both files serve as reference documentation for understanding the project's tooling ecosystem
+
+---
