@@ -8,7 +8,7 @@ import dockerIcon from '../assets/docker.svg';
 
 interface TechItem {
   name: string;
-  icon: JSX.Element | string;
+  icon: React.ReactNode;
 }
 
 function Hero() {
