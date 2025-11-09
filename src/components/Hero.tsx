@@ -1,17 +1,17 @@
-import csharpIcon from '../assets/csharp.svg';
-import gitIcon from '../assets/git.svg';
-import reactIcon from '../assets/react.svg';
-import typescriptIcon from '../assets/typescript.svg';
-import azureIcon from '../assets/azure.svg';
-import pielineIcon from '../assets/pipeline.svg';
-import dockerIcon from '../assets/docker.svg';
+import csharpIcon from '../assets/csharp.svg'
+import gitIcon from '../assets/git.svg'
+import reactIcon from '../assets/react.svg'
+import typescriptIcon from '../assets/typescript.svg'
+import azureIcon from '../assets/azure.svg'
+import pielineIcon from '../assets/pipeline.svg'
+import dockerIcon from '../assets/docker.svg'
 
 interface TechItem {
-  name: string;
-  icon: React.ReactNode;
+  name: string
+  icon: React.ReactNode
 }
 
-function Hero() {
+function Hero(): React.ReactElement {
   const techStack: TechItem[] = [
     { name: ".NET (C#)", icon: <img src={csharpIcon} alt=".NET (C#)" className="w-4 h-4" /> },
     { name: "Azure", icon: <img src={azureIcon} alt="Azure" className="w-4 h-4" /> },
@@ -21,7 +21,7 @@ function Hero() {
     { name: "Docker", icon: <img src={dockerIcon} alt="Docker" className="w-4 h-4" /> },
     { name: "Git", icon: <img src={gitIcon} alt="Git" className="w-4 h-4" /> },
     { name: "Team Leadership", icon: "🧑‍🤝‍🧑" },
-  ];
+  ]
 
   return (
     <section className="flex flex-col items-center justify-center min-h-screen text-center px-4">
@@ -56,7 +56,7 @@ function Hero() {
         }
       `}</style>
     </section>
-  );
+  )
 }
 
-export default Hero;
+export default Hero

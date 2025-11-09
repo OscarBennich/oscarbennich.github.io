@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-function Header() {
+function Header(): React.ReactElement {
   return (
     <header className="bg-gray-800 border-b border-gray-700">
       <div className="max-w-6xl mx-auto px-4 py-6">

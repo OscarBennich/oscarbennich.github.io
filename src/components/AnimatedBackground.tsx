@@ -1,4 +1,4 @@
-function AnimatedBackground() {
+function AnimatedBackground(): React.ReactElement {
   return (
     <>
       {/* Background grid pattern */}

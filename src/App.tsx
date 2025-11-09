@@ -4,7 +4,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Blog from './pages/Blog'
 
-function App() {
+function App(): React.ReactElement {
   return (
     <BrowserRouter>
       <Routes>

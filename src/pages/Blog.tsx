@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 
-function Blog() {
+function Blog(): React.ReactElement {
   useEffect(() => {
     document.title = 'Oscar Bennich-Björkman > Blog'
   }, [])

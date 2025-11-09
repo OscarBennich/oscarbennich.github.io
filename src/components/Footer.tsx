@@ -1,4 +1,4 @@
-function Footer() {
+function Footer(): React.ReactElement {
   return (
     <footer className="bg-gray-800 border-t border-gray-700">
       <div className="max-w-6xl mx-auto px-4 py-8">
