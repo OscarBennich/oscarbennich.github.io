@@ -733,3 +733,20 @@ I like the first one (terminal.svg). Please use that one as the favicon for the 
 - Removed all unused favicon option files from `public/` directory
 
 ---
+
+## Prompt 38
+**Date & Time:** 2025-11-09 22:36:45 UTC  
+**Tool:** GitHub Copilot CLI v0.0.354  
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+There is a bug I need help solving: When deploying this site to Github pages, the root page "/" works as expected, but when I go to /about or /blog, it *only* works when clicking the link in the header @src\components\Header.tsx. Whenever I refresh the page or try to go directly there, i.e. go to https://oscarbennich.github.io/about in the browser, I get a 404 error.
+```
+
+**Changes:**
+- Created `public/404.html` with redirect script that stores requested path in sessionStorage
+- Modified `index.html` to restore the path from sessionStorage before React Router initializes
+- Implemented GitHub Pages SPA routing workaround using history.replaceState()
+
+---
