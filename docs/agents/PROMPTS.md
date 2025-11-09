@@ -6,14 +6,14 @@ This file contains a chronological record of all prompts used to build this site
 
 ## Prompt 1
 **Date & Time:** 2025-10-26 20:03:47 UTC  
-**Tool:** GitHub Copilot CLI  
+**Tool:** GitHub Copilot CLI v0.0.354
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
 ```
 I want you to help me create a personal site that I can host on Github pages. I'm work as a software engineer and I want the site to be place to show my skills (like a CV/portfolio) as well as write some thoughts and blogposts.
 
-To start I want you to create a docs folder and inside it add an agents folder. Inside of that folder I want you to create a "PROMPTS.md" file where you will store all prompts I've used to build this site (including this one) in chronological order. Please include date and time as well as the tool (Github Copilot CLI) and the model being used.
+To start I want you to create a docs folder and inside it add an agents folder. Inside of that folder I want you to create a "PROMPTS.md" file where you will store all prompts I've used to build this site (including this one) in chronological order. Please include date and time as well as the tool (GitHub Copilot CLI v0.0.354) and the model being used.
 
 After you've done that, let me know.
 ```
@@ -26,7 +26,7 @@ After you've done that, let me know.
 
 ## Prompt 2
 **Date & Time:** 2025-10-26 20:12:36 UTC  
-**Tool:** GitHub Copilot CLI  
+**Tool:** GitHub Copilot CLI v0.0.354
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
@@ -42,7 +42,7 @@ Modify the instructions in AGENTS.md to only include prompts that lead to file c
 
 ## Prompt 3
 **Date & Time:** 2025-10-26 20:21:12 UTC  
-**Tool:** GitHub Copilot CLI  
+**Tool:** GitHub Copilot CLI v0.0.354
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
@@ -61,7 +61,7 @@ I want you to start with the simplest possible design and focus on the tech. Bre
 
 ## Prompt 4
 **Date & Time:** 2025-10-26 20:31:58 UTC  
-**Tool:** GitHub Copilot CLI  
+**Tool:** GitHub Copilot CLI v0.0.354
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
@@ -84,7 +84,7 @@ Okay, let's get started with milestone 1. Once that's done, stop and let me revi
 
 ## Prompt 5
 **Date & Time:** 2025-10-26 20:53:24 UTC  
-**Tool:** GitHub Copilot CLI  
+**Tool:** GitHub Copilot CLI v0.0.354
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
@@ -99,7 +99,7 @@ Deploying the site using the deploy.yml file seems to have been successful but w
 
 ## Prompt 6
 **Date & Time:** 2025-10-26 20:57:48 UTC  
-**Tool:** GitHub Copilot CLI  
+**Tool:** GitHub Copilot CLI v0.0.354
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
@@ -116,7 +116,7 @@ I want you to modify the PROMPTS.md file and the instructions in AGENTS.md to in
 
 ## Prompt 7
 **Date & Time:** 2025-10-26 20:58:56 UTC  
-**Tool:** GitHub Copilot CLI  
+**Tool:** GitHub Copilot CLI v0.0.354
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
@@ -133,7 +133,7 @@ Please add a .gitattribute file to fix this.
 
 ## Prompt 8
 **Date & Time:** 2025-10-30 21:27:34 UTC  
-**Tool:** GitHub Copilot CLI  
+**Tool:** GitHub Copilot CLI v0.0.354  
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
@@ -153,7 +153,7 @@ Please implement milestone 2 from @docs\agents\SITE_PLAN.md
 
 ## Prompt 9
 **Date & Time:** 2025-10-30 21:37:54 UTC  
-**Tool:** GitHub Copilot CLI  
+**Tool:** GitHub Copilot CLI v0.0.354  
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
@@ -172,7 +172,7 @@ Please review the site plan and give suggestions for how to modify the remaining
 
 ## Prompt 10
 **Date & Time:** 2025-10-30 21:42:00 UTC  
-**Tool:** GitHub Copilot CLI  
+**Tool:** GitHub Copilot CLI v0.0.354  
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
@@ -192,7 +192,7 @@ Implement milestone 3 from @docs\agents\SITE_PLAN.md and mark it as done afterwa
 
 ## Prompt 11
 **Date & Time:** 2025-10-30 21:47:12 UTC  
-**Tool:** GitHub Copilot CLI  
+**Tool:** GitHub Copilot CLI v0.0.354  
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
@@ -209,7 +209,7 @@ It doesn't seem to be working. It's just a white unstyled page with the text in 
 
 ## Prompt 12
 **Date & Time:** 2025-10-30 21:52:50 UTC  
-**Tool:** GitHub Copilot CLI  
+**Tool:** GitHub Copilot CLI v0.0.354  
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
@@ -226,7 +226,7 @@ Please generate an appropriate favicon and add it to the site.
 
 ## Prompt 13
 **Date & Time:** 2025-10-30 22:00:30 UTC  
-**Tool:** GitHub Copilot CLI  
+**Tool:** GitHub Copilot CLI v0.0.354  
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
@@ -246,7 +246,7 @@ Implement milestone 4 from @docs\agents\SITE_PLAN.md and mark it as done afterwa
 
 ## Prompt 14
 **Date & Time:** 2025-10-30 22:05:06 UTC  
-**Tool:** GitHub Copilot CLI  
+**Tool:** GitHub Copilot CLI v0.0.354  
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
@@ -267,7 +267,7 @@ Implement milestone 4 from @docs\agents\SITE_PLAN.md and mark it as done afterwa
 
 ## Prompt 15
 **Date & Time:** 2025-10-30 22:24:15 UTC  
-**Tool:** GitHub Copilot CLI  
+**Tool:** GitHub Copilot CLI v0.0.354  
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
@@ -285,7 +285,7 @@ I would like you to implement the purple and green color from option 4 but for t
 
 ## Prompt 16
 **Date & Time:** 2025-10-30 22:36:42 UTC  
-**Tool:** GitHub Copilot CLI  
+**Tool:** GitHub Copilot CLI v0.0.354  
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
@@ -309,7 +309,7 @@ Implement milestone 5 from @docs\agents\SITE_PLAN.md and mark it as done afterwa
 
 ## Prompt 17
 **Date & Time:** 2025-10-30 22:37:51 UTC  
-**Tool:** GitHub Copilot CLI  
+**Tool:** GitHub Copilot CLI v0.0.354  
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
@@ -326,7 +326,7 @@ Change the left side of the header to indicate what page the user is on with /ho
 
 ## Prompt 18
 **Date & Time:** 2025-10-30 22:39:45 UTC  
-**Tool:** GitHub Copilot CLI  
+**Tool:** GitHub Copilot CLI v0.0.354  
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
@@ -343,7 +343,7 @@ When you hover over the page links I want them to have the same effect as the na
 
 ## Prompt 19
 **Date & Time:** 2025-10-30 22:45:32 UTC  
-**Tool:** GitHub Copilot CLI  
+**Tool:** GitHub Copilot CLI v0.0.354  
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
@@ -361,7 +361,7 @@ Please add something to clearly indicate that the site is under construction.
 
 ## Prompt 20
 **Date & Time:** 2025-11-07 20:40:07 UTC  
-**Tool:** GitHub Copilot CLI  
+**Tool:** GitHub Copilot CLI v0.0.354  
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
@@ -379,7 +379,7 @@ Let's change the site plan so that milestone 6, 7, 8 are simply one milestone th
 
 ## Prompt 21
 **Date & Time:** 2025-11-07 20:46:30 UTC  
-**Tool:** GitHub Copilot CLI  
+**Tool:** GitHub Copilot CLI v0.0.354  
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
@@ -399,7 +399,7 @@ Implement milestone 6 using the CV that I've put in the docs directory
 
 ## Prompt 22
 **Date & Time:** 2025-11-07 20:54:59 UTC  
-**Tool:** GitHub Copilot CLI  
+**Tool:** GitHub Copilot CLI v0.0.354  
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
@@ -417,7 +417,7 @@ Let's remove the "home" link in the right-side menu and have it be in the left-s
 
 ## Prompt 23
 **Date & Time:** 2025-11-07 20:59:31 UTC  
-**Tool:** GitHub Copilot CLI  
+**Tool:** GitHub Copilot CLI v0.0.354  
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
@@ -438,7 +438,7 @@ Also, the purple part of the box-shadow hover effect is slightly visible even wh
 
 ## Prompt 24
 **Date & Time:** 2025-11-07 21:52:15 UTC  
-**Tool:** GitHub Copilot CLI  
+**Tool:** GitHub Copilot CLI v0.0.354  
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
@@ -457,7 +457,7 @@ Add functionality to change the title of the page to indicate what page the user
 
 ## Prompt 25
 **Date & Time:** 2025-11-07 22:06:56 UTC  
-**Tool:** GitHub Copilot CLI  
+**Tool:** GitHub Copilot CLI v0.0.354  
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
@@ -477,7 +477,7 @@ Remove the pulsing of the animated particles and add this as a background for al
 
 ## Prompt 26
 **Date & Time:** 2025-11-07 22:14:28 UTC  
-**Tool:** GitHub Copilot CLI  
+**Tool:** GitHub Copilot CLI v0.0.354  
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
@@ -495,7 +495,7 @@ The background needs to be set behind everything.
 
 ## Prompt 27
 **Date & Time:** 2025-11-07 22:18:32 UTC  
-**Tool:** GitHub Copilot CLI  
+**Tool:** GitHub Copilot CLI v0.0.354  
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
@@ -517,7 +517,7 @@ Can you find a simpler solution to this?
 
 ## Prompt 28
 **Date & Time:** 2025-11-07 22:34:15 UTC  
-**Tool:** GitHub Copilot CLI  
+**Tool:** GitHub Copilot CLI v0.0.354  
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
