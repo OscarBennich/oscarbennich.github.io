@@ -7,7 +7,7 @@ After executing each user command/prompt, you must add an entry to `docs/agents/
 ### Required Metadata:
 - **Prompt Number**: Sequential number (Prompt 1, Prompt 2, etc.)
 - **Date & Time**: ISO 8601 format in UTC (YYYY-MM-DD HH:MM:SS UTC)
-- **Tool**: Agent tool being used (such as "GitHub Copilot CLI" or "Claude Code")
+- **Tool**: Agent tool being used (such as "GitHub Copilot CLI" or "Claude Code"), including the version (such as v0.0.354)
 - **Model**: Underlying LLM model being used (such as "Claude Sonnet 4.5" or "GPT-5")
 
 ### Format:
