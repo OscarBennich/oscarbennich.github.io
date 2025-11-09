@@ -6,7 +6,7 @@ function Hero(): React.ReactElement {
           Oscar Bennich-Björkman
         </h1>
         <p className="text-sm sm:text-base md:text-lg lg:text-xl font-mono text-gray-100">
-          <span className="typewriter">Tech Lead | Full Stack Developer<span className="caret">_</span></span>
+          <span className="typewriter">Tech Lead && Full Stack Developer<span className="caret">_</span></span>
         </p>
       </div>
 
