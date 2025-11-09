@@ -692,3 +692,44 @@ Please change the text in the hero section @src\components\Hero.tsx to be writte
 - Added `break-words`, `max-w-full`, and responsive breakpoints for better mobile UX
 
 ---
+
+## Prompt 36
+**Date & Time:** 2025-11-09 22:02:18 UTC  
+**Tool:** GitHub Copilot CLI v0.0.354  
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+I want to change the favicon to be something that fits with the developer and green/purple theme. Please produce some suggestions in the form of multiple SVG files that I can review.
+```
+
+**Changes:**
+- Created 7 favicon option SVG files in `public/` directory:
+  - `favicon-option-1-terminal.svg` (terminal prompt with chevron and underscore)
+  - `favicon-option-2-code-brackets.svg` (code angle brackets)
+  - `favicon-option-3-ob-monogram.svg` (OB initials with overlay)
+  - `favicon-option-4-slash.svg` (forward slash with gradient)
+  - `favicon-option-5-git-branch.svg` (git branching visualization)
+  - `favicon-option-6-lambda.svg` (lambda symbol)
+  - `favicon-option-7-cursor.svg` (blinking cursor with code lines)
+- All designs use green (#10b981) and purple (#a855f7) color scheme on dark background
+
+---
+
+## Prompt 37
+**Date & Time:** 2025-11-09 22:04:35 UTC  
+**Tool:** GitHub Copilot CLI v0.0.354  
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+I like the first one (terminal.svg). Please use that one as the favicon for the page, and also add it as the icon to go back to the landing page in the left corner of the header.
+```
+
+**Changes:**
+- Replaced `public/favicon.svg` with terminal icon design
+- Modified `src/components/Header.tsx` to replace house emoji with favicon SVG image
+- Added hover effect to header home icon with green/purple border shadows
+- Removed all unused favicon option files from `public/` directory
+
+---
