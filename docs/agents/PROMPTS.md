@@ -620,3 +620,28 @@ Can you add these explanations as markdown files in the docs/ folder for future 
 - Both files serve as reference documentation for understanding the project's tooling ecosystem
 
 ---
+
+## Prompt 33
+**Date & Time:** 2025-11-09 21:26:56 UTC  
+**Tool:** GitHub Copilot CLI v0.0.354  
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+I feel like there's a lot of files in the root of the project. Is this expected/intended? Like package.json + lock, and multiple different config files. Is this a standard layout for this type of project?
+```
+
+**Changes:**
+- Created `docs/PROJECT_STRUCTURE.md` with comprehensive explanation of:
+  - Complete root directory overview with descriptions
+  - File-by-file breakdown of all config files and their purposes
+  - Why modern JavaScript/TypeScript projects have many config files
+  - Comparison with other frameworks (Next.js, Create React App, Vue)
+  - Explanation of source directories (`src/`, `public/`, `dist/`, `node_modules/`)
+  - Git and GitHub configuration files
+  - Documentation structure
+  - The philosophy behind composable tools vs all-in-one solutions
+  - Quick reference guide for which files to edit/avoid
+- Document serves as comprehensive reference for understanding project organization
+
+---
