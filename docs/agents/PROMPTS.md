@@ -533,3 +533,40 @@ Add badges for .NET (C#), JavaScript and TypeScript, React, Azure, CI/CD, Docker
 - Verified build succeeds
 
 ---
+
+## Prompt 29
+**Date & Time:** 2025-11-09 20:00:32 UTC  
+**Tool:** GitHub Copilot CLI v0.0.354  
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+I want to refactor this site to use TypeScript instead of Javascript. Please make a multi-step plan for that (if needed) so that you can then help me execute this?
+```
+
+**Changes:**
+- **Phase 1 (Steps 1-3):** Added TypeScript dependency and configuration
+  - Installed `typescript` (v5.9.3) and `typescript-eslint` (v8.46.3) packages
+  - Created `tsconfig.json` with React + Vite settings
+  - Converted config files: `vite.config.js` → `vite.config.ts`, `tailwind.config.js` → `tailwind.config.ts`, `postcss.config.js` → `postcss.config.ts`, `eslint.config.js` → `eslint.config.mjs`
+  - Committed as "Phase 1 Step 3: Convert config files to TypeScript"
+- **Phase 2 (Steps 4-5):** Converted core application files
+  - Converted `main.jsx` → `main.tsx` and `App.jsx` → `App.tsx`
+  - Updated `index.html` to reference `.tsx` entry point
+  - Converted all component files: `Layout.jsx`, `Header.jsx`, `Footer.jsx`, `AnimatedBackground.jsx`, `Hero.jsx` → `.tsx`
+  - Added TypeScript interface `TechItem` to Hero component
+  - Committed as "Phase 2 Step 4" and "Phase 2 Step 5"
+- **Phase 3 (Step 6):** Converted page components
+  - Converted `Home.jsx`, `About.jsx`, `Blog.jsx` → `.tsx`
+  - Committed as "Phase 3 Step 6: Convert page components to TypeScript"
+- **Phase 4 (Step 7):** Testing and verification
+  - Created `src/vite-env.d.ts` with type declarations for `.svg` and `.css` imports
+  - Fixed TypeScript type errors (changed `JSX.Element | string` to `React.ReactNode`)
+  - Verified TypeScript compilation with `tsc --noEmit` (no errors)
+  - Verified ESLint passes with no errors
+  - Verified production build succeeds
+  - Committed as "Phase 4 Step 7: Add TypeScript type declarations and verify build"
+- All JavaScript/JSX files successfully migrated to TypeScript/TSX
+- Project fully functional with TypeScript strict mode enabled
+
+---
