@@ -6,8 +6,13 @@ import azureIcon from '../assets/azure.svg';
 import pielineIcon from '../assets/pipeline.svg';
 import dockerIcon from '../assets/docker.svg';
 
+interface TechItem {
+  name: string;
+  icon: JSX.Element | string;
+}
+
 function Hero() {
-  const techStack = [
+  const techStack: TechItem[] = [
     { name: ".NET (C#)", icon: <img src={csharpIcon} alt=".NET (C#)" className="w-4 h-4" /> },
     { name: "Azure", icon: <img src={azureIcon} alt="Azure" className="w-4 h-4" /> },
     { name: "React", icon: <img src={reactIcon} alt="React" className="w-4 h-4" /> },
