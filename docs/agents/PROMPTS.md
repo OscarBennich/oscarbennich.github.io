@@ -669,3 +669,26 @@ I want to move the tech stack badges from the hero component and to the "About" 
 - Verified lint and build pass successfully
 
 ---
+
+## Prompt 35
+**Date & Time:** 2025-11-09 21:55:22 UTC  
+**Tool:** GitHub Copilot CLI v0.0.354  
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+Please change the text in the hero section @src\components\Hero.tsx to be written in as an ASCII drawing, remove the fade in animation and instead add an animation for the "Tech Lead | Full Stack Developer" part which writes it out letter by letter and then ends with a blinking caret.
+```
+
+**Changes:**
+- Modified `src/components/Hero.tsx` to replace name with ASCII art
+- Removed fade-in animation (`animate-[fadeIn_1s_ease-in]` and fadeIn keyframes)
+- Added typewriter animation using CSS `@keyframes typing` with `steps()` function
+- Added blinking caret animation with 3-second delay
+- Changed subtitle to use inline typewriter effect with blinking underscore
+- Iterated on ASCII art readability (block characters, larger size, text shadow)
+- Reset to regular text and added dual-color border effect (purple/green shadows)
+- Optimized for mobile with responsive padding, text sizes, and border shadows
+- Added `break-words`, `max-w-full`, and responsive breakpoints for better mobile UX
+
+---
