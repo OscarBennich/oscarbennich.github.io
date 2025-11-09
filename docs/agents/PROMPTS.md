@@ -645,3 +645,27 @@ I feel like there's a lot of files in the root of the project. Is this expected/
 - Document serves as comprehensive reference for understanding project organization
 
 ---
+
+## Prompt 34
+**Date & Time:** 2025-11-09 21:34:24 UTC  
+**Tool:** GitHub Copilot CLI v0.0.354  
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+I want to move the tech stack badges from the hero component and to the "About" page instead. As you do this, please restructure the about page so that it makes sense with the CV and the skills together.
+```
+
+**Changes:**
+- Moved tech stack badges from `src/components/Hero.tsx` to `src/pages/About.tsx`
+- Removed tech stack imports and interface from Hero component
+- Simplified Hero to show only name and title
+- Restructured About page with two distinct sections:
+  - **Skills & Technologies** section with tech stack badges at the top
+  - **Curriculum Vitae** section with CV download buttons below
+- Added section headings (h2) for better organization
+- Improved visual hierarchy with centered headings
+- Maintained consistent styling for badges (slightly darker background in About context)
+- Verified lint and build pass successfully
+
+---
