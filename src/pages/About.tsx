@@ -10,6 +10,7 @@ import pielineIcon from '../assets/pipeline.svg'
 import dockerIcon from '../assets/docker.svg'
 import databaseIcon from '../assets/database.svg'
 import apiIcon from '../assets/api.svg'
+import pdfIcon from '../assets/pdf.svg'
 import profilePicture from '../assets/profile_picture_2024_cropped.jpeg'
 
 interface TechItem {
@@ -124,24 +125,27 @@ function About(): React.ReactElement {
         </div>
 
         {/* CV Section */}
-        <div>
-          <h2 className="text-2xl font-bold text-gray-100 font-mono mb-4">
+        <div className="font-mono">
+          <h2 className="text-2xl font-bold text-gray-100 mb-4">
             &gt; cv
           </h2>
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-row gap-2 w-fit py-2 pr-4 text-gray-300 hover:text-gray-100">
+            <span>
+              <img src={pdfIcon} alt="PDF Icon" className="w-6 h-6" />
+            </span>
             <a
               href="/CV_OscarBennichBjorkman_2025_en.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-mono rounded-lg transition-all duration-300 hover:[box-shadow:-3px_-3px_0_rgba(16,185,129,0.8)]"
             >
               View
             </a>
-            <a
-              href="/CV_OscarBennichBjorkman_2025_en.pdf"
-              download
-              className="px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-mono rounded-lg transition-all duration-300 hover:[box-shadow:3px_3px_0_rgba(168,85,247,0.8)]"
-            >
+          </div>
+          <div className="flex flex-row gap-2 w-fit py-2 pr-4 text-gray-300 hover:text-gray-100">
+            <span>
+              <img src={pdfIcon} alt="PDF Icon" className="w-6 h-6" />
+            </span>
+            <a href="/CV_OscarBennichBjorkman_2025_en.pdf" download>
               Download
             </a>
           </div>
