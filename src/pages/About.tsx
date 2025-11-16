@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import csharpIcon from '../assets/csharp.svg'
+import dotnetIcon from '../assets/dotnet.svg'
 import gitIcon from '../assets/git.svg'
 import reactIcon from '../assets/react.svg'
 import typescriptIcon from '../assets/typescript.svg'
@@ -19,7 +20,8 @@ function About(): React.ReactElement {
   }, [])
 
   const techStack: TechItem[] = [
-    { name: "C#", icon: <img src={csharpIcon} alt="C#" className="w-4 h-4" /> },
+    { name: "C#", icon: <img src={csharpIcon} alt="C#" className="w-5 h-5" /> },
+    { name: "ASP.NET", icon: <img src={dotnetIcon} alt="C#" className="w-4 h-4" /> },
     { name: "Azure", icon: <img src={azureIcon} alt="Azure" className="w-4 h-4" /> },
     { name: "React", icon: <img src={reactIcon} alt="React" className="w-4 h-4" /> },
     { name: "TypeScript & JavaScript", icon: <img src={typescriptIcon} alt="TypeScript & JavaScript" className="w-4 h-4" /> },
