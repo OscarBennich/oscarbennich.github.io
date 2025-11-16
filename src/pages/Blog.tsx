@@ -7,8 +7,8 @@ function Blog(): React.ReactElement {
  
   return (
     <div className="flex items-center justify-center min-h-screen">
-      <h1 className="text-4xl md:text-6xl font-bold text-gray-100 font-mono">
-        /blog
+      <h1 className="text-3xl md:text-6xl font-bold text-gray-100 font-mono">
+        🚧 Coming soon! 🚧
       </h1>
     </div>
   )
