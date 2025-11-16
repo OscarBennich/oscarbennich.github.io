@@ -4,6 +4,7 @@ import dotnetIcon from '../assets/dotnet.svg'
 import gitIcon from '../assets/git.svg'
 import reactIcon from '../assets/react.svg'
 import typescriptIcon from '../assets/typescript.svg'
+import javascriptIcon from '../assets/javascript.svg'
 import azureIcon from '../assets/azure.svg'
 import pielineIcon from '../assets/pipeline.svg'
 import dockerIcon from '../assets/docker.svg'
@@ -24,7 +25,8 @@ function About(): React.ReactElement {
     { name: "ASP.NET", icon: <img src={dotnetIcon} alt="C#" className="w-4 h-4" /> },
     { name: "Azure", icon: <img src={azureIcon} alt="Azure" className="w-4 h-4" /> },
     { name: "React", icon: <img src={reactIcon} alt="React" className="w-4 h-4" /> },
-    { name: "TypeScript & JavaScript", icon: <img src={typescriptIcon} alt="TypeScript & JavaScript" className="w-4 h-4" /> },
+    { name: "TypeScript", icon: <img src={typescriptIcon} alt="TypeScript" className="w-4 h-4" /> },
+    { name: "JavaScript", icon: <img src={javascriptIcon} alt="JavaScript" className="w-4 h-4" /> },
     { name: "CI/CD pipelines", icon: <img src={pielineIcon} alt="CI/CD pipelines" className="w-4 h-4" /> },
     { name: "Docker", icon: <img src={dockerIcon} alt="Docker" className="w-4 h-4" /> },
     { name: "Git", icon: <img src={gitIcon} alt="Git" className="w-4 h-4" /> }
