@@ -8,6 +8,8 @@ import javascriptIcon from '../assets/javascript.svg'
 import azureIcon from '../assets/azure.svg'
 import pielineIcon from '../assets/pipeline.svg'
 import dockerIcon from '../assets/docker.svg'
+import databaseIcon from '../assets/database.svg'
+import apiIcon from '../assets/api.svg'
 import profilePicture from '../assets/profile_picture_2024_cropped.jpeg'
 
 interface TechItem {
@@ -29,7 +31,9 @@ function About(): React.ReactElement {
     { name: "JavaScript", icon: <img src={javascriptIcon} alt="JavaScript" className="w-4 h-4" /> },
     { name: "CI/CD pipelines", icon: <img src={pielineIcon} alt="CI/CD pipelines" className="w-4 h-4" /> },
     { name: "Docker", icon: <img src={dockerIcon} alt="Docker" className="w-4 h-4" /> },
-    { name: "Git", icon: <img src={gitIcon} alt="Git" className="w-4 h-4" /> }
+    { name: "Git", icon: <img src={gitIcon} alt="Git" className="w-4 h-4" /> },
+    { name: "SQL", icon: <img src={databaseIcon} alt="SQL" className="w-4 h-4" /> },
+    { name: "REST APIs", icon: <img src={apiIcon} alt="REST APIs" className="w-4 h-4" /> },
   ]
 
   return (
