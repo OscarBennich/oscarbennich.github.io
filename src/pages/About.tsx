@@ -27,8 +27,7 @@ function About(): React.ReactElement {
     { name: "TypeScript & JavaScript", icon: <img src={typescriptIcon} alt="TypeScript & JavaScript" className="w-4 h-4" /> },
     { name: "CI/CD pipelines", icon: <img src={pielineIcon} alt="CI/CD pipelines" className="w-4 h-4" /> },
     { name: "Docker", icon: <img src={dockerIcon} alt="Docker" className="w-4 h-4" /> },
-    { name: "Git", icon: <img src={gitIcon} alt="Git" className="w-4 h-4" /> },
-    { name: "Team Leadership", icon: "🧑‍🤝‍🧑" },
+    { name: "Git", icon: <img src={gitIcon} alt="Git" className="w-4 h-4" /> }
   ]
 
   return (
