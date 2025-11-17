@@ -10,12 +10,10 @@ function Layout(): React.ReactElement {
         <AnimatedBackground />
       </div>
       <Header />
-      <main className="grow relative">
-        <Outlet />
-      </main>
+      <Outlet />
       <Footer />
     </div>
-  )
+  );
 }
 
 export default Layout
