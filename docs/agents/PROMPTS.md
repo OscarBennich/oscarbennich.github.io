@@ -823,3 +823,33 @@ Please go ahead and implement milestone 8.
 - Verified build succeeds (note: bundle size increased due to syntax highlighter)
 
 ---
+
+## Prompt 42
+**Date & Time:** 2025-11-17 21:06:45 UTC  
+**Tool:** GitHub Copilot CLI v0.0.358
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+Proceed with milestone 9, please.
+```
+
+**Changes:**
+- Added search functionality to `BlogList.tsx` with real-time filtering by title, excerpt, or tags
+- Implemented tag filtering with clickable tag buttons throughout the component
+- Added automatic sorting by date (newest first) using `useMemo` for performance
+- Created filter UI section with search bar and tag filter buttons
+- Added "Clear filters" button and empty state for no results
+- Display current post count based on active filters
+- Made tags in post cards clickable for instant filtering
+- Highlight selected tag in purple across all instances
+- Added search input with clear (✕) button
+- Reordered blog posts in data file (newest first)
+- Used React `useState` and `useMemo` hooks for efficient filtering
+- Improved responsive layout for filter controls
+- All filtering happens client-side with no page reloads
+- Note: Reading time was already implemented in Milestone 8
+- Note: Pagination not needed yet with only 2 test posts
+- Verified build succeeds
+
+---

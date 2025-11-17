@@ -148,7 +148,7 @@ A personal portfolio and blog site for a software engineer, built with React and
 
 ---
 
-## Milestone 9: Blog Features
+## Milestone 9: Blog Features ✅
 **Goal**: Add functionality to make the blog more useful
 
 ### Tasks:
