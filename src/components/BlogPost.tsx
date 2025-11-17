@@ -34,7 +34,7 @@ function BlogPost({ posts }: BlogPostProps): React.ReactElement {
         </p>
         <Link 
           to="/blog"
-          className="text-blue-400 hover:text-blue-300 font-mono"
+          className="text-purple-400 hover:text-purple-300 font-mono"
         >
           ← Back to Blog
         </Link>
@@ -61,7 +61,7 @@ function BlogPost({ posts }: BlogPostProps): React.ReactElement {
     <article className="max-w-4xl mx-auto px-4 py-12">
       <button
         onClick={() => navigate('/blog')}
-        className="text-blue-400 hover:text-blue-300 font-mono mb-8 flex items-center gap-2 cursor-pointer"
+        className="text-purple-400 hover:text-purple-300 font-mono mb-8 flex items-center gap-2 cursor-pointer"
       >
         ← Back to Blog
       </button>
@@ -80,7 +80,7 @@ function BlogPost({ posts }: BlogPostProps): React.ReactElement {
             {post.tags.map((tag) => (
               <span 
                 key={tag}
-                className="px-2 py-1 bg-gray-800 rounded text-xs hover:bg-gray-700 transition-colors"
+                className="px-2 py-1 text-white bg-gray-700 rounded text-xs"
               >
                 #{tag}
               </span>
@@ -89,12 +89,12 @@ function BlogPost({ posts }: BlogPostProps): React.ReactElement {
         </div>
       </header>
 
-      <div className="prose prose-invert prose-lg max-w-none bg-gray-900/50 backdrop-blur-sm rounded-lg p-6 md:p-8 border border-gray-800">
+      <div className="prose prose-invert prose-lg max-w-none bg-gray-800 backdrop-blur-sm rounded-lg p-6 md:p-8 border border-gray-800">
         <ReactMarkdown
           remarkPlugins={[remarkGfm]}
           components={{
             h1: ({children}) => (
-              <h1 className="text-3xl md:text-4xl font-bold text-gray-100 mt-8 mb-4 font-mono">
+              <h1 className="text-3xl md:text-4xl font-bold text-gray-100 mb-4 font-mono">
                 {children}
               </h1>
             ),
