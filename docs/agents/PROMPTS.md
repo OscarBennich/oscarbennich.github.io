@@ -884,3 +884,32 @@ I'd like you to fix some things on the blog page:
 - Verified build succeeds
 
 ---
+
+## Prompt 44
+**Date & Time:** 2025-11-17 22:03:00 UTC  
+**Tool:** GitHub Copilot CLI v0.0.358
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+Is it possible to add the blog posts as pure markdown, rather than having it inside of a TypeScript file?
+```
+
+**Changes:**
+- Created `public/blog/` directory for storing markdown blog posts
+- Created `building-with-react-and-tailwind.md` with frontmatter (title, date, tags, excerpt)
+- Created `welcome-to-my-blog.md` with frontmatter
+- Refactored `src/data/blogPosts.ts` to export `blogPostsMetadata` array (metadata only)
+- Added `loadBlogPost(slug)` async function to fetch markdown files via HTTP
+- Added `getAllBlogPosts()` async function to load all posts with content
+- Implemented frontmatter stripping (removes YAML between --- markers before rendering)
+- Updated `Blog.tsx` to load posts asynchronously with loading state
+- Updated `BlogPost.tsx` to load individual posts dynamically on mount
+- Removed `posts` prop from BlogPost component (now self-contained)
+- Updated `App.tsx` to remove blogPosts import and prop passing
+- Markdown files automatically copied to `dist/blog/` during Vite build
+- Blog posts can now be added/edited as standard markdown files with frontmatter
+- Maintains backward compatibility with existing blog infrastructure
+- Verified build succeeds and markdown files present in dist folder
+
+---
