@@ -3,6 +3,8 @@ import Layout from './components/Layout'
 import Home from './pages/Home'
 import About from './pages/About'
 import Blog from './pages/Blog'
+import BlogPost from './components/BlogPost'
+import { blogPosts } from './data/blogPosts'
 
 function App(): React.ReactElement {
   return (
@@ -15,6 +17,7 @@ function App(): React.ReactElement {
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="blog" element={<Blog />} />
+          <Route path="blog/:slug" element={<BlogPost posts={blogPosts} />} />
         </Route>
       </Routes>
     </HashRouter>
