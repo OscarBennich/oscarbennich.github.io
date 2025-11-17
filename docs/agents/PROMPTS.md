@@ -913,3 +913,24 @@ Is it possible to add the blog posts as pure markdown, rather than having it ins
 - Verified build succeeds and markdown files present in dist folder
 
 ---
+
+## Prompt 45
+**Date & Time:** 2025-11-17 22:17:58 UTC  
+**Tool:** GitHub Copilot CLI v0.0.358
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+There's a UI bug/annoyance on the blog page where if the user filters the posts below the limit where there is no longer a scroll bar, then the page appears to move sideways (because of the scroll bar). Please fix this.
+```
+
+**Changes:**
+- Added `overflow-y: scroll` CSS rule to `html` element in `src/index.css`
+- Forces scrollbar gutter to always be visible
+- Prevents horizontal layout shift when content changes height
+- Fixes visual "jump" when filtering blog posts reduces content below viewport height
+- Scrollbar space now reserved even when content is short
+- Improves overall UI consistency across all pages
+- Verified build succeeds
+
+---
