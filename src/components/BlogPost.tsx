@@ -61,7 +61,7 @@ function BlogPost({ posts }: BlogPostProps): React.ReactElement {
     <article className="max-w-4xl mx-auto px-4 py-12">
       <button
         onClick={() => navigate('/blog')}
-        className="text-blue-400 hover:text-blue-300 font-mono mb-8 flex items-center gap-2"
+        className="text-blue-400 hover:text-blue-300 font-mono mb-8 flex items-center gap-2 cursor-pointer"
       >
         ← Back to Blog
       </button>
@@ -89,8 +89,8 @@ function BlogPost({ posts }: BlogPostProps): React.ReactElement {
         </div>
       </header>
 
-      <div className="prose prose-invert prose-lg max-w-none">
-        <ReactMarkdown 
+      <div className="prose prose-invert prose-lg max-w-none bg-gray-900/50 backdrop-blur-sm rounded-lg p-6 md:p-8 border border-gray-800">
+        <ReactMarkdown
           remarkPlugins={[remarkGfm]}
           components={{
             h1: ({children}) => (

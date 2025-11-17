@@ -47,6 +47,7 @@ function BlogList({ posts }: BlogListProps): React.ReactElement {
       filtered = filtered.filter(post => 
         post.title.toLowerCase().includes(term) ||
         post.excerpt.toLowerCase().includes(term) ||
+        post.content.toLowerCase().includes(term) ||
         post.tags.some(tag => tag.toLowerCase().includes(term))
       )
     }
@@ -144,57 +145,58 @@ function BlogList({ posts }: BlogListProps): React.ReactElement {
       ) : (
         <div className="space-y-8">
           {filteredPosts.map((post) => (
-            <article 
+            <Link 
               key={post.slug}
-              className="border border-gray-700 rounded-lg p-6 hover:border-purple-500 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300"
+              to={`/blog/${post.slug}`}
+              className="block group"
             >
-              <Link to={`/blog/${post.slug}`}>
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-100 mb-3 font-mono hover:text-purple-400 transition-colors">
+              <article 
+                className="border border-gray-700 rounded-lg p-6 hover:border-purple-500 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 cursor-pointer"
+              >
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-100 mb-3 font-mono group-hover:text-purple-400 transition-colors">
                   {post.title}
                 </h2>
-              </Link>
-              
-              <div className="flex flex-wrap items-center gap-3 text-sm text-gray-400 mb-4 font-mono">
-                <time dateTime={post.date}>{formatDate(post.date)}</time>
-                <span className="text-gray-600">•</span>
-                <span>{calculateReadingTime(post.content)} min read</span>
-                {post.tags.length > 0 && (
-                  <>
-                    <span className="text-gray-600">•</span>
-                    <div className="flex gap-2">
-                      {post.tags.map((tag) => (
-                        <button
-                          key={tag}
-                          onClick={(e) => {
-                            e.preventDefault()
-                            handleTagClick(tag)
-                          }}
-                          className={`px-2 py-1 rounded text-xs transition-colors ${
-                            selectedTag === tag
-                              ? 'bg-purple-600 text-white'
-                              : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
-                          }`}
-                        >
-                          #{tag}
-                        </button>
-                      ))}
-                    </div>
-                  </>
-                )}
-              </div>
-              
-              <p className="text-gray-300 mb-4 font-mono leading-relaxed">
-                {post.excerpt}
-              </p>
-              
-              <Link 
-                to={`/blog/${post.slug}`}
-                className="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 font-mono text-sm transition-colors group"
-              >
-                Read more 
-                <span className="group-hover:translate-x-1 transition-transform">→</span>
-              </Link>
-            </article>
+                
+                <div className="flex flex-wrap items-center gap-3 text-sm text-gray-400 mb-4 font-mono">
+                  <time dateTime={post.date}>{formatDate(post.date)}</time>
+                  <span className="text-gray-600">•</span>
+                  <span>{calculateReadingTime(post.content)} min read</span>
+                  {post.tags.length > 0 && (
+                    <>
+                      <span className="text-gray-600">•</span>
+                      <div className="flex gap-2">
+                        {post.tags.map((tag) => (
+                          <button
+                            key={tag}
+                            onClick={(e) => {
+                              e.preventDefault()
+                              e.stopPropagation()
+                              handleTagClick(tag)
+                            }}
+                            className={`px-2 py-1 rounded text-xs transition-colors cursor-pointer ${
+                              selectedTag === tag
+                                ? 'bg-purple-600 text-white'
+                                : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+                            }`}
+                          >
+                            #{tag}
+                          </button>
+                        ))}
+                      </div>
+                    </>
+                  )}
+                </div>
+                
+                <p className="text-gray-300 mb-4 font-mono leading-relaxed">
+                  {post.excerpt}
+                </p>
+                
+                <div className="inline-flex items-center gap-2 text-purple-400 group-hover:text-green-400 font-mono text-sm transition-colors">
+                  Read more 
+                  <span className="group-hover:translate-x-1 transition-transform">→</span>
+                </div>
+              </article>
+            </Link>
           ))}
         </div>
       )}
