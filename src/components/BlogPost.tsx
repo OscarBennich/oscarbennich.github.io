@@ -2,6 +2,8 @@ import { useEffect } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import { BlogPost as BlogPostType } from '../types/blog'
 
 interface BlogPostProps {
@@ -49,6 +51,12 @@ function BlogPost({ posts }: BlogPostProps): React.ReactElement {
     })
   }
 
+  const calculateReadingTime = (content: string): number => {
+    const wordsPerMinute = 200
+    const words = content.trim().split(/\s+/).length
+    return Math.ceil(words / wordsPerMinute)
+  }
+
   return (
     <article className="max-w-4xl mx-auto px-4 py-12">
       <button
@@ -63,13 +71,16 @@ function BlogPost({ posts }: BlogPostProps): React.ReactElement {
           {post.title}
         </h1>
         
-        <div className="flex items-center gap-4 text-sm text-gray-400 font-mono">
+        <div className="flex flex-wrap items-center gap-4 text-sm text-gray-400 font-mono">
           <time dateTime={post.date}>{formatDate(post.date)}</time>
+          <span className="text-gray-500">•</span>
+          <span>{calculateReadingTime(post.content)} min read</span>
+          <span className="text-gray-500">•</span>
           <div className="flex gap-2">
             {post.tags.map((tag) => (
               <span 
                 key={tag}
-                className="px-2 py-1 bg-gray-800 rounded text-xs"
+                className="px-2 py-1 bg-gray-800 rounded text-xs hover:bg-gray-700 transition-colors"
               >
                 #{tag}
               </span>
@@ -118,15 +129,35 @@ function BlogPost({ posts }: BlogPostProps): React.ReactElement {
               </li>
             ),
             code: ({className, children}) => {
+              const match = /language-(\w+)/.exec(className || '')
+              const language = match ? match[1] : ''
               const isInline = !className
+
               return isInline ? (
                 <code className="bg-gray-800 text-blue-400 px-1.5 py-0.5 rounded text-sm font-mono">
                   {children}
                 </code>
               ) : (
-                <code className="block bg-gray-800 text-gray-100 p-4 rounded-lg overflow-x-auto font-mono text-sm">
-                  {children}
-                </code>
+                <div className="my-4 rounded-lg overflow-hidden border border-gray-700">
+                  {language && (
+                    <div className="bg-gray-800 px-4 py-2 text-xs text-gray-400 font-mono border-b border-gray-700">
+                      {language}
+                    </div>
+                  )}
+                  <SyntaxHighlighter
+                    language={language || 'text'}
+                    style={vscDarkPlus}
+                    customStyle={{
+                      margin: 0,
+                      padding: '1rem',
+                      background: '#1a1a1a',
+                      fontSize: '0.875rem',
+                    }}
+                    wrapLongLines={true}
+                  >
+                    {String(children).replace(/\n$/, '')}
+                  </SyntaxHighlighter>
+                </div>
               )
             },
             pre: ({children}) => (
