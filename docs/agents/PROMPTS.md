@@ -796,3 +796,30 @@ Remember to follow the instructions in @AGENTS.md.
 - Verified build succeeds
 
 ---
+
+## Prompt 41
+**Date & Time:** 2025-11-17 20:55:12 UTC  
+**Tool:** GitHub Copilot CLI v0.0.358
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+Please go ahead and implement milestone 8.
+```
+
+**Changes:**
+- Installed `react-syntax-highlighter` and `@types/react-syntax-highlighter` packages
+- Enhanced `BlogPost.tsx` with syntax highlighting using VS Code Dark+ theme
+- Added reading time calculation function (200 words/minute)
+- Added language labels above code blocks
+- Improved metadata display with reading time, bullet separators, and hover effects
+- Enhanced `BlogList.tsx` with better styling and hover animations
+- Added purple hover effects with shadows to blog post cards
+- Added subtitle "Thoughts, tutorials, and experiences in software engineering" to blog listing
+- Improved "Read more" links with animated arrow on hover
+- Made tags hoverable with transition effects
+- Better responsive design with flex-wrap for metadata
+- Updated BlogList props to accept full BlogPost objects for reading time calculation
+- Verified build succeeds (note: bundle size increased due to syntax highlighter)
+
+---

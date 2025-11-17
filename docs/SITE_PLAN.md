@@ -130,7 +130,7 @@ A personal portfolio and blog site for a software engineer, built with React and
 
 ---
 
-## Milestone 8: Style Blog Pages
+## Milestone 8: Style Blog Pages ✅
 **Goal**: Apply styling to blog listing and post pages
 
 ### Tasks:
