@@ -111,7 +111,7 @@ A personal portfolio and blog site for a software engineer, built with React and
 
 ---
 
-## Milestone 7: Blog Infrastructure
+## Milestone 7: Blog Infrastructure ✅
 **Goal**: Set up the technical foundation for the blog
 
 ### Tasks:
