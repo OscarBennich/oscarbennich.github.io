@@ -1,12 +1,3 @@
----
-title: Welcome to My Blog
-date: 2024-01-15
-tags: [introduction, personal]
-excerpt: This is my first blog post where I introduce myself and share what you can expect from this blog.
----
-
-# Welcome to My Blog
-
 Hello and welcome! This is my first blog post, and I'm excited to share my thoughts and experiences with you.
 
 ## About Me

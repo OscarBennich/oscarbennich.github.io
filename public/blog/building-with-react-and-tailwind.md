@@ -1,12 +1,3 @@
----
-title: Building a Modern Website with React and Tailwind CSS
-date: 2024-01-22
-tags: [react, tailwind, web-development]
-excerpt: Exploring the process of building a modern, responsive website using React and Tailwind CSS.
----
-
-# Building a Modern Website with React and Tailwind CSS
-
 In this post, I'll share my experience building this very website using React and Tailwind CSS.
 
 ## Why React?
