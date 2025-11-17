@@ -20,7 +20,7 @@ interface TechItem {
 
 function About(): React.ReactElement {
   useEffect(() => {
-    document.title = 'Oscar Bennich-Björkman > About'
+    document.title = 'Oscar Bennich-Björkman | About'
   }, [])
 
   const techStackFirstRow: TechItem[] = [

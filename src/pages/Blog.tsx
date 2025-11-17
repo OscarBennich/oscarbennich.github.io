@@ -8,7 +8,7 @@ function Blog(): React.ReactElement {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    document.title = 'Oscar Bennich-Björkman > Blog'
+    document.title = 'Oscar Bennich-Björkman | Blog'
     
     // Load blog posts
     getAllBlogPosts().then((loadedPosts) => {
