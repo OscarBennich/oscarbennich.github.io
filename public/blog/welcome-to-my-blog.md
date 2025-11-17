@@ -1,3 +1,10 @@
+⚠️⚠️⚠️
+```
+THIS IS CURRENTLY AI-GENERATED CONTENT, USED AS A PLACEHOLDER
+ REAL CONTENT WILL BE ADDED SOON.
+```
+⚠️⚠️⚠️
+
 Hello and welcome! This is my first blog post, and I'm excited to share my thoughts and experiences with you.
 
 ## About Me

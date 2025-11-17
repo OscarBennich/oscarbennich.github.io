@@ -1,3 +1,10 @@
+⚠️⚠️⚠️
+```
+THIS IS CURRENTLY AI-GENERATED CONTENT, USED AS A PLACEHOLDER
+ REAL CONTENT WILL BE ADDED SOON.
+```
+⚠️⚠️⚠️
+
 In this post, I'll share my experience building this very website using React and Tailwind CSS.
 
 ## Why React?
