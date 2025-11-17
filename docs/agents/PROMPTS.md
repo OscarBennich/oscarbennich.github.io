@@ -853,3 +853,34 @@ Proceed with milestone 9, please.
 - Verified build succeeds
 
 ---
+
+## Prompt 43
+**Date & Time:** 2025-11-17 21:15:34 UTC  
+**Tool:** GitHub Copilot CLI v0.0.358
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+I'd like you to fix some things on the blog page:
+
+- There are a few clickable elements that lack the "pointer" cursor, such as the tags and the "Back to Blog" link
+- I think the content on each individual blog page is a bit hard to read. Could this be improved? Potentinally adding some kind of background to increase the context between the text color and the background.
+- The search field only seems to search in the titles of the blog pages. I'd like this to be improved so it searches across all blog content instead.
+- Please make the entire blog card clickable instead of just the title. Change the color of the "Read more" to match the color of the hover effect for the links in the header (and the favicon). And finally, make the "Read more" hover effect trigger as the user hovers over the card, not just the "Read more" link.
+```
+
+**Changes:**
+- Added `cursor-pointer` class to "Back to Blog" button in `BlogPost.tsx`
+- Added `cursor-pointer` class to tag buttons in `BlogList.tsx`
+- Improved blog post readability by adding semi-transparent background panel (`bg-gray-900/50 backdrop-blur-sm`)
+- Added border, rounded corners, and padding to blog post content area
+- Enhanced search functionality to include full `post.content` in addition to title, excerpt, and tags
+- Restructured blog cards to be fully clickable by wrapping article in Link component
+- Changed "Read more" text color from blue (`text-blue-400`) to purple (`text-purple-400`)
+- Added green hover effect to "Read more" (`group-hover:text-green-400`) matching header link style
+- Used React Router's group hover to trigger arrow animation on card hover
+- Added `stopPropagation` to tag button clicks to prevent card navigation when clicking tags
+- Improved overall accessibility and user experience
+- Verified build succeeds
+
+---
