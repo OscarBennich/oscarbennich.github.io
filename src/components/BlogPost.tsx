@@ -1,27 +1,41 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import { BlogPost as BlogPostType } from '../types/blog'
+import { blogPostsMetadata, loadBlogPost } from '../data/blogPosts'
 
-interface BlogPostProps {
-  posts: BlogPostType[]
-}
-
-function BlogPost({ posts }: BlogPostProps): React.ReactElement {
+function BlogPost(): React.ReactElement {
   const { slug } = useParams<{ slug: string }>()
   const navigate = useNavigate()
-  const post = posts.find(p => p.slug === slug)
+  const [post, setPost] = useState<BlogPostType | null>(null)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    if (post) {
-      document.title = `${post.title} > Oscar Bennich-Björkman`
+    const postMetadata = blogPostsMetadata.find(p => p.slug === slug)
+    
+    if (postMetadata && slug) {
+      loadBlogPost(slug).then((content) => {
+        setPost({ ...postMetadata, content })
+        setLoading(false)
+        document.title = `${postMetadata.title} > Oscar Bennich-Björkman`
+      })
     } else {
+      setPost(null)
+      setLoading(false)
       document.title = 'Post Not Found > Oscar Bennich-Björkman'
     }
-  }, [post])
+  }, [slug])
+
+  if (loading) {
+    return (
+      <div className="max-w-4xl mx-auto px-4 py-12">
+        <p className="text-gray-400 font-mono">Loading post...</p>
+      </div>
+    )
+  }
 
   if (!post) {
     return (
