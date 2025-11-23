@@ -1,8 +1,9 @@
 > Note that this guide is written with Function Apps using the [isolated worker model](https://learn.microsoft.com/en-us/azure/azure-functions/dotnet-isolated-in-process-differences) in mind, not the [soon-to-be unsupported in-process model](https://azure.microsoft.com/en-us/updates?id=retirement-support-for-the-inprocess-model-for-net-apps-in-azure-functions-ends-10-november-2026).
 
-The purpose of this document is mainly these two things:
+The purpose of this post is mainly:
 1. To gather the most important info on this topic in one easy-to-read place combined with some findings of my own, largely because the documentation I've looked up is surprisingly spread out and unintuitive.
 2. To help me learn and test my assumptions as I was writing this.
+
 ## TL;DR
 ### Clean up
 In Azure, go to the Function App > Settings > Environment variables. Double-check if you have an app setting key in your Function App named `AzureFunctionsJobHost__logging__logLevel__default` (or similar). In which case, **remove it**.
@@ -18,7 +19,7 @@ then also remove that.
 ### Install packages
 Add references to these two packages from your Function App project:
 
-```
+```cs
 dotnet add package Microsoft.ApplicationInsights.WorkerService
 dotnet add package Microsoft.Azure.Functions.Worker.ApplicationInsights
 ```
@@ -94,14 +95,14 @@ Finally, add this to the `host.json` file of your Function App:
 **⚠️ Warning ⚠️**
 If you have already set this up earlier, then double-check if you have an app setting key in your Function App named `AzureFunctionsJobHost__logging__logLevel__default` (or similar). In which case, **remove it**. This value will [override](https://learn.microsoft.com/en-us/azure/azure-functions/configure-monitoring?tabs=v2#overriding-monitoring-configuration-at-runtime) anything set in `host.json` and will therefore make the logging behavior unintuitive and potentially different across environments.
 
-It is only recommended to use this app setting in cases where you [[#Overriding log levels at runtime|temporarily need to adjust the log levels without redeploying the app]].
+It is only recommended to use this app setting in cases where you [temporarily need to adjust the log levels without redeploying the app](#/blog/azure-function-app-logging-setup-guide.md#overriding-log-levels-at-runtime).
 
 ### In the Function App project (C#)
 Unless you're using [Aspire](https://learn.microsoft.com/en-us/azure/azure-functions/dotnet-isolated-process-guide?tabs=hostbuilder%2Cwindows#aspire-preview), the recommended way to configure logging to [Application Insights](https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview?tabs=net) is by emitting the logs directly instead of [relaying logs through the host](https://learn.microsoft.com/en-us/azure/azure-functions/configure-monitoring#custom-application-logs).
 
 First, add references to these two packages from your Function App project:
 
-```
+```cs
 dotnet add package Microsoft.ApplicationInsights.WorkerService
 dotnet add package Microsoft.Azure.Functions.Worker.ApplicationInsights
 ```

@@ -17,6 +17,14 @@ export const blogPostsMetadata: BlogPost[] = [
     tags: ['introduction', 'personal'],
     excerpt: 'This is my first blog post where I introduce myself and share what you can expect from this blog.',
     content: '' // Will be loaded dynamically
+  },
+  {
+    slug: 'azure-function-app-logging-setup-guide',
+    title: 'How-to: Set up logging for Azure Function Apps',
+    date: '2025-11-14',
+    tags: ['azure', 'logging', 'function-app', 'application-insights'],
+    excerpt: 'A how-to/guide with best practices and gotchas to keep in mind when configuring logging for Azure Function Apps.',
+    content: '' // Will be loaded dynamically
   }
 ]
 
