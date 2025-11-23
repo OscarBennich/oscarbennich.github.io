@@ -363,7 +363,7 @@ and then matching that level in `host.json`:
 ### Analyzing what logs to filter out 
 To check what log categories are the biggest offenders, you can run this KQL query in Monitoring > Logs for the specific Application Insights resource:
   
-```
+```kql
 traces
 | extend CategoryNameFromLog = tostring(customDimensions.CategoryName)
 | extend CategoryFromLog = tostring(customDimensions.Category)
