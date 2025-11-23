@@ -78,7 +78,7 @@ function BlogList({ posts }: BlogListProps): React.ReactElement {
         Blog Posts
       </h1>
       <p className="text-gray-400 font-mono mb-8">
-        Thoughts, tutorials, and experiences in software engineering.
+        Guides, how-to's, and random thoughts on software development.
       </p>
 
       {/* Search and Filter Section */}
