@@ -1077,3 +1077,27 @@ installHook.js:1 React has detected a change in the order of Hooks called by Blo
 - Verified build succeeds after fix
 
 ---
+
+## Prompt 52
+**Date & Time:** 2025-11-23 23:36:06 UTC  
+**Tool:** GitHub Copilot CLI v0.0.358
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+Please add a copy-button to the right corner of the code blocks in the rendered markdown files so that the user can copy the contents of the whole code block to their clipboard. Let me review this before commiting and updating the prompts file.
+```
+
+**Changes:**
+- Added `CopyButton` component to `src/components/BlogPost.tsx`
+- Implemented copy-to-clipboard functionality using Clipboard API
+- Button shows "Copy" by default, "✓ Copied!" (in green) for 5 seconds after clicking
+- Used flexbox layout to position button in top-right corner of code blocks
+- Button positioned in language header bar when language label exists
+- Button positioned at top-right of code block when no language label
+- Fixed layout shift by setting explicit height (`h-[33px]`) on both button states
+- Matched text size (`text-xs`) and padding (`px-3 py-1.5`) for both states
+- Green checkmark uses emerald-400 color matching Header hover effect
+- No absolute positioning to avoid layout issues
+
+---
