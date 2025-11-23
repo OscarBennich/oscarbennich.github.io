@@ -74,103 +74,103 @@ function BlogPost(): React.ReactElement {
   }
 
   const markdownComponents = useMemo(() => ({
-            h1: ({children}) => (
-              <h1 className="text-3xl md:text-4xl font-bold text-gray-100 mb-4 font-mono">
-                {children}
-              </h1>
-            ),
-            h2: ({children}) => (
-              <h2 className="text-2xl md:text-3xl font-bold text-gray-100 mt-8 mb-4 font-mono">
-                {children}
-              </h2>
-            ),
-            h3: ({children}) => (
-              <h3 className="text-xl md:text-2xl font-bold text-gray-100 mt-6 mb-3 font-mono">
-                {children}
-              </h3>
-            ),
-            p: ({children}) => (
-              <p className="text-gray-300 mb-4 leading-relaxed font-mono">
-                {children}
-              </p>
-            ),
-            ul: ({children}) => (
-              <ul className="list-disc list-outside ml-6 text-gray-300 mb-4 space-y-2 font-mono">
-                {children}
-              </ul>
-            ),
-            ol: ({children}) => (
-              <ol className="list-decimal list-outside ml-6 text-gray-300 mb-4 space-y-2 font-mono">
-                {children}
-              </ol>
-            ),
-            li: ({children}) => (
-              <li className="text-gray-300 font-mono ml-2">
-                {children}
-              </li>
-            ),
-            code: ({className, children}) => {
-              const match = /language-(\w+)/.exec(className || '')
-              const language = match ? match[1] : ''
-              const isInline = !className
+    h1: ({children}) => (
+      <h1 className="text-3xl md:text-4xl font-bold text-gray-100 mb-4 font-mono">
+        {children}
+      </h1>
+    ),
+    h2: ({children}) => (
+      <h2 className="text-2xl md:text-3xl font-bold text-gray-100 mt-8 mb-4 font-mono">
+        {children}
+      </h2>
+    ),
+    h3: ({children}) => (
+      <h3 className="text-xl md:text-2xl font-bold text-gray-100 mt-6 mb-3 font-mono">
+        {children}
+      </h3>
+    ),
+    p: ({children}) => (
+      <p className="text-gray-300 mb-4 leading-relaxed font-mono">
+        {children}
+      </p>
+    ),
+    ul: ({children}) => (
+      <ul className="list-disc list-outside ml-6 text-gray-300 mb-4 space-y-2 font-mono">
+        {children}
+      </ul>
+    ),
+    ol: ({children}) => (
+      <ol className="list-decimal list-outside ml-6 text-gray-300 mb-4 space-y-2 font-mono">
+        {children}
+      </ol>
+    ),
+    li: ({children}) => (
+      <li className="text-gray-300 font-mono ml-2">
+        {children}
+      </li>
+    ),
+    code: ({className, children}) => {
+      const match = /language-(\w+)/.exec(className || '')
+      const language = match ? match[1] : ''
+      const isInline = !className
 
-              return isInline ? (
-                <code className="bg-gray-700 text-orange-300 px-1.5 py-0.5 rounded text-sm font-mono">
-                  {children}
-                </code>
-              ) : (
-                <div className="my-4 rounded-lg overflow-hidden border border-gray-700">
-                  {language && (
-                    <div className="bg-gray-800 px-4 py-2 text-xs text-gray-400 font-mono border-b border-gray-700">
-                      {language}
-                    </div>
-                  )}
-                  <MemoizedSyntaxHighlighter
-                    language={language || 'text'}
-                    style={vscDarkPlus}
-                    customStyle={{
-                      margin: 0,
-                      padding: '1rem',
-                      background: '#1a1a1a',
-                      fontSize: '0.875rem',
-                    }}
-                    wrapLongLines={true}
-                  >
-                    {String(children).replace(/\n$/, '')}
-                  </MemoizedSyntaxHighlighter>
-                </div>
-              )
-            },
-            pre: ({children}) => (
-              <pre className="mb-4">
-                {children}
-              </pre>
-            ),
-            a: ({href, children}) => (
-              <a 
-                href={href}
-                className="text-blue-400 hover:text-blue-300 underline"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {children}
-              </a>
-            ),
-            blockquote: ({children}) => (
-              <blockquote className="border-l-4 border-gray-700 pl-4 italic text-gray-400 my-4 font-mono">
-                {children}
-              </blockquote>
-            ),
-            img: ({src, alt}) => {
-              const imageSrc = src?.startsWith('images/') ? `/blog/${src}` : src
-              return (
-                <img 
-                  src={imageSrc}
-                  alt={alt || ''}
-                  className="max-w-full h-auto rounded-lg border border-gray-700 my-4"
-                />
-              )
-            },
+      return isInline ? (
+        <code className="bg-gray-700 text-orange-300 px-1.5 py-0.5 rounded text-sm font-mono">
+          {children}
+        </code>
+      ) : (
+        <div className="my-4 rounded-lg overflow-hidden border border-gray-700">
+          {language && (
+            <div className="bg-gray-800 px-4 py-2 text-xs text-gray-400 font-mono border-b border-gray-700">
+              {language}
+            </div>
+          )}
+          <MemoizedSyntaxHighlighter
+            language={language || 'text'}
+            style={vscDarkPlus}
+            customStyle={{
+              margin: 0,
+              padding: '1rem',
+              background: '#1a1a1a',
+              fontSize: '0.875rem',
+            }}
+            wrapLongLines={true}
+          >
+            {String(children).replace(/\n$/, '')}
+          </MemoizedSyntaxHighlighter>
+        </div>
+      )
+    },
+    pre: ({children}) => (
+      <pre className="mb-4">
+        {children}
+      </pre>
+    ),
+    a: ({href, children}) => (
+      <a 
+        href={href}
+        className="text-blue-400 hover:text-blue-300 underline"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {children}
+      </a>
+    ),
+    blockquote: ({children}) => (
+      <blockquote className="border-l-4 border-gray-700 pl-4 italic text-gray-400 my-4 font-mono">
+        {children}
+      </blockquote>
+    ),
+    img: ({src, alt}) => {
+      const imageSrc = src?.startsWith('images/') ? `/blog/${src}` : src
+      return (
+        <img 
+          src={imageSrc}
+          alt={alt || ''}
+          className="max-w-full h-auto rounded-lg border border-gray-700 my-4"
+        />
+      )
+    },
   }), [])
 
   return (

@@ -997,3 +997,22 @@ Please change the styling of in-line code blocks (like `my code`) to look less l
 - Inline code now visually distinct from hyperlinks while still standing out
 
 ---
+
+## Prompt 49
+**Date & Time:** 2025-11-23 22:13:17 UTC  
+**Tool:** GitHub Copilot CLI v0.0.358
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+There is a noticable performance issue when rendering the @public\blog\azure-function-app-logging-setup-guide.md blog post compared to the other ones. I'm guessing it's because it is significantly longer. Please help me solve this. Ask me clarifying questions if needed.
+```
+
+**Changes:**
+- Modified `src/components/BlogPost.tsx` to optimize rendering performance
+- Memoized SyntaxHighlighter component with React.memo()
+- Wrapped markdown components object in useMemo hook to prevent recreation on every render
+- Fixed sluggish scrolling performance on long blog posts by preventing unnecessary re-renders
+- Improved overall performance for blog posts with many code blocks
+
+---
