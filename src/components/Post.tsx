@@ -2,8 +2,8 @@ import { useEffect, useState, useMemo } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
-import { BlogPost as BlogPostType } from '../types/blog'
-import { blogPostsMetadata, loadBlogPost } from '../data/blogPosts'
+import { BlogPost as PostType } from '../types/post'
+import { postsMetadata, loadPost } from '../data/posts'
 
 // Copy button component for code blocks
 function CopyButton({ code }: { code: string }) {
@@ -31,10 +31,10 @@ function CopyButton({ code }: { code: string }) {
   )
 }
 
-function BlogPost(): React.ReactElement {
+function Post(): React.ReactElement {
   const { slug } = useParams<{ slug: string }>()
   const navigate = useNavigate()
-  const [post, setPost] = useState<BlogPostType | null>(null)
+  const [post, setPost] = useState<PostType | null>(null)
   const [loading, setLoading] = useState(true)
 
   const markdownComponents = useMemo(() => ({
@@ -124,7 +124,7 @@ function BlogPost(): React.ReactElement {
       </blockquote>
     ),
     img: ({src, alt}: {src?: string, alt?: string}) => {
-      const imageSrc = src?.startsWith('images/') ? `/blog/${src}` : src
+      const imageSrc = src?.startsWith('images/') ? `/posts/${src}` : src
       return (
         <img 
           src={imageSrc}
@@ -136,10 +136,10 @@ function BlogPost(): React.ReactElement {
   }), [])
 
   useEffect(() => {
-    const postMetadata = blogPostsMetadata.find(p => p.slug === slug)
+    const postMetadata = postsMetadata.find(p => p.slug === slug)
     
     if (postMetadata && slug) {
-      loadBlogPost(slug).then((content) => {
+      loadPost(slug).then((content) => {
         setPost({ ...postMetadata, content })
         setLoading(false)
         document.title = `${postMetadata.title} > Oscar Bennich-Björkman`
@@ -166,13 +166,13 @@ function BlogPost(): React.ReactElement {
           Post Not Found
         </h1>
         <p className="text-gray-300 mb-6 font-mono">
-          Sorry, the blog post you're looking for doesn't exist.
+          Sorry, the post you're looking for doesn't exist.
         </p>
         <Link 
-          to="/blog"
+          to="/posts"
           className="text-purple-400 hover:text-purple-300 font-mono"
         >
-          ← Back to Blog
+          ← Back to Posts
         </Link>
       </div>
     )
@@ -196,10 +196,10 @@ function BlogPost(): React.ReactElement {
   return (
     <article className="max-w-4xl mx-auto px-4 py-12">
       <button
-        onClick={() => navigate('/blog')}
+        onClick={() => navigate('/posts')}
         className="text-purple-400 hover:text-purple-300 font-mono mb-8 flex items-center gap-2 cursor-pointer"
       >
-        ← Back to Blog
+        ← Back to Posts
       </button>
 
       <header className="mb-8">
@@ -237,4 +237,4 @@ function BlogPost(): React.ReactElement {
   )
 }
 
-export default BlogPost
+export default Post

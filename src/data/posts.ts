@@ -1,7 +1,7 @@
-import { BlogPost } from '../types/blog'
+import { BlogPost } from '../types/post'
 
-// Blog post metadata - content will be loaded from markdown files
-export const blogPostsMetadata: BlogPost[] = [
+// Post metadata - content will be loaded from markdown files
+export const postsMetadata: BlogPost[] = [
   {
     slug: 'azure-function-app-logging-setup-guide',
     title: 'How-to: Set up logging for Azure Function Apps',
@@ -12,12 +12,12 @@ export const blogPostsMetadata: BlogPost[] = [
   }
 ]
 
-// Function to load blog post content from markdown file
-export async function loadBlogPost(slug: string): Promise<string> {
+// Function to load post content from markdown file
+export async function loadPost(slug: string): Promise<string> {
   try {
-    const response = await fetch(`/blog/${slug}.md`)
+    const response = await fetch(`/posts/${slug}.md`)
     if (!response.ok) {
-      throw new Error(`Failed to load blog post: ${slug}`)
+      throw new Error(`Failed to load post: ${slug}`)
     }
     const text = await response.text()
     
@@ -26,17 +26,17 @@ export async function loadBlogPost(slug: string): Promise<string> {
     
     return contentWithoutFrontmatter
   } catch (error) {
-    console.error('Error loading blog post:', error)
+    console.error('Error loading post:', error)
     return ''
   }
 }
 
-// Function to get all blog posts with content loaded
-export async function getAllBlogPosts(): Promise<BlogPost[]> {
+// Function to get all posts with content loaded
+export async function getAllPosts(): Promise<BlogPost[]> {
   const postsWithContent = await Promise.all(
-    blogPostsMetadata.map(async (post) => ({
+    postsMetadata.map(async (post) => ({
       ...post,
-      content: await loadBlogPost(post.slug)
+      content: await loadPost(post.slug)
     }))
   )
   return postsWithContent

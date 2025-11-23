@@ -1,17 +1,17 @@
 import { useEffect, useState } from 'react'
-import BlogList from '../components/BlogList'
-import { getAllBlogPosts } from '../data/blogPosts'
-import { BlogPost } from '../types/blog'
+import PostList from '../components/PostList'
+import { getAllPosts } from '../data/posts'
+import { BlogPost } from '../types/post'
 
-function Blog(): React.ReactElement {
+function Posts(): React.ReactElement {
   const [posts, setPosts] = useState<BlogPost[]>([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    document.title = 'Oscar Bennich-Björkman | Blog'
+    document.title = 'Oscar Bennich-Björkman | Posts'
     
-    // Load blog posts
-    getAllBlogPosts().then((loadedPosts) => {
+    // Load posts
+    getAllPosts().then((loadedPosts) => {
       setPosts(loadedPosts)
       setLoading(false)
     })
@@ -25,7 +25,7 @@ function Blog(): React.ReactElement {
     )
   }
 
-  return <BlogList posts={posts} />
+  return <PostList posts={posts} />
 }
 
-export default Blog
+export default Posts

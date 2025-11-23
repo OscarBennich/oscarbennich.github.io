@@ -1,12 +1,12 @@
 import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
-import { BlogPost } from "../types/blog";
+import { BlogPost } from "../types/post";
 
-interface BlogListProps {
+interface PostListProps {
   posts: BlogPost[];
 }
 
-function BlogList({ posts }: BlogListProps): React.ReactElement {
+function PostList({ posts }: PostListProps): React.ReactElement {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
 
@@ -75,7 +75,7 @@ function BlogList({ posts }: BlogListProps): React.ReactElement {
   return (
     <div className="max-w-4xl mx-auto px-4 py-12">
       <h1 className="text-4xl md:text-5xl font-bold text-gray-100 mb-4 font-mono">
-        Blog Posts
+        Posts
       </h1>
       <p className="text-gray-400 font-mono mb-8">
         Guides, how-to's, and random thoughts on software development.
@@ -147,7 +147,7 @@ function BlogList({ posts }: BlogListProps): React.ReactElement {
           {filteredPosts.map((post) => (
             <Link
               key={post.slug}
-              to={`/blog/${post.slug}`}
+              to={`/posts/${post.slug}`}
               className="block group"
             >
               <article className="bg-gray-800 border border-gray-700 rounded-lg p-6 hover:border-purple-500 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 cursor-pointer">
@@ -195,4 +195,4 @@ function BlogList({ posts }: BlogListProps): React.ReactElement {
   );
 }
 
-export default BlogList;
+export default PostList;

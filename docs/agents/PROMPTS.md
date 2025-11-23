@@ -1101,3 +1101,36 @@ Please add a copy-button to the right corner of the code blocks in the rendered 
 - No absolute positioning to avoid layout issues
 
 ---
+
+## Prompt 53
+**Date & Time:** 2025-11-23 23:49:44 UTC  
+**Tool:** GitHub Copilot CLI v0.0.358
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+I want to change the "Blog" concept to simply be "Posts" instead.
+
+Please change file names, folders, component names, page title, the link in the header, etc.
+
+Let me review this and accept the changes before you log the prompt and commit.
+```
+
+**Changes:**
+- Renamed folder `public/blog/` to `public/posts/`
+- Renamed `src/components/BlogList.tsx` to `src/components/PostList.tsx`
+- Renamed `src/components/BlogPost.tsx` to `src/components/Post.tsx`
+- Renamed `src/data/blogPosts.ts` to `src/data/posts.ts`
+- Renamed `src/pages/Blog.tsx` to `src/pages/Posts.tsx`
+- Renamed `src/types/blog.ts` to `src/types/post.ts`
+- Updated all component names: `BlogList` → `PostList`, `BlogPost` → `Post`
+- Updated all function names: `blogPostsMetadata` → `postsMetadata`, `loadBlogPost` → `loadPost`, `getAllBlogPosts` → `getAllPosts`
+- Updated routes from `/blog` to `/posts` in `src/App.tsx`
+- Updated Header navigation link from `/blog` to `/posts`
+- Updated all internal links and references to use `/posts/` instead of `/blog/`
+- Updated page titles and UI text from "Blog" to "Posts"
+- Updated markdown file path references from `/blog/` to `/posts/`
+- Updated image path references from `/blog/` to `/posts/`
+- Verified build succeeds after all changes
+
+---
