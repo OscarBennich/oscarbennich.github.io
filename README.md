@@ -3,7 +3,6 @@
 A personal portfolio and blog site built with React and Tailwind CSS, hosted on GitHub Pages.
 
 ## TODO
-- Add Playwright MCP
 - Blog fixes:
   - Add a table of contents to the side of the main content
   - Add ability to deeplink to specific sections (and automatically copy link when hovering section title)
