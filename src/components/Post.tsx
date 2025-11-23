@@ -142,12 +142,12 @@ function Post(): React.ReactElement {
       loadPost(slug).then((content) => {
         setPost({ ...postMetadata, content })
         setLoading(false)
-        document.title = `${postMetadata.title} > Oscar Bennich-Björkman`
+        document.title = `Oscar Bennich-Björkman | ${postMetadata.title}`
       })
     } else {
       setPost(null)
       setLoading(false)
-      document.title = 'Post Not Found > Oscar Bennich-Björkman'
+      document.title = 'Oscar Bennich-Björkman | Post Not Found'
     }
   }, [slug])
 
