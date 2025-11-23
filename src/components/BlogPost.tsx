@@ -15,64 +15,6 @@ function BlogPost(): React.ReactElement {
   const [post, setPost] = useState<BlogPostType | null>(null)
   const [loading, setLoading] = useState(true)
 
-  useEffect(() => {
-    const postMetadata = blogPostsMetadata.find(p => p.slug === slug)
-    
-    if (postMetadata && slug) {
-      loadBlogPost(slug).then((content) => {
-        setPost({ ...postMetadata, content })
-        setLoading(false)
-        document.title = `${postMetadata.title} > Oscar Bennich-Björkman`
-      })
-    } else {
-      setPost(null)
-      setLoading(false)
-      document.title = 'Post Not Found > Oscar Bennich-Björkman'
-    }
-  }, [slug])
-
-  if (loading) {
-    return (
-      <div className="max-w-4xl mx-auto px-4 py-12">
-        <p className="text-gray-400 font-mono">Loading post...</p>
-      </div>
-    )
-  }
-
-  if (!post) {
-    return (
-      <div className="max-w-4xl mx-auto px-4 py-12">
-        <h1 className="text-4xl font-bold text-gray-100 mb-6 font-mono">
-          Post Not Found
-        </h1>
-        <p className="text-gray-300 mb-6 font-mono">
-          Sorry, the blog post you're looking for doesn't exist.
-        </p>
-        <Link 
-          to="/blog"
-          className="text-purple-400 hover:text-purple-300 font-mono"
-        >
-          ← Back to Blog
-        </Link>
-      </div>
-    )
-  }
-
-  const formatDate = (dateString: string) => {
-    const date = new Date(dateString)
-    return date.toLocaleDateString('en-US', { 
-      year: 'numeric', 
-      month: 'long', 
-      day: 'numeric' 
-    })
-  }
-
-  const calculateReadingTime = (content: string): number => {
-    const wordsPerMinute = 200
-    const words = content.trim().split(/\s+/).length
-    return Math.ceil(words / wordsPerMinute)
-  }
-
   const markdownComponents = useMemo(() => ({
     h1: ({children}) => (
       <h1 className="text-3xl md:text-4xl font-bold text-gray-100 mb-4 font-mono">
@@ -172,6 +114,64 @@ function BlogPost(): React.ReactElement {
       )
     },
   }), [])
+
+  useEffect(() => {
+    const postMetadata = blogPostsMetadata.find(p => p.slug === slug)
+    
+    if (postMetadata && slug) {
+      loadBlogPost(slug).then((content) => {
+        setPost({ ...postMetadata, content })
+        setLoading(false)
+        document.title = `${postMetadata.title} > Oscar Bennich-Björkman`
+      })
+    } else {
+      setPost(null)
+      setLoading(false)
+      document.title = 'Post Not Found > Oscar Bennich-Björkman'
+    }
+  }, [slug])
+
+  if (loading) {
+    return (
+      <div className="max-w-4xl mx-auto px-4 py-12">
+        <p className="text-gray-400 font-mono">Loading post...</p>
+      </div>
+    )
+  }
+
+  if (!post) {
+    return (
+      <div className="max-w-4xl mx-auto px-4 py-12">
+        <h1 className="text-4xl font-bold text-gray-100 mb-6 font-mono">
+          Post Not Found
+        </h1>
+        <p className="text-gray-300 mb-6 font-mono">
+          Sorry, the blog post you're looking for doesn't exist.
+        </p>
+        <Link 
+          to="/blog"
+          className="text-purple-400 hover:text-purple-300 font-mono"
+        >
+          ← Back to Blog
+        </Link>
+      </div>
+    )
+  }
+
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString)
+    return date.toLocaleDateString('en-US', { 
+      year: 'numeric', 
+      month: 'long', 
+      day: 'numeric' 
+    })
+  }
+
+  const calculateReadingTime = (content: string): number => {
+    const wordsPerMinute = 200
+    const words = content.trim().split(/\s+/).length
+    return Math.ceil(words / wordsPerMinute)
+  }
 
   return (
     <article className="max-w-4xl mx-auto px-4 py-12">

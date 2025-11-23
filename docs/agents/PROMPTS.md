@@ -1016,3 +1016,23 @@ There is a noticable performance issue when rendering the @public\blog\azure-fun
 - Improved overall performance for blog posts with many code blocks
 
 ---
+
+## Prompt 50
+**Date & Time:** 2025-11-23 22:16:34 UTC  
+**Tool:** GitHub Copilot CLI v0.0.358
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+The latest changes seems to have introduced a bug in the @src\components\BlogPost.tsx component.
+
+I can see that there are errors in the browser console, please use the Playwright MCP server and check these and then attempt to fix the problem.
+```
+
+**Changes:**
+- Fixed indentation bug in `src/components/BlogPost.tsx`
+- Corrected useMemo markdown components object formatting
+- Fixed incorrect indentation that was introduced in previous performance optimization
+- Verified build succeeds after fix
+
+---
