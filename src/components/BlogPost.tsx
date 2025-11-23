@@ -57,7 +57,7 @@ function BlogPost(): React.ReactElement {
       const isInline = !className
 
       return isInline ? (
-        <code className="bg-gray-700 text-orange-300 px-1.5 py-0.5 rounded text-sm font-mono">
+        <code className="bg-gray-700 px-1.5 py-0.5 rounded text-sm font-mono">
           {children}
         </code>
       ) : (
