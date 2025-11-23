@@ -128,17 +128,17 @@ function BlogPost(): React.ReactElement {
               </p>
             ),
             ul: ({children}) => (
-              <ul className="list-disc list-inside text-gray-300 mb-4 space-y-2 font-mono">
+              <ul className="list-disc list-outside ml-6 text-gray-300 mb-4 space-y-2 font-mono">
                 {children}
               </ul>
             ),
             ol: ({children}) => (
-              <ol className="list-decimal list-inside text-gray-300 mb-4 space-y-2 font-mono">
+              <ol className="list-decimal list-outside ml-6 text-gray-300 mb-4 space-y-2 font-mono">
                 {children}
               </ol>
             ),
             li: ({children}) => (
-              <li className="text-gray-300 font-mono">
+              <li className="text-gray-300 font-mono ml-2">
                 {children}
               </li>
             ),

@@ -960,3 +960,22 @@ Please ask me clarifiying questions if required.
 - Fixed blog post images not displaying when markdown contains relative image paths
 
 ---
+
+## Prompt 47
+**Date & Time:** 2025-11-23 21:53:34 UTC  
+**Tool:** GitHub Copilot CLI v0.0.358
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+There is another issue I can see, where the bullet point list at the end of @public\blog\azure-function-app-logging-setup-guide.md is being rendered as a flat list, even though there are multiple levels of indentation in the original markdown file. Please help me fix this.
+```
+
+**Changes:**
+- Modified `src/components/BlogPost.tsx` to fix nested list rendering
+- Changed list styling from `list-inside` to `list-outside` for proper nested list support
+- Added left margin (`ml-6`) to `ul` and `ol` elements for proper indentation
+- Added additional margin (`ml-2`) to `li` elements for better spacing
+- Fixed nested bullet point lists to display with proper hierarchy and indentation
+
+---
