@@ -5,6 +5,32 @@ import remarkGfm from 'remark-gfm'
 import { BlogPost as BlogPostType } from '../types/blog'
 import { blogPostsMetadata, loadBlogPost } from '../data/blogPosts'
 
+// Copy button component for code blocks
+function CopyButton({ code }: { code: string }) {
+  const [copied, setCopied] = useState(false)
+
+  const handleCopy = async () => {
+    await navigator.clipboard.writeText(code)
+    setCopied(true)
+    setTimeout(() => setCopied(false), 5000)
+  }
+
+  return copied ? (
+    <div className="text-xs font-mono flex items-center gap-1.5 px-3 py-1.5 h-[33px]">
+      <span className="text-emerald-400">✓</span>
+      <span className="text-gray-300">Copied!</span>
+    </div>
+  ) : (
+    <button
+      onClick={handleCopy}
+      className="px-3 py-1.5 bg-gray-700 hover:bg-gray-600 text-gray-300 text-xs rounded border border-gray-600 transition-colors cursor-pointer h-[33px]"
+      aria-label="Copy code to clipboard"
+    >
+      Copy
+    </button>
+  )
+}
+
 function BlogPost(): React.ReactElement {
   const { slug } = useParams<{ slug: string }>()
   const navigate = useNavigate()
@@ -57,15 +83,23 @@ function BlogPost(): React.ReactElement {
           {children}
         </code>
       ) : (
-        <div className="my-4 rounded-lg overflow-hidden border border-gray-700">
+        <div className="my-4 rounded-lg border border-gray-700 overflow-hidden">
           {language && (
-            <div className="bg-gray-800 px-4 py-2 text-xs text-gray-400 font-mono border-b border-gray-700">
-              {language}
+            <div className="bg-gray-800 px-4 py-2 text-xs text-gray-400 font-mono border-b border-gray-700 flex items-center justify-between">
+              <span>{language}</span>
+              <CopyButton code={String(children).replace(/\n$/, '')} />
             </div>
           )}
-          <pre className="bg-[#1a1a1a] text-gray-300 p-4 overflow-x-auto m-0">
-            <code className="text-sm font-mono whitespace-pre">{String(children).replace(/\n$/, '')}</code>
-          </pre>
+          <div className="bg-[#1a1a1a]">
+            {!language && (
+              <div className="flex justify-end px-4 pt-2">
+                <CopyButton code={String(children).replace(/\n$/, '')} />
+              </div>
+            )}
+            <pre className="text-gray-300 p-4 overflow-x-auto m-0">
+              <code className="text-sm font-mono whitespace-pre">{String(children).replace(/\n$/, '')}</code>
+            </pre>
+          </div>
         </div>
       )
     },
