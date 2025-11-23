@@ -4,6 +4,11 @@ A personal portfolio and blog site built with React and Tailwind CSS, hosted on 
 
 ## TODO
 - Add blog content
+- Blog fixes:
+  - Change styling of in-line code blocks so that they don't look like hyperlinks
+  - Fix scrolling performance
+  - Add ability to deeplink to specific sections (and automatically copy link when hovering section title)
+  - Add a table of contents to the side of the main content
 - Update footer to include where to find more information about how the site was built and move GitHub + LinkedIn links to "About" page instead (I think...?)
 - Add Playwright MCP (before Milestone 11)
 - Add page for projects
