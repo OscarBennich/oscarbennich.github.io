@@ -194,6 +194,16 @@ function BlogPost(): React.ReactElement {
                 {children}
               </blockquote>
             ),
+            img: ({src, alt}) => {
+              const imageSrc = src?.startsWith('images/') ? `/blog/${src}` : src
+              return (
+                <img 
+                  src={imageSrc}
+                  alt={alt || ''}
+                  className="max-w-full h-auto rounded-lg border border-gray-700 my-4"
+                />
+              )
+            },
           }}
         >
           {post.content}
