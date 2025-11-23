@@ -934,3 +934,29 @@ There's a UI bug/annoyance on the blog page where if the user filters the posts 
 - Verified build succeeds
 
 ---
+
+## Prompt 46
+**Date & Time:** 2025-11-23 21:47:51 UTC  
+**Tool:** GitHub Copilot CLI v0.0.358
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+I want you to help me implement some missing functionality.
+
+The images that are linked in this blog post: @public\blog\azure-function-app-logging-setup-guide.md, contained here: @public\blog\images\, are not showing up when the blog post gets rendered on the page.
+
+I suspect there is some missing logic in either @src\data\blogPosts.ts or either of the blog-related components: @src\components\BlogList.tsx, @src\components\BlogPost.tsx.
+
+Keep in mind the instructions in @AGENTS.md.
+
+Please ask me clarifiying questions if required.
+```
+
+**Changes:**
+- Modified `src/components/BlogPost.tsx` to add `img` component handler in ReactMarkdown
+- Transforms relative image paths starting with `images/` to absolute paths `/blog/images/`
+- Added image styling (max-width, rounded corners, border) for consistent design
+- Fixed blog post images not displaying when markdown contains relative image paths
+
+---
