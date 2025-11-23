@@ -3,15 +3,15 @@
 A personal portfolio and blog site built with React and Tailwind CSS, hosted on GitHub Pages.
 
 ## TODO
-- Add blog content
+- Add Playwright MCP
 - Blog fixes:
   - Fix scrolling performance
   - Add ability to deeplink to specific sections (and automatically copy link when hovering section title)
   - Add a table of contents to the side of the main content
   - Fix the layout on mobile
   - Change font etc. to make it easier to read?
+- Add blog content
 - Update footer to include where to find more information about how the site was built and move GitHub + LinkedIn links to "About" page instead (I think...?)
-- Add Playwright MCP (before Milestone 11)
 - Add page for projects
   - At that point, change side menu to a hamburger menu for mobile, as 3 links will be too many
 - Idea: change the landing page to a terminal-like thing, add animation to write `whoami`, then print the information (could include much more than we have today), ending with the caret flashing animation we have today

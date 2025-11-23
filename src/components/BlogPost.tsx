@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useMemo, memo } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
@@ -6,6 +6,8 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import { BlogPost as BlogPostType } from '../types/blog'
 import { blogPostsMetadata, loadBlogPost } from '../data/blogPosts'
+
+const MemoizedSyntaxHighlighter = memo(SyntaxHighlighter)
 
 function BlogPost(): React.ReactElement {
   const { slug } = useParams<{ slug: string }>()
@@ -71,42 +73,7 @@ function BlogPost(): React.ReactElement {
     return Math.ceil(words / wordsPerMinute)
   }
 
-  return (
-    <article className="max-w-4xl mx-auto px-4 py-12">
-      <button
-        onClick={() => navigate('/blog')}
-        className="text-purple-400 hover:text-purple-300 font-mono mb-8 flex items-center gap-2 cursor-pointer"
-      >
-        ← Back to Blog
-      </button>
-
-      <header className="mb-8">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-100 mb-4 font-mono">
-          {post.title}
-        </h1>
-        
-        <div className="flex flex-wrap items-center gap-4 text-sm text-gray-400 font-mono">
-          <time dateTime={post.date}>{formatDate(post.date)}</time>
-          <span className="text-gray-500">•</span>
-          <span>{calculateReadingTime(post.content)} min read</span>
-          <span className="text-gray-500">•</span>
-          <div className="flex gap-2">
-            {post.tags.map((tag) => (
-              <span 
-                key={tag}
-                className="px-2 py-1 text-white bg-gray-700 rounded text-xs"
-              >
-                #{tag}
-              </span>
-            ))}
-          </div>
-        </div>
-      </header>
-
-      <div className="prose prose-invert prose-lg max-w-none bg-gray-800 backdrop-blur-sm rounded-lg p-6 md:p-8 border border-gray-800">
-        <ReactMarkdown
-          remarkPlugins={[remarkGfm]}
-          components={{
+  const markdownComponents = useMemo(() => ({
             h1: ({children}) => (
               <h1 className="text-3xl md:text-4xl font-bold text-gray-100 mb-4 font-mono">
                 {children}
@@ -148,7 +115,7 @@ function BlogPost(): React.ReactElement {
               const isInline = !className
 
               return isInline ? (
-                <code className="bg-gray-700 px-1.5 py-0.5 rounded text-sm font-mono">
+                <code className="bg-gray-700 text-orange-300 px-1.5 py-0.5 rounded text-sm font-mono">
                   {children}
                 </code>
               ) : (
@@ -158,7 +125,7 @@ function BlogPost(): React.ReactElement {
                       {language}
                     </div>
                   )}
-                  <SyntaxHighlighter
+                  <MemoizedSyntaxHighlighter
                     language={language || 'text'}
                     style={vscDarkPlus}
                     customStyle={{
@@ -170,7 +137,7 @@ function BlogPost(): React.ReactElement {
                     wrapLongLines={true}
                   >
                     {String(children).replace(/\n$/, '')}
-                  </SyntaxHighlighter>
+                  </MemoizedSyntaxHighlighter>
                 </div>
               )
             },
@@ -204,7 +171,44 @@ function BlogPost(): React.ReactElement {
                 />
               )
             },
-          }}
+  }), [])
+
+  return (
+    <article className="max-w-4xl mx-auto px-4 py-12">
+      <button
+        onClick={() => navigate('/blog')}
+        className="text-purple-400 hover:text-purple-300 font-mono mb-8 flex items-center gap-2 cursor-pointer"
+      >
+        ← Back to Blog
+      </button>
+
+      <header className="mb-8">
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-100 mb-4 font-mono">
+          {post.title}
+        </h1>
+        
+        <div className="flex flex-wrap items-center gap-4 text-sm text-gray-400 font-mono">
+          <time dateTime={post.date}>{formatDate(post.date)}</time>
+          <span className="text-gray-500">•</span>
+          <span>{calculateReadingTime(post.content)} min read</span>
+          <span className="text-gray-500">•</span>
+          <div className="flex gap-2">
+            {post.tags.map((tag) => (
+              <span 
+                key={tag}
+                className="px-2 py-1 text-white bg-gray-700 rounded text-xs"
+              >
+                #{tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      </header>
+
+      <div className="prose prose-invert prose-lg max-w-none bg-gray-800 backdrop-blur-sm rounded-lg p-6 md:p-8 border border-gray-800">
+        <ReactMarkdown
+          remarkPlugins={[remarkGfm]}
+          components={markdownComponents}
         >
           {post.content}
         </ReactMarkdown>
