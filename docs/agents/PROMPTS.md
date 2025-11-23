@@ -1036,3 +1036,44 @@ I can see that there are errors in the browser console, please use the Playwrigh
 - Verified build succeeds after fix
 
 ---
+
+## Prompt 51
+**Date & Time:** 2025-11-23 22:27:22 UTC  
+**Tool:** GitHub Copilot CLI v0.0.358
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+I'm still getting these console errors:
+
+installHook.js:1 React has detected a change in the order of Hooks called by BlogPost. This will lead to bugs and errors if not fixed. For more information, read the Rules of Hooks: https://react.dev/link/rules-of-hooks
+
+   Previous render            Next render
+   ------------------------------------------------------
+1. useContext                 useContext
+2. useContext                 useContext
+3. useContext                 useContext
+4. useContext                 useContext
+5. useContext                 useContext
+6. useContext                 useContext
+7. useContext                 useContext
+8. useContext                 useContext
+9. useRef                     useRef
+10. useContext                useContext
+11. useLayoutEffect           useLayoutEffect
+12. useCallback               useCallback
+13. useState                  useState
+14. useState                  useState
+15. useEffect                 useEffect
+16. undefined                 useMemo
+   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+```
+
+**Changes:**
+- Fixed React hooks ordering violation in `src/components/BlogPost.tsx`
+- Moved useMemo hook before early return statements to maintain consistent hook order
+- All hooks now called at top of component before any conditional returns
+- Resolved "Rendered more hooks than during the previous render" error
+- Verified build succeeds after fix
+
+---
