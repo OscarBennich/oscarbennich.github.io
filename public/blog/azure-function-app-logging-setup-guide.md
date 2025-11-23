@@ -29,7 +29,8 @@ dotnet add package Microsoft.Azure.Functions.Worker.ApplicationInsights
 Add this to your service registration:
 
 ```cs
-services.AddApplicationInsightsTelemetryWorkerService(); services.ConfigureFunctionsApplicationInsights();
+services.AddApplicationInsightsTelemetryWorkerService();
+services.ConfigureFunctionsApplicationInsights();
 ```
 
 and then this to your service configuration:

@@ -979,3 +979,21 @@ There is another issue I can see, where the bullet point list at the end of @pub
 - Fixed nested bullet point lists to display with proper hierarchy and indentation
 
 ---
+
+## Prompt 48
+**Date & Time:** 2025-11-23 21:57:39 UTC  
+**Tool:** GitHub Copilot CLI v0.0.358
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+Please change the styling of in-line code blocks (like `my code`) to look less like hyperlinks. I want them to stand out from the rest of the text though.
+```
+
+**Changes:**
+- Modified `src/components/BlogPost.tsx` inline code styling
+- Changed text color from blue (`text-blue-400`) to orange (`text-orange-300`)
+- Changed background color from `bg-gray-800` to `bg-gray-700` for better contrast
+- Inline code now visually distinct from hyperlinks while still standing out
+
+---
