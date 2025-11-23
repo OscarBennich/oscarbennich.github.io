@@ -3,22 +3,6 @@ import { BlogPost } from '../types/blog'
 // Blog post metadata - content will be loaded from markdown files
 export const blogPostsMetadata: BlogPost[] = [
   {
-    slug: 'building-with-react-and-tailwind',
-    title: 'Building a Modern Website with React and Tailwind CSS',
-    date: '2024-01-22',
-    tags: ['react', 'tailwind', 'web-development'],
-    excerpt: 'Exploring the process of building a modern, responsive website using React and Tailwind CSS.',
-    content: '' // Will be loaded dynamically
-  },
-  {
-    slug: 'welcome-to-my-blog',
-    title: 'Welcome to My Blog',
-    date: '2024-01-15',
-    tags: ['introduction', 'personal'],
-    excerpt: 'This is my first blog post where I introduce myself and share what you can expect from this blog.',
-    content: '' // Will be loaded dynamically
-  },
-  {
     slug: 'azure-function-app-logging-setup-guide',
     title: 'How-to: Set up logging for Azure Function Apps',
     date: '2025-11-14',
