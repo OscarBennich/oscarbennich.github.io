@@ -1,4 +1,3 @@
-> [!info]
 > Note that this guide is written with Function Apps using the [isolated worker model](https://learn.microsoft.com/en-us/azure/azure-functions/dotnet-isolated-in-process-differences) in mind, not the [soon-to-be unsupported in-process model](https://azure.microsoft.com/en-us/updates?id=retirement-support-for-the-inprocess-model-for-net-apps-in-azure-functions-ends-10-november-2026).
 
 The purpose of this document is mainly these two things:
@@ -331,7 +330,7 @@ To do this, add [these app setting values](https://learn.microsoft.com/en-us/azu
 ### Adjusting the minimum log level below "Information" (not recommended)
 Even with the default logging filter removed, the *minimum* log level of the worker process is still "Information", regardless of what is set in `host.json`. Even though it is [*not recommended*](https://learn.microsoft.com/en-us/azure/azure-functions/functions-monitoring#log-levels-and-categories) to log at the "Trace" or "Debug" levels in a production environment:
 
-![[Pasted image 20251106000718.png]]
+![](images/log_level_trace-debug.png)
  
  *if* you have calls like this:
 
@@ -397,7 +396,7 @@ Otherwise exceptions thrown by your code can end up wrapped in an `RpcException
 
 But as of 2025-11-03, this option is flagged as deprecated and the default value is now `true`, meaning this is redundant.
 
-![[Pasted image 20251103224159.png]]
+![](images/user_code_exception.png)
 
 ---
 ## Sources
