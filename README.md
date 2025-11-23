@@ -5,9 +5,8 @@ A personal portfolio and blog site built with React and Tailwind CSS, hosted on 
 ## TODO
 - Add Playwright MCP
 - Blog fixes:
-  - Fix scrolling performance
-  - Add ability to deeplink to specific sections (and automatically copy link when hovering section title)
   - Add a table of contents to the side of the main content
+  - Add ability to deeplink to specific sections (and automatically copy link when hovering section title)
   - Fix the layout on mobile
   - Change font etc. to make it easier to read?
 - Add blog content
@@ -17,6 +16,7 @@ A personal portfolio and blog site built with React and Tailwind CSS, hosted on 
 - Idea: change the landing page to a terminal-like thing, add animation to write `whoami`, then print the information (could include much more than we have today), ending with the caret flashing animation we have today
   - Follow-up: Add some easter egg information? Allow the user to actually write some commands? Could add some fun interactivity to the site.
 - Update README.md
+- Update text under "whoami" on About page
 
 ## Tech Stack
 
