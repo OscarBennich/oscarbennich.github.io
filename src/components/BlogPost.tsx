@@ -16,42 +16,42 @@ function BlogPost(): React.ReactElement {
   const [loading, setLoading] = useState(true)
 
   const markdownComponents = useMemo(() => ({
-    h1: ({children}) => (
+    h1: ({children}: {children?: React.ReactNode}) => (
       <h1 className="text-3xl md:text-4xl font-bold text-gray-100 mb-4 font-mono">
         {children}
       </h1>
     ),
-    h2: ({children}) => (
+    h2: ({children}: {children?: React.ReactNode}) => (
       <h2 className="text-2xl md:text-3xl font-bold text-gray-100 mt-8 mb-4 font-mono">
         {children}
       </h2>
     ),
-    h3: ({children}) => (
+    h3: ({children}: {children?: React.ReactNode}) => (
       <h3 className="text-xl md:text-2xl font-bold text-gray-100 mt-6 mb-3 font-mono">
         {children}
       </h3>
     ),
-    p: ({children}) => (
+    p: ({children}: {children?: React.ReactNode}) => (
       <p className="text-gray-300 mb-4 leading-relaxed font-mono">
         {children}
       </p>
     ),
-    ul: ({children}) => (
+    ul: ({children}: {children?: React.ReactNode}) => (
       <ul className="list-disc list-outside ml-6 text-gray-300 mb-4 space-y-2 font-mono">
         {children}
       </ul>
     ),
-    ol: ({children}) => (
+    ol: ({children}: {children?: React.ReactNode}) => (
       <ol className="list-decimal list-outside ml-6 text-gray-300 mb-4 space-y-2 font-mono">
         {children}
       </ol>
     ),
-    li: ({children}) => (
+    li: ({children}: {children?: React.ReactNode}) => (
       <li className="text-gray-300 font-mono ml-2">
         {children}
       </li>
     ),
-    code: ({className, children}) => {
+    code: ({className, children}: {className?: string, children?: React.ReactNode}) => {
       const match = /language-(\w+)/.exec(className || '')
       const language = match ? match[1] : ''
       const isInline = !className
@@ -83,12 +83,12 @@ function BlogPost(): React.ReactElement {
         </div>
       )
     },
-    pre: ({children}) => (
+    pre: ({children}: {children?: React.ReactNode}) => (
       <pre className="mb-4">
         {children}
       </pre>
     ),
-    a: ({href, children}) => (
+    a: ({href, children}: {href?: string, children?: React.ReactNode}) => (
       <a 
         href={href}
         className="text-blue-400 hover:text-blue-300 underline"
@@ -98,12 +98,12 @@ function BlogPost(): React.ReactElement {
         {children}
       </a>
     ),
-    blockquote: ({children}) => (
+    blockquote: ({children}: {children?: React.ReactNode}) => (
       <blockquote className="border-l-4 border-gray-700 pl-4 italic text-gray-400 my-4 font-mono">
         {children}
       </blockquote>
     ),
-    img: ({src, alt}) => {
+    img: ({src, alt}: {src?: string, alt?: string}) => {
       const imageSrc = src?.startsWith('images/') ? `/blog/${src}` : src
       return (
         <img 
