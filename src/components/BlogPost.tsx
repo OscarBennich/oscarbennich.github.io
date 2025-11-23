@@ -1,13 +1,9 @@
-import { useEffect, useState, useMemo, memo } from 'react'
+import { useEffect, useState, useMemo } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import { BlogPost as BlogPostType } from '../types/blog'
 import { blogPostsMetadata, loadBlogPost } from '../data/blogPosts'
-
-const MemoizedSyntaxHighlighter = memo(SyntaxHighlighter)
 
 function BlogPost(): React.ReactElement {
   const { slug } = useParams<{ slug: string }>()
@@ -57,7 +53,7 @@ function BlogPost(): React.ReactElement {
       const isInline = !className
 
       return isInline ? (
-        <code className="bg-gray-700 px-1.5 py-0.5 rounded text-sm font-mono">
+        <code className="bg-gray-700 text-orange-300 px-1.5 py-0.5 rounded text-sm font-mono">
           {children}
         </code>
       ) : (
@@ -67,19 +63,9 @@ function BlogPost(): React.ReactElement {
               {language}
             </div>
           )}
-          <MemoizedSyntaxHighlighter
-            language={language || 'text'}
-            style={vscDarkPlus}
-            customStyle={{
-              margin: 0,
-              padding: '1rem',
-              background: '#1a1a1a',
-              fontSize: '0.875rem',
-            }}
-            wrapLongLines={true}
-          >
-            {String(children).replace(/\n$/, '')}
-          </MemoizedSyntaxHighlighter>
+          <pre className="bg-[#1a1a1a] text-gray-300 p-4 overflow-x-auto m-0">
+            <code className="text-sm font-mono whitespace-pre">{String(children).replace(/\n$/, '')}</code>
+          </pre>
         </div>
       )
     },
