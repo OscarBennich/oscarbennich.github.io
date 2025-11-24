@@ -1153,3 +1153,48 @@ Please fix the broken 404 page for this site. I just get an empty white screen a
 - Updated \Layout\ route in \src/App.tsx\ to be pathless to correctly wrap the catch-all route
 
 ---
+## Prompt 55
+**Date & Time:** 2025-11-24 21:16:06 UTC
+**Tool:** GitHub Copilot CLI v0.0.362
+**Model:** Gemini 3 Pro (Preview)
+
+**Prompt:**
+`
+Please fix the mobile layout for the posts page (and the individual posts). It is overflowing horizontally and looks bad.
+
+Use the Playwright MCP server to troubleshoot the layout if needed.
+`
+
+**Changes:**
+- Modified src/components/PostList.tsx:
+  - Added flex-wrap to tags container to prevent overflow
+  - Added break-words to post titles and excerpts
+- Modified src/components/Post.tsx:
+  - Added flex-wrap to tags container
+  - Added w-full and min-w-0 to article and prose containers to ensure proper shrinking
+  - Fixed invalid HTML structure by changing pre component to render Fragment instead of nested pre
+  - Added !overflow-x-auto and max-w-full to code blocks to force scrolling
+  - Added break-words to paragraphs, links, and list items to handle long text/URLs
+
+---
+
+## Prompt 56
+**Date & Time:** 2025-11-24 21:34:07 UTC
+**Tool:** GitHub Copilot CLI v0.0.362
+**Model:** Gemini 3 Pro (Preview)
+
+**Prompt:**
+```
+I want you to add new functionality to the @src\components\Post.tsx component.
+
+For all headings (#, ##, etc.) in the markdown file that gets rendered, I want to add a way for the user to be able to copy a link directly to that part of the post. When anyone uses this link it should scroll directly to that part of the page.
+```
+
+**Changes:**
+- Modified `src/components/Post.tsx`:
+  - Added `slugify` and `getText` helper functions
+  - Created `HeadingRenderer` component to render headings with ID and copy-link button
+  - Updated `markdownComponents` to use `HeadingRenderer` for h1-h6
+  - Added `useEffect` to handle scrolling to hash on load
+
+---
