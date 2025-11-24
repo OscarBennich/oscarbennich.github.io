@@ -1219,3 +1219,23 @@ I recently added functionality to the post component, @src\components\Post.tsx, 
   - URLs now correctly formatted as `http://localhost:5173/#/posts/slug#section` instead of `http://localhost:5173/#section`
 
 ---
+
+## Prompt 58
+**Date & Time:** 2025-11-24 22:15:25 UTC
+**Tool:** GitHub Copilot CLI v0.0.362
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+Now I want you to add a "back to top" button/link to the @src\components\Post.tsx component if the content is long enough where the user has to scroll.
+```
+
+**Changes:**
+- Modified `src/components/Post.tsx`:
+  - Added `showBackToTop` state to track scroll position
+  - Added scroll event listener to show/hide button when user scrolls more than 400px
+  - Added `scrollToTop` function with smooth scroll behavior
+  - Added fixed-position back-to-top button in bottom-right corner with purple styling and upward arrow icon
+  - Button only appears when user has scrolled down, providing easy navigation back to top
+
+---

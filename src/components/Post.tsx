@@ -110,6 +110,7 @@ function Post(): React.ReactElement {
   const navigate = useNavigate()
   const [post, setPost] = useState<PostType | null>(null)
   const [loading, setLoading] = useState(true)
+  const [showBackToTop, setShowBackToTop] = useState(false)
 
   const markdownComponents = useMemo(() => ({
     h1: ({children}: {children?: React.ReactNode}) => <HeadingRenderer level={1}>{children}</HeadingRenderer>,
@@ -235,6 +236,20 @@ function Post(): React.ReactElement {
     }
   }, [loading, post])
 
+  // Handle showing/hiding back to top button based on scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowBackToTop(window.scrollY > 400)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
   if (loading) {
     return (
       <div className="max-w-4xl mx-auto px-4 py-12">
@@ -317,6 +332,18 @@ function Post(): React.ReactElement {
           {post.content}
         </ReactMarkdown>
       </div>
+
+      {showBackToTop && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-8 right-8 bg-purple-600 hover:bg-purple-500 text-white p-3 rounded-full shadow-lg transition-all cursor-pointer z-50"
+          aria-label="Back to top"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M12 19V5M5 12l7-7 7 7"/>
+          </svg>
+        </button>
+      )}
     </article>
   )
 }
