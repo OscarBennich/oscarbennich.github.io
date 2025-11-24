@@ -4,6 +4,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Posts from './pages/Posts'
 import Post from './components/Post'
+import NotFound from './pages/NotFound'
 
 function App(): React.ReactElement {
   return (
@@ -12,11 +13,12 @@ function App(): React.ReactElement {
     // Otherwise we run into 404 errors when refreshing or directly accessing nested routes.
     <HashRouter>
       <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="posts" element={<Posts />} />
           <Route path="posts/:slug" element={<Post />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </HashRouter>
