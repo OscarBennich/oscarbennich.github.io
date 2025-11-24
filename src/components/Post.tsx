@@ -70,12 +70,15 @@ const HeadingRenderer = ({ level, children }: { level: number, children: React.R
 
   const handleCopy = (e: React.MouseEvent) => {
     e.preventDefault()
-    const url = `${window.location.origin}${window.location.pathname}#${slug}`
+    // Get the route hash without any existing section anchor (remove anything after second #)
+    const routeHash = window.location.hash.split('#').slice(0, 2).join('#')
+    const url = `${window.location.origin}${window.location.pathname}${routeHash}#${slug}`
     navigator.clipboard.writeText(url)
     setShowCopied(true)
     setTimeout(() => setShowCopied(false), 2000)
     
-    window.history.pushState(null, '', `#${slug}`)
+    // Update the browser URL to include the section anchor
+    window.history.pushState(null, '', `${routeHash}#${slug}`)
     document.getElementById(slug)?.scrollIntoView({ behavior: 'smooth' })
   }
 
@@ -216,14 +219,19 @@ function Post(): React.ReactElement {
   // Handle scroll to hash after content loads
   useEffect(() => {
     if (!loading && post && window.location.hash) {
-      const id = window.location.hash.substring(1)
-      // Small timeout to ensure DOM is ready
-      setTimeout(() => {
-        const element = document.getElementById(id)
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' })
-        }
-      }, 100)
+      // Extract the section anchor (everything after the second #)
+      const hashParts = window.location.hash.split('#')
+      const sectionId = hashParts.length > 2 ? hashParts[2] : null
+      
+      if (sectionId) {
+        // Small timeout to ensure DOM is ready
+        setTimeout(() => {
+          const element = document.getElementById(sectionId)
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' })
+          }
+        }, 100)
+      }
     }
   }, [loading, post])
 

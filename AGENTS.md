@@ -1,8 +1,18 @@
 # Agent Instructions
 
+## Workflow
+
+1. **Wait for a prompt** - User provides instructions for changes
+2. **Execute the task** - Make the necessary code/file changes
+3. **Wait for review** - User tests and reviews the changes
+4. **Iterate if needed** - If issues are found, fix them and repeat step 3
+5. **Finalize** - When user says it's complete/perfect:
+   - Log the prompt(s) to `docs/agents/PROMPTS.md`
+   - Commit the changes with an appropriate message
+
 ## Prompt Logging
 
-After executing each user command/prompt, you must add an entry to `docs/agents/PROMPTS.md` with the following information:
+When the user indicates work is complete, add an entry to `docs/agents/PROMPTS.md` with the following information:
 
 ### Required Metadata:
 - **Prompt Number**: Sequential number (Prompt 1, Prompt 2, etc.)
@@ -36,8 +46,9 @@ After executing each user command/prompt, you must add an entry to `docs/agents/
    - Ask questions or request information
    - Run git commands without modifying files
    - Execute read-only operations (viewing, searching, etc.)
-3. Always log **after** successfully executing the requested task
-4. Use the exact prompt text provided by the user
-5. Include a **Changes** section with brief summary of additions and modifications
-6. Maintain chronological order
-7. Keep formatting consistent across all entries
+3. Log only when the user indicates the work is complete and satisfactory
+4. If multiple prompts/iterations were needed, log the **initial prompt** that started the work
+5. Use the exact prompt text provided by the user for the initial request
+6. Include a **Changes** section with brief summary of additions and modifications
+7. Maintain chronological order
+8. Keep formatting consistent across all entries

@@ -1198,3 +1198,24 @@ For all headings (#, ##, etc.) in the markdown file that gets rendered, I want t
   - Added `useEffect` to handle scrolling to hash on load
 
 ---
+
+## Prompt 57
+**Date & Time:** 2025-11-24 22:10:25 UTC
+**Tool:** GitHub Copilot CLI v0.0.362
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+I recently added functionality to the post component, @src\components\Post.tsx, to allow a user to copy a link to a specific section (based on the heading). This kind of works but there are two issues I can see:
+1. The link that gets copied doesn't take the whole URL into account, so for example insted of being http://localhost:5173/#/posts/azure-function-app-logging-setup-guide#clean-up, it's just http://localhost:5173/#clean-up.
+2. Because of the first issue, it doesn't work to actually go to the copied URL, it results in a 404 error.
+```
+
+**Changes:**
+- Modified `src/components/Post.tsx`:
+  - Fixed `handleCopy` to properly construct URLs with React Router hash-based routing by including the full route path before the section anchor
+  - Fixed URL replacement bug by stripping existing section anchors before appending new ones using `.split('#').slice(0, 2).join('#')`
+  - Fixed scroll-on-load by updating the useEffect to properly extract section IDs from URLs with multiple hash symbols (e.g., `#/posts/slug#section`)
+  - URLs now correctly formatted as `http://localhost:5173/#/posts/slug#section` instead of `http://localhost:5173/#section`
+
+---
