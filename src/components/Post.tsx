@@ -31,6 +31,77 @@ function CopyButton({ code }: { code: string }) {
   )
 }
 
+// Helper to generate slug from text
+const slugify = (text: string) => {
+  return text
+    .toString()
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, '-')     // Replace spaces with -
+    .replace(/[^\w\-]+/g, '') // Remove all non-word chars
+    .replace(/\-\-+/g, '-')   // Replace multiple - with single -
+}
+
+// Helper to extract text from React children
+const getText = (node: React.ReactNode): string => {
+  if (typeof node === 'string') return node
+  if (typeof node === 'number') return node.toString()
+  if (Array.isArray(node)) return node.map(getText).join('')
+  if (typeof node === 'object' && node !== null && 'props' in node) return getText((node as any).props.children)
+  return ''
+}
+
+// Heading component with copy link
+const HeadingRenderer = ({ level, children }: { level: number, children: React.ReactNode }) => {
+  const text = getText(children)
+  const slug = slugify(text)
+  const [showCopied, setShowCopied] = useState(false)
+  
+  const Tag = `h${level}` as keyof JSX.IntrinsicElements
+  
+  const styles = {
+    1: "text-3xl md:text-4xl font-bold text-gray-100 mb-4 font-mono",
+    2: "text-2xl md:text-3xl font-bold text-gray-100 mt-8 mb-4 font-mono",
+    3: "text-xl md:text-2xl font-bold text-gray-100 mt-6 mb-3 font-mono",
+    4: "text-lg md:text-xl font-bold text-gray-100 mt-6 mb-3 font-mono",
+    5: "text-base md:text-lg font-bold text-gray-100 mt-6 mb-3 font-mono",
+    6: "text-sm md:text-base font-bold text-gray-100 mt-6 mb-3 font-mono"
+  }[level] || "font-bold text-gray-100 font-mono"
+
+  const handleCopy = (e: React.MouseEvent) => {
+    e.preventDefault()
+    const url = `${window.location.origin}${window.location.pathname}#${slug}`
+    navigator.clipboard.writeText(url)
+    setShowCopied(true)
+    setTimeout(() => setShowCopied(false), 2000)
+    
+    window.history.pushState(null, '', `#${slug}`)
+    document.getElementById(slug)?.scrollIntoView({ behavior: 'smooth' })
+  }
+
+  return (
+    <Tag id={slug} className={`${styles} group flex items-center gap-2 scroll-mt-20`}>
+      {children}
+      <a 
+        href={`#${slug}`} 
+        onClick={handleCopy}
+        className="opacity-0 group-hover:opacity-100 transition-opacity text-gray-500 hover:text-purple-400 focus:opacity-100"
+        title="Copy link to section"
+        aria-label="Copy link to section"
+      >
+        {showCopied ? (
+            <span className="text-emerald-400 text-lg">✓</span>
+        ) : (
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+            </svg>
+        )}
+      </a>
+    </Tag>
+  )
+}
+
 function Post(): React.ReactElement {
   const { slug } = useParams<{ slug: string }>()
   const navigate = useNavigate()
@@ -38,21 +109,12 @@ function Post(): React.ReactElement {
   const [loading, setLoading] = useState(true)
 
   const markdownComponents = useMemo(() => ({
-    h1: ({children}: {children?: React.ReactNode}) => (
-      <h1 className="text-3xl md:text-4xl font-bold text-gray-100 mb-4 font-mono">
-        {children}
-      </h1>
-    ),
-    h2: ({children}: {children?: React.ReactNode}) => (
-      <h2 className="text-2xl md:text-3xl font-bold text-gray-100 mt-8 mb-4 font-mono">
-        {children}
-      </h2>
-    ),
-    h3: ({children}: {children?: React.ReactNode}) => (
-      <h3 className="text-xl md:text-2xl font-bold text-gray-100 mt-6 mb-3 font-mono">
-        {children}
-      </h3>
-    ),
+    h1: ({children}: {children?: React.ReactNode}) => <HeadingRenderer level={1}>{children}</HeadingRenderer>,
+    h2: ({children}: {children?: React.ReactNode}) => <HeadingRenderer level={2}>{children}</HeadingRenderer>,
+    h3: ({children}: {children?: React.ReactNode}) => <HeadingRenderer level={3}>{children}</HeadingRenderer>,
+    h4: ({children}: {children?: React.ReactNode}) => <HeadingRenderer level={4}>{children}</HeadingRenderer>,
+    h5: ({children}: {children?: React.ReactNode}) => <HeadingRenderer level={5}>{children}</HeadingRenderer>,
+    h6: ({children}: {children?: React.ReactNode}) => <HeadingRenderer level={6}>{children}</HeadingRenderer>,
     p: ({children}: {children?: React.ReactNode}) => (
       <p className="text-gray-300 mb-4 leading-relaxed font-mono break-words">
         {children}
@@ -150,6 +212,20 @@ function Post(): React.ReactElement {
       document.title = 'Oscar Bennich-Björkman | Post Not Found'
     }
   }, [slug])
+
+  // Handle scroll to hash after content loads
+  useEffect(() => {
+    if (!loading && post && window.location.hash) {
+      const id = window.location.hash.substring(1)
+      // Small timeout to ensure DOM is ready
+      setTimeout(() => {
+        const element = document.getElementById(id)
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' })
+        }
+      }, 100)
+    }
+  }, [loading, post])
 
   if (loading) {
     return (
