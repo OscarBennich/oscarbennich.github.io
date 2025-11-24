@@ -54,7 +54,7 @@ function Post(): React.ReactElement {
       </h3>
     ),
     p: ({children}: {children?: React.ReactNode}) => (
-      <p className="text-gray-300 mb-4 leading-relaxed font-mono">
+      <p className="text-gray-300 mb-4 leading-relaxed font-mono break-words">
         {children}
       </p>
     ),
@@ -69,7 +69,7 @@ function Post(): React.ReactElement {
       </ol>
     ),
     li: ({children}: {children?: React.ReactNode}) => (
-      <li className="text-gray-300 font-mono ml-2">
+      <li className="text-gray-300 font-mono ml-2 break-words">
         {children}
       </li>
     ),
@@ -83,7 +83,7 @@ function Post(): React.ReactElement {
           {children}
         </code>
       ) : (
-        <div className="my-4 rounded-lg border border-gray-700 overflow-hidden">
+        <div className="my-4 rounded-lg border border-gray-700 overflow-hidden max-w-full">
           {language && (
             <div className="bg-gray-800 px-4 py-2 text-xs text-gray-400 font-mono border-b border-gray-700 flex items-center justify-between">
               <span>{language}</span>
@@ -96,7 +96,7 @@ function Post(): React.ReactElement {
                 <CopyButton code={String(children).replace(/\n$/, '')} />
               </div>
             )}
-            <pre className="text-gray-300 p-4 overflow-x-auto m-0">
+            <pre className="text-gray-300 p-4 !overflow-x-auto m-0 max-w-full">
               <code className="text-sm font-mono whitespace-pre">{String(children).replace(/\n$/, '')}</code>
             </pre>
           </div>
@@ -104,14 +104,14 @@ function Post(): React.ReactElement {
       )
     },
     pre: ({children}: {children?: React.ReactNode}) => (
-      <pre className="mb-4">
+      <>
         {children}
-      </pre>
+      </>
     ),
     a: ({href, children}: {href?: string, children?: React.ReactNode}) => (
       <a 
         href={href}
-        className="text-blue-400 hover:text-blue-300 underline"
+        className="text-blue-400 hover:text-blue-300 underline break-words"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -194,7 +194,7 @@ function Post(): React.ReactElement {
   }
 
   return (
-    <article className="max-w-4xl mx-auto px-4 py-12">
+    <article className="max-w-4xl mx-auto px-4 py-12 w-full min-w-0">
       <button
         onClick={() => navigate('/posts')}
         className="text-purple-400 hover:text-purple-300 font-mono mb-8 flex items-center gap-2 cursor-pointer"
@@ -212,7 +212,7 @@ function Post(): React.ReactElement {
           <span className="text-gray-500">•</span>
           <span>{calculateReadingTime(post.content)} min read</span>
           <span className="text-gray-500">•</span>
-          <div className="flex gap-2">
+          <div className="flex flex-wrap gap-2">
             {post.tags.map((tag) => (
               <span 
                 key={tag}
@@ -225,7 +225,7 @@ function Post(): React.ReactElement {
         </div>
       </header>
 
-      <div className="prose prose-invert prose-lg max-w-none bg-gray-800 backdrop-blur-sm rounded-lg p-6 md:p-8 border border-gray-800">
+      <div className="prose prose-invert prose-lg max-w-none bg-gray-800 backdrop-blur-sm rounded-lg p-6 md:p-8 border border-gray-800 w-full min-w-0">
         <ReactMarkdown
           remarkPlugins={[remarkGfm]}
           components={markdownComponents}

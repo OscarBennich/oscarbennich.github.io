@@ -151,7 +151,7 @@ function PostList({ posts }: PostListProps): React.ReactElement {
               className="block group"
             >
               <article className="bg-gray-800 border border-gray-700 rounded-lg p-6 hover:border-purple-500 hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 cursor-pointer">
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-100 mb-3 font-mono">
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-100 mb-3 font-mono break-words">
                   {post.title}
                 </h2>
 
@@ -162,7 +162,7 @@ function PostList({ posts }: PostListProps): React.ReactElement {
                   {post.tags.length > 0 && (
                     <>
                       <span className="text-gray-600">•</span>
-                      <div className="flex gap-2">
+                      <div className="flex flex-wrap gap-2">
                         {post.tags.map((tag) => (
                           <span
                             key={tag}
@@ -176,7 +176,7 @@ function PostList({ posts }: PostListProps): React.ReactElement {
                   )}
                 </div>
 
-                <p className="text-gray-300 mb-4 font-mono leading-relaxed">
+                <p className="text-gray-300 mb-4 font-mono leading-relaxed break-words">
                   {post.excerpt}
                 </p>
 
