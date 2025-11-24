@@ -51,6 +51,35 @@ const getText = (node: React.ReactNode): string => {
   return ''
 }
 
+// Type for table of contents item
+type TocItem = {
+  text: string
+  slug: string
+  level: number
+}
+
+// Helper to extract headings from markdown content
+const extractHeadings = (content: string): TocItem[] => {
+  const headingRegex = /^(#{1,6})\s+(.+)$/gm
+  const headings: TocItem[] = []
+  let match
+
+  while ((match = headingRegex.exec(content)) !== null) {
+    const level = match[1].length
+    const text = match[2].trim()
+    // Skip h1 as it's the post title
+    if (level > 1) {
+      headings.push({
+        text,
+        slug: slugify(text),
+        level
+      })
+    }
+  }
+
+  return headings
+}
+
 // Heading component with copy link
 const HeadingRenderer = ({ level, children }: { level: number, children: React.ReactNode }) => {
   const text = getText(children)
@@ -105,12 +134,153 @@ const HeadingRenderer = ({ level, children }: { level: number, children: React.R
   )
 }
 
+// Table of Contents component
+function TableOfContents({ headings, isMobile = false }: { headings: TocItem[], isMobile?: boolean }) {
+  const [isOpen, setIsOpen] = useState(false)
+  const [activeId, setActiveId] = useState<string>('')
+
+  useEffect(() => {
+    // Only enable intersection observer on desktop to avoid performance issues on mobile
+    if (isMobile) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveId(entry.target.id)
+          }
+        })
+      },
+      { rootMargin: '-100px 0px -80% 0px', threshold: 0.5 }
+    )
+
+    headings.forEach(({ slug }) => {
+      const element = document.getElementById(slug)
+      if (element) observer.observe(element)
+    })
+
+    return () => observer.disconnect()
+  }, [headings, isMobile])
+
+  // Prevent body scrolling when mobile menu is open
+  useEffect(() => {
+    if (isMobile && isOpen) {
+      const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth
+      document.body.style.overflow = 'hidden'
+      document.body.style.paddingRight = `${scrollBarWidth}px`
+      
+      return () => {
+        document.body.style.overflow = ''
+        document.body.style.paddingRight = ''
+      }
+    }
+  }, [isMobile, isOpen])
+
+  const handleClick = (slug: string) => {
+    const routeHash = window.location.hash.split('#').slice(0, 2).join('#')
+    window.history.pushState(null, '', `${routeHash}#${slug}`)
+    document.getElementById(slug)?.scrollIntoView({ behavior: 'smooth' })
+    setIsOpen(false)
+  }
+
+  if (headings.length === 0) return null
+
+  if (isMobile) {
+    return (
+      <>
+        {/* Hamburger button */}
+        <button
+          onClick={() => setIsOpen(true)}
+          className="fixed bottom-6 left-6 md:bottom-8 md:left-8 z-40 p-2.5 md:p-3 bg-purple-600 hover:bg-purple-500 text-white rounded-full shadow-lg transition-colors cursor-pointer lg:hidden opacity-90 hover:opacity-100"
+          aria-label="Open table of contents"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="md:w-6 md:h-6">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+
+        {/* Slide-out menu from left */}
+        <nav
+          className={`fixed top-0 left-0 h-full w-80 max-w-[85vw] bg-gray-900 border-r border-gray-700 z-50 transform transition-transform duration-300 lg:hidden overflow-y-auto shadow-2xl ${
+            isOpen ? 'translate-x-0' : '-translate-x-full'
+          }`}
+        >
+          <div className="flex items-center justify-between p-4 border-b border-gray-700">
+            <h2 className="text-lg font-bold text-gray-100 font-mono">In this post</h2>
+            <button
+              onClick={() => setIsOpen(false)}
+              className="p-2 hover:bg-gray-800 rounded cursor-pointer transition-colors"
+              aria-label="Close table of contents"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-400">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+          </div>
+          <div className="p-4">
+            <ul className="space-y-2 font-mono text-sm">
+              {headings.map(({ text, slug, level }) => (
+                <li key={slug} style={{ paddingLeft: `${(level - 2) * 0.75}rem` }}>
+                  <a
+                    href={`#${slug}`}
+                    onClick={(e) => {
+                      e.preventDefault()
+                      handleClick(slug)
+                    }}
+                    className="block py-2 text-gray-400 hover:text-purple-400 transition-colors"
+                  >
+                    {text}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </nav>
+      </>
+    )
+  }
+
+  // Desktop sidebar
+  return (
+    <nav className="w-[250px]">
+      <div className="sticky top-20 bg-gray-800 border border-gray-700 rounded-lg p-4">
+        <h2 className="text-sm font-bold text-purple-400 mb-3 font-mono">In this post</h2>
+        <ul className="space-y-2 font-mono text-xs border-l-2 border-gray-700 overflow-x-hidden pr-2">
+          {headings.map(({ text, slug, level }) => (
+            <li key={slug} style={{ paddingLeft: `${(level - 2) * 0.75 + 0.75}rem` }}>
+              <a
+                href={`#${slug}`}
+                onClick={(e) => {
+                  e.preventDefault()
+                  handleClick(slug)
+                }}
+                className="block py-1 text-white hover:text-purple-400 transition-colors break-words"
+              >
+                {text}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </nav>
+  )
+}
+
 function Post(): React.ReactElement {
   const { slug } = useParams<{ slug: string }>()
   const navigate = useNavigate()
   const [post, setPost] = useState<PostType | null>(null)
   const [loading, setLoading] = useState(true)
   const [showBackToTop, setShowBackToTop] = useState(false)
+
+  // Extract headings for table of contents
+  const headings = useMemo(() => {
+    if (!post) return []
+    return extractHeadings(post.content)
+  }, [post])
 
   const markdownComponents = useMemo(() => ({
     h1: ({children}: {children?: React.ReactNode}) => <HeadingRenderer level={1}>{children}</HeadingRenderer>,
@@ -247,6 +417,9 @@ function Post(): React.ReactElement {
   }, [])
 
   const scrollToTop = () => {
+    // Remove section anchor from URL
+    const routeHash = window.location.hash.split('#').slice(0, 2).join('#')
+    window.history.pushState(null, '', routeHash)
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
@@ -294,7 +467,8 @@ function Post(): React.ReactElement {
 
   return (
     <>
-      <article className="max-w-4xl mx-auto px-4 py-12 w-full min-w-0">
+      <div className="max-w-7xl mx-auto px-4 py-12">
+        {/* Back button and header - full width */}
         <button
           onClick={() => navigate('/posts')}
           className="text-purple-400 hover:text-purple-300 font-mono mb-8 flex items-center gap-2 cursor-pointer"
@@ -325,15 +499,29 @@ function Post(): React.ReactElement {
           </div>
         </header>
 
-        <div className="prose prose-invert prose-lg max-w-none bg-gray-800 backdrop-blur-sm rounded-lg p-6 md:p-8 border border-gray-800 w-full min-w-0">
-          <ReactMarkdown
-            remarkPlugins={[remarkGfm]}
-            components={markdownComponents}
-          >
-            {post.content}
-          </ReactMarkdown>
+        {/* Content and ToC grid */}
+        <div className="lg:grid lg:grid-cols-[1fr_250px] lg:gap-8 lg:items-start">
+          {/* Main content */}
+          <article className="min-w-0 w-full">
+            <div className="prose prose-invert prose-lg max-w-none bg-gray-800 backdrop-blur-sm rounded-lg p-6 md:p-8 border border-gray-800 w-full min-w-0">
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                components={markdownComponents}
+              >
+                {post.content}
+              </ReactMarkdown>
+            </div>
+          </article>
+
+          {/* Desktop ToC sidebar - explicitly hidden on mobile */}
+          <aside className="hidden lg:block w-[250px] flex-shrink-0">
+            <TableOfContents headings={headings} isMobile={false} />
+          </aside>
         </div>
-      </article>
+      </div>
+
+      {/* Mobile ToC button and menu */}
+      <TableOfContents headings={headings} isMobile={true} />
 
       {showBackToTop && (
         <button

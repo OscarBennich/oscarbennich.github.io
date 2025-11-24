@@ -10,7 +10,7 @@ html {
   overflow-y: scroll;
 }
 
-/* Prevent horizontal scroll on mobile */
+/* Prevent horizontal scroll */
 body {
   overflow-x: hidden;
 }
