@@ -293,58 +293,60 @@ function Post(): React.ReactElement {
   }
 
   return (
-    <article className="max-w-4xl mx-auto px-4 py-12 w-full min-w-0">
-      <button
-        onClick={() => navigate('/posts')}
-        className="text-purple-400 hover:text-purple-300 font-mono mb-8 flex items-center gap-2 cursor-pointer"
-      >
-        ← Back to Posts
-      </button>
-
-      <header className="mb-8">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-100 mb-4 font-mono">
-          {post.title}
-        </h1>
-        
-        <div className="flex flex-wrap items-center gap-4 text-sm text-gray-400 font-mono">
-          <time dateTime={post.date}>{formatDate(post.date)}</time>
-          <span className="text-gray-500">•</span>
-          <span>{calculateReadingTime(post.content)} min read</span>
-          <span className="text-gray-500">•</span>
-          <div className="flex flex-wrap gap-2">
-            {post.tags.map((tag) => (
-              <span 
-                key={tag}
-                className="px-2 py-1 text-white bg-gray-700 rounded text-xs"
-              >
-                #{tag}
-              </span>
-            ))}
-          </div>
-        </div>
-      </header>
-
-      <div className="prose prose-invert prose-lg max-w-none bg-gray-800 backdrop-blur-sm rounded-lg p-6 md:p-8 border border-gray-800 w-full min-w-0">
-        <ReactMarkdown
-          remarkPlugins={[remarkGfm]}
-          components={markdownComponents}
+    <>
+      <article className="max-w-4xl mx-auto px-4 py-12 w-full min-w-0">
+        <button
+          onClick={() => navigate('/posts')}
+          className="text-purple-400 hover:text-purple-300 font-mono mb-8 flex items-center gap-2 cursor-pointer"
         >
-          {post.content}
-        </ReactMarkdown>
-      </div>
+          ← Back to Posts
+        </button>
+
+        <header className="mb-8">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-100 mb-4 font-mono">
+            {post.title}
+          </h1>
+          
+          <div className="flex flex-wrap items-center gap-4 text-sm text-gray-400 font-mono">
+            <time dateTime={post.date}>{formatDate(post.date)}</time>
+            <span className="text-gray-500">•</span>
+            <span>{calculateReadingTime(post.content)} min read</span>
+            <span className="text-gray-500">•</span>
+            <div className="flex flex-wrap gap-2">
+              {post.tags.map((tag) => (
+                <span 
+                  key={tag}
+                  className="px-2 py-1 text-white bg-gray-700 rounded text-xs"
+                >
+                  #{tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        </header>
+
+        <div className="prose prose-invert prose-lg max-w-none bg-gray-800 backdrop-blur-sm rounded-lg p-6 md:p-8 border border-gray-800 w-full min-w-0">
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm]}
+            components={markdownComponents}
+          >
+            {post.content}
+          </ReactMarkdown>
+        </div>
+      </article>
 
       {showBackToTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 bg-purple-600 hover:bg-purple-500 text-white p-3 rounded-full shadow-lg transition-all cursor-pointer z-50"
+          className="fixed bottom-6 right-6 md:bottom-8 md:right-8 bg-purple-600 hover:bg-purple-500 text-white p-2.5 md:p-3 rounded-full shadow-lg transition-all cursor-pointer z-50 opacity-90 hover:opacity-100"
           aria-label="Back to top"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="md:w-6 md:h-6">
             <path d="M12 19V5M5 12l7-7 7 7"/>
           </svg>
         </button>
       )}
-    </article>
+    </>
   )
 }
 

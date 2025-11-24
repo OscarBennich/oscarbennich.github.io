@@ -1239,3 +1239,22 @@ Now I want you to add a "back to top" button/link to the @src\components\Post.ts
   - Button only appears when user has scrolled down, providing easy navigation back to top
 
 ---
+
+## Prompt 59
+**Date & Time:** 2025-11-24 22:22:11 UTC
+**Tool:** GitHub Copilot CLI v0.0.362
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+The "back to top" button seems to have broken the responsive design on mobile devices, can you have a look at this and fix it?
+```
+
+**Changes:**
+- Modified `src/components/Post.tsx`:
+  - Moved back-to-top button outside of `<article>` element to prevent overflow issues with fixed positioning
+  - Wrapped article and button in React Fragment (`<>`)
+- Modified `src/index.css`:
+  - Added `overflow-x: hidden` to body element to prevent horizontal scrolling on mobile devices caused by the fixed-position button
+
+---

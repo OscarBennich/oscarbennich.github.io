@@ -5,8 +5,6 @@ A personal portfolio and blog site built with React and Tailwind CSS, hosted on 
 ## TODO
 - Blog fixes:
   - Add a table of contents to the side of the main content
-  - Add ability to deeplink to specific sections (and automatically copy link when hovering section title)
-  - Fix the layout on mobile
   - Change font etc. to make it easier to read?
 - Add blog content
 - Update footer to include where to find more information about how the site was built and move GitHub + LinkedIn links to "About" page instead (I think...?)

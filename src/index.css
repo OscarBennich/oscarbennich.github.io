@@ -9,3 +9,8 @@
 html {
   overflow-y: scroll;
 }
+
+/* Prevent horizontal scroll on mobile */
+body {
+  overflow-x: hidden;
+}
