@@ -1,4 +1,3 @@
-# HOW TO: Customize Windows Terminal w/ Oh My Posh
 ![image](windows_terminal_setup_1.png)
 
 - Oh My Posh theme

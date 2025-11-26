@@ -1,5 +1,3 @@
-# Git Tips & Tricks
-
 ## How to split code from a repository into a new one and only keep relevant history
 
 Expanded from [these instructions](https://docs.github.com/en/get-started/using-git/splitting-a-subfolder-out-into-a-new-repository). *[Here](https://github.com/newren/git-filter-repo) you can find the repo for the Git-filter-repo tool.*
