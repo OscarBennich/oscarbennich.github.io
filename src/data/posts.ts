@@ -4,20 +4,20 @@ import { BlogPost } from '../types/post'
 export const postsMetadata: BlogPost[] = [
   {
     slug: "azure-function-app-logging-setup-guide",
-    title: "How-to: Set up logging for Azure Function Apps",
+    title: "Setting up logging in Azure Function Apps",
     date: "2025-11-14",
-    tags: ["azure", "logging", "function-app", "application-insights"],
+    tags: ["guide", "azure", "logging", "function-app", "application-insights"],
     excerpt:
-      "A how-to/guide with best practices and gotchas to keep in mind when configuring logging for Azure Function Apps.",
+      "A guide with best practices and gotchas to keep in mind when configuring logging for Azure Function Apps.",
     content: "", // Will be loaded dynamically
   },
   {
     slug: "windows-terminal-setup-guide",
-    title: "How-to: Customize Windows Terminal w/ Oh My Posh",
+    title: "Customizing Windows Terminal with Oh My Posh",
     date: "2023-10-01",
-    tags: ["windows-terminal"],
+    tags: ["guide", "windows-terminal"],
     excerpt:
-      "A short guide for setting up a custom version of Windows Terminal w/ Oh My Posh.",
+      "How to set up a custom version of Windows Terminal with Oh My Posh.",
     content: "", // Will be loaded dynamically
   },
 ];
