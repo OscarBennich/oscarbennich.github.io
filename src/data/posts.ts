@@ -3,14 +3,24 @@ import { BlogPost } from '../types/post'
 // Post metadata - content will be loaded from markdown files
 export const postsMetadata: BlogPost[] = [
   {
-    slug: 'azure-function-app-logging-setup-guide',
-    title: 'How-to: Set up logging for Azure Function Apps',
-    date: '2025-11-14',
-    tags: ['azure', 'logging', 'function-app', 'application-insights'],
-    excerpt: 'A how-to/guide with best practices and gotchas to keep in mind when configuring logging for Azure Function Apps.',
-    content: '' // Will be loaded dynamically
-  }
-]
+    slug: "azure-function-app-logging-setup-guide",
+    title: "How-to: Set up logging for Azure Function Apps",
+    date: "2025-11-14",
+    tags: ["azure", "logging", "function-app", "application-insights"],
+    excerpt:
+      "A how-to/guide with best practices and gotchas to keep in mind when configuring logging for Azure Function Apps.",
+    content: "", // Will be loaded dynamically
+  },
+  {
+    slug: "windows-terminal-setup-guide",
+    title: "How-to: Customize Windows Terminal w/ Oh My Posh",
+    date: "2023-10-01",
+    tags: ["windows-terminal"],
+    excerpt:
+      "A short guide for setting up a custom version of Windows Terminal w/ Oh My Posh.",
+    content: "", // Will be loaded dynamically
+  },
+];
 
 // Function to load post content from markdown file
 export async function loadPost(slug: string): Promise<string> {
