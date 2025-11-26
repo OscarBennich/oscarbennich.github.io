@@ -6,7 +6,14 @@ export const postsMetadata: Post[] = [
     slug: "azure-function-app-logging-setup-guide",
     title: "Setting up logging in Azure Function Apps",
     date: "2025-11-14",
-    tags: ["guide", "azure", "logging", "function-app", "application-insights", "dotnet"],
+    tags: [
+      "guide",
+      "azure",
+      "logging",
+      "function-app",
+      "application-insights",
+      "dotnet",
+    ],
     excerpt:
       "A guide with best practices and gotchas to keep in mind when configuring logging for Azure Function Apps.",
     content: "", // Will be loaded dynamically
@@ -46,6 +53,14 @@ export const postsMetadata: Post[] = [
     excerpt: "A collection of useful tips and tricks for using NuGet.",
     content: "", // Will be loaded dynamically
   },
+  {
+    slug: "lessons-learned-az-pipelines-coverage-dotnet-sq",
+    title: "Lessons learned - Azure Pipelines, Code Coverage, .NET, SonarQube",
+    date: "2023-12-18",
+    tags: ["dotnet", "azure-devops", "sonarqube", "code-coverage", "pipelines"],
+    excerpt: "A collection of useful tips and tricks for using NuGet.",
+    content: "", // Will be loaded dynamically
+  }
 ];
 
 // Function to load post content from markdown file
