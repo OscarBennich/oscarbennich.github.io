@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo } from 'react'
+import { useEffect, useState, useMemo, JSX } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
@@ -137,7 +137,7 @@ const HeadingRenderer = ({ level, children }: { level: number, children: React.R
 // Table of Contents component
 function TableOfContents({ headings, isMobile = false }: { headings: TocItem[], isMobile?: boolean }) {
   const [isOpen, setIsOpen] = useState(false)
-  const [activeId, setActiveId] = useState<string>('')
+  const [, setActiveId] = useState<string>('')
 
   useEffect(() => {
     // Only enable intersection observer on desktop to avoid performance issues on mobile
@@ -214,7 +214,7 @@ function TableOfContents({ headings, isMobile = false }: { headings: TocItem[], 
             {/* Menu panel */}
             <div className="absolute top-0 left-0 h-full w-80 max-w-[85vw] bg-gray-900 border-r border-gray-700 overflow-y-auto shadow-2xl">
               <div className="flex items-center justify-between p-4 border-b border-gray-700">
-                <h2 className="text-lg font-bold text-gray-100 font-mono">In this post</h2>
+                <h2 className="text-lg font-bold text-purple-400 font-mono">In this post</h2>
                 <button
                   onClick={() => setIsOpen(false)}
                   className="p-2 hover:bg-gray-800 rounded cursor-pointer transition-colors"
@@ -265,7 +265,7 @@ function TableOfContents({ headings, isMobile = false }: { headings: TocItem[], 
                   e.preventDefault()
                   handleClick(slug)
                 }}
-                className="block py-1 text-white hover:text-purple-400 transition-colors break-words"
+                className="block py-1 text-white hover:text-purple-400 transition-colors wrap-break-word"
               >
                 {text}
               </a>
@@ -298,7 +298,7 @@ function Post(): React.ReactElement {
     h5: ({children}: {children?: React.ReactNode}) => <HeadingRenderer level={5}>{children}</HeadingRenderer>,
     h6: ({children}: {children?: React.ReactNode}) => <HeadingRenderer level={6}>{children}</HeadingRenderer>,
     p: ({children}: {children?: React.ReactNode}) => (
-      <p className="text-gray-300 mb-4 leading-relaxed font-mono break-words">
+      <p className="text-gray-300 mb-4 leading-relaxed font-mono wrap-break-word">
         {children}
       </p>
     ),
@@ -313,7 +313,7 @@ function Post(): React.ReactElement {
       </ol>
     ),
     li: ({children}: {children?: React.ReactNode}) => (
-      <li className="text-gray-300 font-mono ml-2 break-words">
+      <li className="text-gray-300 font-mono ml-2 wrap-break-word">
         {children}
       </li>
     ),
@@ -340,7 +340,7 @@ function Post(): React.ReactElement {
                 <CopyButton code={String(children).replace(/\n$/, '')} />
               </div>
             )}
-            <pre className="text-gray-300 p-4 !overflow-x-auto m-0 max-w-full">
+            <pre className="text-gray-300 p-4 overflow-x-auto! m-0 max-w-full">
               <code className="text-sm font-mono whitespace-pre">{String(children).replace(/\n$/, '')}</code>
             </pre>
           </div>
@@ -355,7 +355,7 @@ function Post(): React.ReactElement {
     a: ({href, children}: {href?: string, children?: React.ReactNode}) => (
       <a 
         href={href}
-        className="text-blue-400 hover:text-blue-300 underline break-words"
+        className="text-blue-400 hover:text-blue-300 underline wrap-break-word"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -485,7 +485,7 @@ function Post(): React.ReactElement {
         </button>
 
         <header className="mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-100 mb-4 font-mono break-words">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-100 mb-4 font-mono wrap-break-word">
             {post.title}
           </h1>
           
@@ -522,7 +522,7 @@ function Post(): React.ReactElement {
           </article>
 
           {/* Desktop ToC sidebar - explicitly hidden on mobile */}
-          <aside className="hidden lg:block flex-shrink-0">
+          <aside className="hidden lg:block shrink-0">
             <TableOfContents headings={headings} isMobile={false} />
           </aside>
         </div>
