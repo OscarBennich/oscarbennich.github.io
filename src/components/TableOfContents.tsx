@@ -59,16 +59,19 @@ function TableOfContents({ headings, isMobile = false }: TableOfContentsProps): 
   if (isMobile) {
     return (
       <>
-        {/* Hamburger button - positioned within viewport bounds */}
+        {/* Table of contents button - positioned within viewport bounds */}
         <button
           onClick={() => setIsOpen(true)}
           className="fixed bottom-6 left-6 md:bottom-8 md:left-8 z-40 p-2.5 md:p-3 bg-purple-600 hover:bg-purple-500 text-white rounded-full shadow-lg transition-colors cursor-pointer opacity-90 hover:opacity-100"
           aria-label="Open table of contents"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="md:w-6 md:h-6">
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
+            <line x1="8" y1="6" x2="21" y2="6"></line>
+            <line x1="8" y1="12" x2="21" y2="12"></line>
+            <line x1="8" y1="18" x2="21" y2="18"></line>
+            <circle cx="4" cy="6" r="1.5" fill="currentColor"></circle>
+            <circle cx="4" cy="12" r="1.5" fill="currentColor"></circle>
+            <circle cx="4" cy="18" r="1.5" fill="currentColor"></circle>
           </svg>
         </button>
 
