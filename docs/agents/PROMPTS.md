@@ -1262,7 +1262,7 @@ The "back to top" button seems to have broken the responsive design on mobile de
 ## Prompt 60
 **Date & Time:** 2025-11-26 19:32:13 UTC
 **Tool:** GitHub Copilot CLI v0.0.365
-**Model:** Claude Sonnet 4.5
+**Model:** Claude Opus 4.5
 
 **Prompt:**
 ```
@@ -1288,7 +1288,7 @@ The relevant changes where introduced in commit 8f8cc7e70982e as I tried resetti
 ## Prompt 61
 **Date & Time:** 2025-11-26 20:04:03 UTC
 **Tool:** GitHub Copilot CLI v0.0.365
-**Model:** Claude Sonnet 4.5
+**Model:** Claude Opus 4.5
 
 **Prompt:**
 ```
@@ -1312,7 +1312,7 @@ If there are any other code improvements you notice, go ahead and refactor that,
 ## Prompt 62
 **Date & Time:** 2025-11-26 20:11:15 UTC
 **Tool:** GitHub Copilot CLI v0.0.365
-**Model:** Claude Sonnet 4.5
+**Model:** Claude Opus 4.5
 
 **Prompt:**
 ```
@@ -1333,7 +1333,7 @@ I'm not sure if it's related to using backticks (`) to render code blocks *insid
 ## Prompt 63
 **Date & Time:** 2025-11-26 20:24:34 UTC
 **Tool:** GitHub Copilot CLI v0.0.365
-**Model:** Claude Sonnet 4.5
+**Model:** Claude Opus 4.5
 
 **Prompt:**
 ```
@@ -1353,7 +1353,7 @@ Please change the mobile ToC icon to look like this one from GitHub (or similar)
 ## Prompt 64
 **Date & Time:** 2025-11-26 20:57:03 UTC
 **Tool:** GitHub Copilot CLI v0.0.365
-**Model:** Claude Sonnet 4.5
+**Model:** Claude Opus 4.5
 
 **Prompt:**
 ```
@@ -1375,7 +1375,7 @@ In the post I just made, the scrolling performance in the desktop layout is a bi
 ## Prompt 65
 **Date & Time:** 2025-11-26 21:11:01 UTC
 **Tool:** GitHub Copilot CLI v0.0.365
-**Model:** Claude Sonnet 4.5
+**Model:** Claude Opus 4.5
 
 **Prompt:**
 ```
@@ -1400,7 +1400,7 @@ I would like to refactor the files in the @public\posts folder so that each post
 ## Prompt 66
 **Date & Time:** 2025-11-26 21:21:40 UTC
 **Tool:** GitHub Copilot CLI v0.0.365
-**Model:** Claude Sonnet 4.5
+**Model:** Claude Opus 4.5
 
 **Prompt:**
 ```
@@ -1418,7 +1418,7 @@ I'd like to add a new property for a post which I can use to indicate when the l
 ## Prompt 67
 **Date & Time:** 2025-11-26 22:07:04 UTC
 **Tool:** GitHub Copilot CLI v0.0.365
-**Model:** Claude Sonnet 4.5
+**Model:** Claude Opus 4.5
 
 **Prompt:**
 ```
