@@ -1284,3 +1284,27 @@ The relevant changes where introduced in commit 8f8cc7e70982e as I tried resetti
   - Fixed scrolling performance by avoiding complex transform animations on hidden elements
 
 ---
+
+## Prompt 61
+**Date & Time:** 2025-11-26 20:04:03 UTC
+**Tool:** GitHub Copilot CLI v0.0.365
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+Please refactor @src\components\Post.tsx so that all separate components are broken out into separate files in the components/ folder.
+
+If there are any other code improvements you notice, go ahead and refactor that, too. But do each refactoring change in a separate commit, that way it's easier to keep track of afterwards.
+```
+
+**Changes:**
+- Created `src/utils/markdown.ts` with utilities: slugify, getText, extractHeadings, TocItem type, formatDate, calculateReadingTime
+- Created `src/components/CopyButton.tsx` for code block copy functionality
+- Created `src/components/HeadingRenderer.tsx` for markdown headings with anchor links
+- Created `src/components/TableOfContents.tsx` for desktop/mobile ToC navigation
+- Created `src/components/BackToTopButton.tsx` as reusable scroll-to-top component
+- Created `src/config/markdownComponents.tsx` with ReactMarkdown component definitions
+- Refactored `src/components/Post.tsx` from 551 lines to 151 lines (~73% reduction)
+- Fixed invalid Tailwind class `wrap-break-word` to `break-words`
+
+---
