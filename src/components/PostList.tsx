@@ -78,7 +78,7 @@ function PostList({ posts }: PostListProps): React.ReactElement {
         Posts
       </h1>
       <p className="text-gray-400 font-mono mb-8">
-        Guides, how-to's, and random thoughts on software development.
+        Guides, tips & tricks, and random thoughts.
       </p>
 
       {/* Search and Filter Section */}
