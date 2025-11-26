@@ -109,7 +109,10 @@ export const markdownComponents = {
       <img 
         src={imageSrc}
         alt={alt || ''}
-        className="max-w-full h-auto rounded-lg border border-gray-700 my-4"
+        loading="lazy"
+        decoding="async"
+        className="max-w-full h-auto rounded-lg border border-gray-700 my-4 contain-paint"
+        style={{ contentVisibility: 'auto' }}
       />
     )
   },

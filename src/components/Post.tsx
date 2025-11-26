@@ -120,7 +120,7 @@ function Post(): React.ReactElement {
         <div className="lg:grid lg:grid-cols-[1fr_250px] lg:gap-8 lg:items-start">
           {/* Main content */}
           <article className="min-w-0 max-w-full overflow-hidden">
-            <div className="prose prose-invert prose-lg max-w-none bg-gray-800 backdrop-blur-sm rounded-lg p-6 md:p-8 border border-gray-800 overflow-hidden">
+            <div className="prose prose-invert prose-lg max-w-none bg-gray-800 rounded-lg p-6 md:p-8 border border-gray-800 overflow-hidden">
               <ReactMarkdown
                 remarkPlugins={[remarkGfm]}
                 components={markdownComponents}

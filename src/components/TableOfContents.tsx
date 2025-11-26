@@ -8,30 +8,6 @@ interface TableOfContentsProps {
 
 function TableOfContents({ headings, isMobile = false }: TableOfContentsProps): React.ReactElement | null {
   const [isOpen, setIsOpen] = useState(false)
-  const [, setActiveId] = useState<string>('')
-
-  useEffect(() => {
-    // Only enable intersection observer on desktop to avoid performance issues on mobile
-    if (isMobile) return
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveId(entry.target.id)
-          }
-        })
-      },
-      { rootMargin: '-100px 0px -80% 0px', threshold: 0.5 }
-    )
-
-    headings.forEach(({ slug }) => {
-      const element = document.getElementById(slug)
-      if (element) observer.observe(element)
-    })
-
-    return () => observer.disconnect()
-  }, [headings, isMobile])
 
   // Prevent body scrolling when mobile menu is open
   useEffect(() => {
@@ -128,7 +104,7 @@ function TableOfContents({ headings, isMobile = false }: TableOfContentsProps): 
   // Desktop sidebar
   return (
     <nav className="w-[250px]">
-      <div className="sticky top-20 bg-gray-800 border border-gray-700 rounded-lg p-4">
+      <div className="sticky top-20 bg-gray-800 border border-gray-700 rounded-lg p-4 will-change-transform">
         <h2 className="text-sm font-bold text-purple-400 mb-3 font-mono">In this post</h2>
         <ul className="space-y-2 font-mono text-xs border-l-2 border-gray-700 overflow-x-hidden pr-2">
           {headings.map(({ text, slug, level }) => (
