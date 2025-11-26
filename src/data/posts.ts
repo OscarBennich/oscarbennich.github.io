@@ -6,7 +6,7 @@ export const postsMetadata: Post[] = [
     slug: "azure-function-app-logging-setup-guide",
     title: "Setting up logging in Azure Function Apps",
     date: "2025-11-14",
-    tags: ["guide", "azure", "logging", "function-app", "application-insights"],
+    tags: ["guide", "azure", "logging", "function-app", "application-insights", "dotnet"],
     excerpt:
       "A guide with best practices and gotchas to keep in mind when configuring logging for Azure Function Apps.",
     content: "", // Will be loaded dynamically
@@ -36,6 +36,14 @@ export const postsMetadata: Post[] = [
     date: "2025-01-14",
     tags: ["tips & tricks", "docker"],
     excerpt: "A collection of useful tips and tricks for using Docker.",
+    content: "", // Will be loaded dynamically
+  },
+  {
+    slug: "nuget-tips-and-tricks",
+    title: "NuGet Tips & Tricks",
+    date: "2024-11-05",
+    tags: ["tips & tricks", "nuget", "dotnet"],
+    excerpt: "A collection of useful tips and tricks for using NuGet.",
     content: "", // Will be loaded dynamically
   },
 ];
