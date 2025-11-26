@@ -4,7 +4,7 @@ import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { BlogPost as PostType } from '../types/post'
 import { postsMetadata, loadPost } from '../data/posts'
-import { extractHeadings } from '../utils/markdown'
+import { extractHeadings, formatDate, calculateReadingTime } from '../utils/markdown'
 import CopyButton from './CopyButton'
 import HeadingRenderer from './HeadingRenderer'
 import TableOfContents from './TableOfContents'
@@ -188,21 +188,6 @@ function Post(): React.ReactElement {
         </Link>
       </div>
     )
-  }
-
-  const formatDate = (dateString: string) => {
-    const date = new Date(dateString)
-    return date.toLocaleDateString('en-US', { 
-      year: 'numeric', 
-      month: 'long', 
-      day: 'numeric' 
-    })
-  }
-
-  const calculateReadingTime = (content: string): number => {
-    const wordsPerMinute = 200
-    const words = content.trim().split(/\s+/).length
-    return Math.ceil(words / wordsPerMinute)
   }
 
   return (

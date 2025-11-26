@@ -46,3 +46,20 @@ export const extractHeadings = (content: string): TocItem[] => {
 
   return headings
 }
+
+// Format date string to localized display format
+export const formatDate = (dateString: string): string => {
+  const date = new Date(dateString)
+  return date.toLocaleDateString('en-US', { 
+    year: 'numeric', 
+    month: 'long', 
+    day: 'numeric' 
+  })
+}
+
+// Calculate estimated reading time in minutes
+export const calculateReadingTime = (content: string): number => {
+  const wordsPerMinute = 200
+  const words = content.trim().split(/\s+/).length
+  return Math.ceil(words / wordsPerMinute)
+}
