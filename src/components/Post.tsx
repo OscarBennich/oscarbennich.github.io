@@ -5,8 +5,7 @@ import remarkGfm from 'remark-gfm'
 import { BlogPost as PostType } from '../types/post'
 import { postsMetadata, loadPost } from '../data/posts'
 import { extractHeadings, formatDate, calculateReadingTime } from '../utils/markdown'
-import CopyButton from './CopyButton'
-import HeadingRenderer from './HeadingRenderer'
+import { markdownComponents } from '../config/markdownComponents'
 import TableOfContents from './TableOfContents'
 import BackToTopButton from './BackToTopButton'
 
@@ -21,95 +20,6 @@ function Post(): React.ReactElement {
     if (!post) return []
     return extractHeadings(post.content)
   }, [post])
-
-  const markdownComponents = useMemo(() => ({
-    h1: ({children}: {children?: React.ReactNode}) => <HeadingRenderer level={1}>{children}</HeadingRenderer>,
-    h2: ({children}: {children?: React.ReactNode}) => <HeadingRenderer level={2}>{children}</HeadingRenderer>,
-    h3: ({children}: {children?: React.ReactNode}) => <HeadingRenderer level={3}>{children}</HeadingRenderer>,
-    h4: ({children}: {children?: React.ReactNode}) => <HeadingRenderer level={4}>{children}</HeadingRenderer>,
-    h5: ({children}: {children?: React.ReactNode}) => <HeadingRenderer level={5}>{children}</HeadingRenderer>,
-    h6: ({children}: {children?: React.ReactNode}) => <HeadingRenderer level={6}>{children}</HeadingRenderer>,
-    p: ({children}: {children?: React.ReactNode}) => (
-      <p className="text-gray-300 mb-4 leading-relaxed font-mono wrap-break-word">
-        {children}
-      </p>
-    ),
-    ul: ({children}: {children?: React.ReactNode}) => (
-      <ul className="list-disc list-outside ml-6 text-gray-300 mb-4 space-y-2 font-mono">
-        {children}
-      </ul>
-    ),
-    ol: ({children}: {children?: React.ReactNode}) => (
-      <ol className="list-decimal list-outside ml-6 text-gray-300 mb-4 space-y-2 font-mono">
-        {children}
-      </ol>
-    ),
-    li: ({children}: {children?: React.ReactNode}) => (
-      <li className="text-gray-300 font-mono ml-2 wrap-break-word">
-        {children}
-      </li>
-    ),
-    code: ({className, children}: {className?: string, children?: React.ReactNode}) => {
-      const match = /language-(\w+)/.exec(className || '')
-      const language = match ? match[1] : ''
-      const isInline = !className
-
-      return isInline ? (
-        <code className="bg-gray-700 px-1.5 py-0.5 rounded text-sm font-mono">
-          {children}
-        </code>
-      ) : (
-        <div className="my-4 rounded-lg border border-gray-700 overflow-hidden max-w-full">
-          {language && (
-            <div className="bg-gray-800 px-4 py-2 text-xs text-gray-400 font-mono border-b border-gray-700 flex items-center justify-between">
-              <span>{language}</span>
-              <CopyButton code={String(children).replace(/\n$/, '')} />
-            </div>
-          )}
-          <div className="bg-[#1a1a1a]">
-            {!language && (
-              <div className="flex justify-end px-4 pt-2">
-                <CopyButton code={String(children).replace(/\n$/, '')} />
-              </div>
-            )}
-            <pre className="text-gray-300 p-4 overflow-x-auto! m-0 max-w-full">
-              <code className="text-sm font-mono whitespace-pre">{String(children).replace(/\n$/, '')}</code>
-            </pre>
-          </div>
-        </div>
-      )
-    },
-    pre: ({children}: {children?: React.ReactNode}) => (
-      <>
-        {children}
-      </>
-    ),
-    a: ({href, children}: {href?: string, children?: React.ReactNode}) => (
-      <a 
-        href={href}
-        className="text-blue-400 hover:text-blue-300 underline wrap-break-word"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        {children}
-      </a>
-    ),
-    blockquote: ({children}: {children?: React.ReactNode}) => (
-      <blockquote className="border-l-4 border-gray-700 pl-4 italic text-gray-400 my-4 font-mono">
-        {children}
-      </blockquote>
-    ),
-    img: ({src, alt}: {src?: string, alt?: string}) => {
-      const imageSrc = src?.startsWith('images/') ? `/posts/${src}` : src
-      return (
-        <img 
-          src={imageSrc}
-          alt={alt || ''}
-          className="max-w-full h-auto rounded-lg border border-gray-700 my-4"
-        />
-      )
-    },
-  }), [])
 
   useEffect(() => {
     const postMetadata = postsMetadata.find(p => p.slug === slug)
