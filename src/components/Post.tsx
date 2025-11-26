@@ -8,13 +8,13 @@ import { extractHeadings, formatDate, calculateReadingTime } from '../utils/mark
 import CopyButton from './CopyButton'
 import HeadingRenderer from './HeadingRenderer'
 import TableOfContents from './TableOfContents'
+import BackToTopButton from './BackToTopButton'
 
 function Post(): React.ReactElement {
   const { slug } = useParams<{ slug: string }>()
   const navigate = useNavigate()
   const [post, setPost] = useState<PostType | null>(null)
   const [loading, setLoading] = useState(true)
-  const [showBackToTop, setShowBackToTop] = useState(false)
 
   // Extract headings for table of contents
   const headings = useMemo(() => {
@@ -146,23 +146,6 @@ function Post(): React.ReactElement {
     }
   }, [loading, post])
 
-  // Handle showing/hiding back to top button based on scroll position
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowBackToTop(window.scrollY > 400)
-    }
-
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  const scrollToTop = () => {
-    // Remove section anchor from URL
-    const routeHash = window.location.hash.split('#').slice(0, 2).join('#')
-    window.history.pushState(null, '', routeHash)
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
-
   if (loading) {
     return (
       <div className="max-w-4xl mx-auto px-4 py-12">
@@ -250,17 +233,7 @@ function Post(): React.ReactElement {
         <TableOfContents headings={headings} isMobile={true} />
       </div>
 
-      {showBackToTop && (
-        <button
-          onClick={scrollToTop}
-          className="fixed bottom-6 right-6 md:bottom-8 md:right-8 bg-purple-600 hover:bg-purple-500 text-white p-2.5 md:p-3 rounded-full shadow-lg transition-all cursor-pointer z-50 opacity-90 hover:opacity-100"
-          aria-label="Back to top"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="md:w-6 md:h-6">
-            <path d="M12 19V5M5 12l7-7 7 7"/>
-          </svg>
-        </button>
-      )}
+      <BackToTopButton />
     </>
   )
 }
