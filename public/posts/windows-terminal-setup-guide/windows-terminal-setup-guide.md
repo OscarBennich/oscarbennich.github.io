@@ -1,3 +1,5 @@
+> This text was originally written in [this repo](https://github.com/OscarBennich/git-tips-and-tricks)
+
 ![image](windows_terminal_setup_1.png)
 
 - Oh My Posh theme
