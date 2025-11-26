@@ -1,9 +1,9 @@
 import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
-import { BlogPost } from "../types/post";
+import { Post } from "../types/post";
 
 interface PostListProps {
-  posts: BlogPost[];
+  posts: Post[];
 }
 
 function PostList({ posts }: PostListProps): React.ReactElement {

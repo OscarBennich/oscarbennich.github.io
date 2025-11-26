@@ -1,7 +1,7 @@
-import { BlogPost } from '../types/post'
+import { Post } from '../types/post'
 
 // Post metadata - content will be loaded from markdown files
-export const postsMetadata: BlogPost[] = [
+export const postsMetadata: Post[] = [
   {
     slug: "azure-function-app-logging-setup-guide",
     title: "Setting up logging in Azure Function Apps",
@@ -49,7 +49,7 @@ export async function loadPost(slug: string): Promise<string> {
 }
 
 // Function to get all posts with content loaded
-export async function getAllPosts(): Promise<BlogPost[]> {
+export async function getAllPosts(): Promise<Post[]> {
   const postsWithContent = await Promise.all(
     postsMetadata.map(async (post) => ({
       ...post,

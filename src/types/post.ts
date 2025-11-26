@@ -1,4 +1,4 @@
-export interface BlogPostMetadata {
+export interface PostMetadata {
   title: string
   date: string
   tags: string[]
@@ -6,6 +6,6 @@ export interface BlogPostMetadata {
   slug: string
 }
 
-export interface BlogPost extends BlogPostMetadata {
+export interface Post extends PostMetadata {
   content: string
 }

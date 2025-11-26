@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
 import PostList from '../components/PostList'
 import { getAllPosts } from '../data/posts'
-import { BlogPost } from '../types/post'
+import { Post } from '../types/post'
 
 function Posts(): React.ReactElement {
-  const [posts, setPosts] = useState<BlogPost[]>([])
+  const [posts, setPosts] = useState<Post[]>([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
