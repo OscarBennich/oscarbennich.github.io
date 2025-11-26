@@ -1414,3 +1414,24 @@ I'd like to add a new property for a post which I can use to indicate when the l
   - Added conditional display of "Updated: {date}" after the publish date when `lastUpdated` is present
 
 ---
+
+## Prompt 67
+**Date & Time:** 2025-11-26 22:07:04 UTC
+**Tool:** GitHub Copilot CLI v0.0.365
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+The <details> sections from the "lessons-learned-az-pipelines-coverage-dotnet-sq.md" post do not currenty get rendered on the posts page. Can you fix this?
+```
+
+**Changes:**
+- Installed `rehype-raw` package to enable HTML rendering in markdown
+- Modified `src/components/Post.tsx`:
+  - Added `rehype-raw` import and plugin to ReactMarkdown for HTML passthrough
+- Modified `src/config/markdownComponents.tsx`:
+  - Added `DetailsProps` and `SummaryProps` types
+  - Added styled `details` component with border, rounded corners, and content margins
+  - Added styled `summary` component with custom arrow icon, flex layout, and hover state
+
+---

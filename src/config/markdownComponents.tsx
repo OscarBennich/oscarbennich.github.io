@@ -20,6 +20,15 @@ type ImageProps = {
   alt?: string
 }
 
+type DetailsProps = {
+  children?: React.ReactNode
+  open?: boolean
+}
+
+type SummaryProps = {
+  children?: React.ReactNode
+}
+
 // Markdown component renderers for ReactMarkdown
 export const markdownComponents = {
   h1: ({ children }: ChildrenProps) => <HeadingRenderer level={1}>{children}</HeadingRenderer>,
@@ -112,5 +121,21 @@ export const markdownComponents = {
       className="max-w-full h-auto rounded-lg border border-gray-700 my-4 contain-paint"
       style={{ contentVisibility: 'auto' }}
     />
+  ),
+
+  details: ({ children, open }: DetailsProps) => (
+    <details 
+      open={open}
+      className="my-4 border border-gray-700 rounded-lg bg-gray-800/50 overflow-hidden [&>*:not(summary)]:mx-4 [&>*:not(summary)]:mb-4 [&>*:last-child]:mb-4"
+    >
+      {children}
+    </details>
+  ),
+
+  summary: ({ children }: SummaryProps) => (
+    <summary className="cursor-pointer px-4 py-3 font-mono text-gray-200 hover:bg-gray-700/50 select-none list-none flex items-center gap-3 marker:hidden [&::-webkit-details-marker]:hidden">
+      <span className="text-gray-400 transition-transform details-open:rotate-90">▶</span>
+      <span>{children}</span>
+    </summary>
   ),
 }

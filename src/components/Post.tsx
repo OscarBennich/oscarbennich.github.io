@@ -2,6 +2,7 @@ import { useEffect, useState, useMemo } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import rehypeRaw from 'rehype-raw'
 import { Post as PostType } from '../types/post'
 import { postsMetadata, loadPost } from '../data/posts'
 import { extractHeadings, formatDate, calculateReadingTime } from '../utils/markdown'
@@ -129,6 +130,7 @@ function Post(): React.ReactElement {
             <div className="prose prose-invert prose-lg max-w-none bg-gray-800 rounded-lg p-6 md:p-8 border border-gray-800 overflow-hidden">
               <ReactMarkdown
                 remarkPlugins={[remarkGfm]}
+                rehypePlugins={[rehypeRaw]}
                 components={markdownComponents}
               >
                 {post.content}
