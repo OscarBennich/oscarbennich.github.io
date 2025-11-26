@@ -1308,3 +1308,24 @@ If there are any other code improvements you notice, go ahead and refactor that,
 - Fixed invalid Tailwind class `wrap-break-word` to `break-words`
 
 ---
+
+## Prompt 62
+**Date & Time:** 2025-11-26 20:11:15 UTC
+**Tool:** GitHub Copilot CLI v0.0.365
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+There are a few examples where some of the section headings seem to render strangely in the mobile layout. For example "Accessing the ILogger interface" or "Injecting ILogger<T> or ILoggeFactory"
+
+I'm not sure if it's related to using backticks (`) to render code blocks *inside* the heading. It doesn't necessarily seem related to the length of the heading at least.
+```
+
+**Changes:**
+- Modified `src/components/HeadingRenderer.tsx`:
+  - Removed `flex items-center gap-2` from heading which caused inline code to wrap oddly
+  - Wrapped children in `<span className="inline">` for natural text flow
+  - Added `ml-2 inline-block align-middle` to copy link icon for proper alignment
+  - Added `inline-block` to SVG icon
+
+---
