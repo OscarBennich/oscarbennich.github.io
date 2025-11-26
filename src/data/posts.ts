@@ -25,7 +25,7 @@ export const postsMetadata: BlogPost[] = [
 // Function to load post content from markdown file
 export async function loadPost(slug: string): Promise<string> {
   try {
-    const response = await fetch(`/posts/${slug}.md`)
+    const response = await fetch(`/posts/${slug}/${slug}.md`)
     if (!response.ok) {
       throw new Error(`Failed to load post: ${slug}`)
     }
@@ -34,7 +34,14 @@ export async function loadPost(slug: string): Promise<string> {
     // Remove frontmatter (everything between --- markers)
     const contentWithoutFrontmatter = text.replace(/^---[\s\S]*?---\n/, '')
     
-    return contentWithoutFrontmatter
+    // Transform relative image paths to absolute paths within the post folder
+    // Matches ![alt](filename.ext) where filename doesn't start with http/https or /
+    const contentWithFixedImages = contentWithoutFrontmatter.replace(
+      /!\[([^\]]*)\]\((?!https?:\/\/)(?!\/)([^)]+)\)/g,
+      `![$1](/posts/${slug}/$2)`
+    )
+    
+    return contentWithFixedImages
   } catch (error) {
     console.error('Error loading post:', error)
     return ''

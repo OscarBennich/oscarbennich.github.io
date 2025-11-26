@@ -1371,3 +1371,28 @@ In the post I just made, the scrolling performance in the desktop layout is a bi
   - Added `will-change-transform` to sticky ToC sidebar for GPU acceleration
 
 ---
+
+## Prompt 65
+**Date & Time:** 2025-11-26 21:11:01 UTC
+**Tool:** GitHub Copilot CLI v0.0.365
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+I would like to refactor the files in the @public\posts folder so that each post is a self-contained folder with both the markdown file and any potential images.
+```
+
+**Changes:**
+- Restructured `public/posts/` folder:
+  - Created `azure-function-app-logging-setup-guide/` folder containing `azure-function-app-logging-setup-guide.md` and its images
+  - Created `windows-terminal-setup-guide/` folder containing `windows-terminal-setup-guide.md` and its images
+  - Removed shared `images/` folder
+- Fixed image numbering in windows-terminal post (8→7, 9→8)
+- Updated image references in both markdown files to use relative paths
+- Modified `src/data/posts.ts`:
+  - Updated `loadPost` to fetch from `/posts/${slug}/${slug}.md`
+  - Added image path transformation to convert relative paths to absolute paths at load time
+- Simplified `src/config/markdownComponents.tsx`:
+  - Removed now-unnecessary image path transformation logic from `img` component
+
+---

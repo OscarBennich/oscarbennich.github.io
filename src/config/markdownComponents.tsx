@@ -103,17 +103,14 @@ export const markdownComponents = {
     </blockquote>
   ),
   
-  img: ({ src, alt }: ImageProps) => {
-    const imageSrc = src?.startsWith('images/') ? `/posts/${src}` : src
-    return (
-      <img 
-        src={imageSrc}
-        alt={alt || ''}
-        loading="lazy"
-        decoding="async"
-        className="max-w-full h-auto rounded-lg border border-gray-700 my-4 contain-paint"
-        style={{ contentVisibility: 'auto' }}
-      />
-    )
-  },
+  img: ({ src, alt }: ImageProps) => (
+    <img 
+      src={src}
+      alt={alt || ''}
+      loading="lazy"
+      decoding="async"
+      className="max-w-full h-auto rounded-lg border border-gray-700 my-4 contain-paint"
+      style={{ contentVisibility: 'auto' }}
+    />
+  ),
 }

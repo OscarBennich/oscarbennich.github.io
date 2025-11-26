@@ -96,7 +96,7 @@ Finally, add this to the `host.json` file of your Function App:
 **⚠️ Warning ⚠️**
 If you have already set this up earlier, then double-check if you have an app setting key in your Function App named `AzureFunctionsJobHost__logging__logLevel__default` (or similar). In which case, **remove it**. This value will [override](https://learn.microsoft.com/en-us/azure/azure-functions/configure-monitoring?tabs=v2#overriding-monitoring-configuration-at-runtime) anything set in `host.json` and will therefore make the logging behavior unintuitive and potentially different across environments.
 
-It is only recommended to use this app setting in cases where you [temporarily need to adjust the log levels without redeploying the app](#/blog/azure-function-app-logging-setup-guide.md#overriding-log-levels-at-runtime).
+It is only recommended to use this app setting in cases where you [temporarily need to adjust the log levels without redeploying the app](#/blog/azure-function-app-logging-setup-guide#overriding-log-levels-at-runtime).
 
 ### In the Function App project (C#)
 Unless you're using [Aspire](https://learn.microsoft.com/en-us/azure/azure-functions/dotnet-isolated-process-guide?tabs=hostbuilder%2Cwindows#aspire-preview), the recommended way to configure logging to [Application Insights](https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview?tabs=net) is by emitting the logs directly instead of [relaying logs through the host](https://learn.microsoft.com/en-us/azure/azure-functions/configure-monitoring#custom-application-logs).
@@ -332,7 +332,7 @@ To do this, add [these app setting values](https://learn.microsoft.com/en-us/azu
 ### Adjusting the minimum log level below "Information" (not recommended)
 Even with the default logging filter removed, the *minimum* log level of the worker process is still "Information", regardless of what is set in `host.json`. Even though it is [*not recommended*](https://learn.microsoft.com/en-us/azure/azure-functions/functions-monitoring#log-levels-and-categories) to log at the "Trace" or "Debug" levels in a production environment:
 
-![](images/log_level_trace-debug.png)
+![](log_level_trace-debug.png)
  
  *if* you have calls like this:
 
@@ -398,7 +398,7 @@ Otherwise exceptions thrown by your code can end up wrapped in an `RpcException
 
 But as of 2025-11-03, this option is flagged as deprecated and the default value is now `true`, meaning this is redundant.
 
-![](images/user_code_exception.png)
+![](user_code_exception.png)
 
 ---
 ## Sources

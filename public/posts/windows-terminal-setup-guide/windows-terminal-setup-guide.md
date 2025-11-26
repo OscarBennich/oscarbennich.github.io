@@ -1,5 +1,5 @@
 # HOW TO: Customize Windows Terminal w/ Oh My Posh
-![image](images/windows_terminal_setup_1.png)
+![image](windows_terminal_setup_1.png)
 
 - Oh My Posh theme
 - Custom font
@@ -66,7 +66,7 @@ OR
 - Open up the "Font settings" (search for "fonts" in Windows)
 - Drag and drop all the `.ttf` files from the unzipped hack folder into the "Add fonts" square:
 
-  ![image](images/windows_terminal_setup_2.png)
+  ![image](windows_terminal_setup_2.png)
 
 ### 2.2 - Set the terminal font in Windows Terminal
 - Open up `Windows Terminal`
@@ -83,7 +83,7 @@ OR
 - Scroll down to `Terminal › Integrated: Font Family`
 - Write "Hack Nerd Font", save and exit
 
-![image](images/windows_terminal_setup_3.png)
+![image](windows_terminal_setup_3.png)
  
 ## 3 - Create a PowerShell profile file
 PowerShell will look for a profile file to initialize each time you open the terminal in the path that gets printed if you run his command: `echo $profile`. This file does not exist by default, so we need to create it.
@@ -94,7 +94,7 @@ PowerShell will look for a profile file to initialize each time you open the ter
 - Refresh your profile by running the command `. $PROFILE` in the terminal
 - Your terminal should now look like this:
 
-![image](images/windows_terminal_setup_4.png)
+![image](windows_terminal_setup_4.png)
 - These settings will be automatically initalized whenever you start the terminal from now on
 
 ## 4 - Add an "Oh My Posh" theme
@@ -108,7 +108,7 @@ PowerShell will look for a profile file to initialize each time you open the ter
   - `oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/amro.omp.json" | Invoke-Expression`
 - My terminal now looks like this:
 
-![image](images/windows_terminal_setup_5.png)
+![image](windows_terminal_setup_5.png)
 - It is also possible to [adjust themes](https://ohmyposh.dev/docs/installation/customize#adjust-a-theme) if you want to read more about that.
 
 ## 5 - Customize the PowerShell profile
@@ -122,11 +122,11 @@ PowerShell will look for a profile file to initialize each time you open the ter
 - You should now have custom icons in your terminal
 - Before:
 
-![image](images/windows_terminal_setup_6.png)
+![image](windows_terminal_setup_6.png)
 
 - After:
 
-![image](images/windows_terminal_setup_7.png)
+![image](windows_terminal_setup_7.png)
 
 ### 5.2 - Add auto-complete and history functionality
 - Add the [`PSReadLine`](https://www.powershellgallery.com/packages/PSReadLine) package
@@ -146,7 +146,7 @@ Set-PSReadLineOption -EditMode Windows
 - Save and refresh your terminal
 - You should now have auto-complete and see a list of previous commands you've run in the terminal
 
-![image](images/windows_terminal_setup_8.png)
+![image](windows_terminal_setup_7.png)
 
 - The updated profile file should now look the same as [Microsoft.PowerShell_profile.ps1](/Microsoft.PowerShell_profile.ps1)
   - Note that this profile file *also* contains a custom `GitPrune` command that you can choose to keep or not
@@ -167,7 +167,7 @@ Update-Module -Name Terminal-Icons
 
 - Then press "A" to check the "Yes to All" option if you get this warning:
 
-![image](images/windows_terminal_setup_9.png)
+![image](windows_terminal_setup_8.png)
 
 - You can check what versions of packages you are using by running this command:
 
