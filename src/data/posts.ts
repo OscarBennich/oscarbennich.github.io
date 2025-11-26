@@ -21,6 +21,16 @@ export const postsMetadata: Post[] = [
       "How to set up a custom version of Windows Terminal with Oh My Posh.",
     content: "", // Will be loaded dynamically
   },
+  {
+    slug: "git-tips-and-tricks",
+    title: "Git Tips & Tricks",
+    date: "2024-03-19",
+    lastUpdated: "2025-11-24",
+    tags: ["tips & tricks", "git"],
+    excerpt:
+      "A collection of useful tips and tricks for using Git.",
+    content: "", // Will be loaded dynamically
+  },
 ];
 
 // Function to load post content from markdown file
