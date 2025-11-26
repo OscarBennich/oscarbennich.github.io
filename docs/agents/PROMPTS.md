@@ -1435,3 +1435,29 @@ The <details> sections from the "lessons-learned-az-pipelines-coverage-dotnet-sq
   - Added styled `summary` component with custom arrow icon, flex layout, and hover state
 
 ---
+
+## Prompt 68
+**Date & Time:** 2025-11-26 22:19:57 UTC
+**Tool:** GitHub Copilot CLI v0.0.365
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+I previously had to revert changes that added syntax highlighting to the code blocks of the posts because of severe performance issues. This is stashed away in stash@{0} ("Add "rehype-highlight" to handle syntax highlighting. Note that this has a significant performance implication!").
+
+Can you have a look at that and see if there is a better way to make that work without the performance downside?
+```
+
+**Changes:**
+- Created `src/components/CodeBlock.tsx`:
+  - New lazy-loaded syntax highlighting component using `react-syntax-highlighter`
+  - Uses `IntersectionObserver` to detect when code blocks become visible
+  - Dynamically imports syntax highlighter and language modules only when needed
+  - Shows plain text immediately, applies highlighting asynchronously
+  - Memoized to prevent unnecessary re-renders
+  - Supports 20+ languages (js, ts, python, csharp, yaml, bash, sql, etc.)
+- Modified `src/config/markdownComponents.tsx`:
+  - Replaced inline code block rendering with new `CodeBlock` component
+  - Removed unused `CopyButton` import
+
+---

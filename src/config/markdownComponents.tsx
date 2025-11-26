@@ -1,4 +1,4 @@
-import CopyButton from '../components/CopyButton'
+import CodeBlock from '../components/CodeBlock'
 import HeadingRenderer from '../components/HeadingRenderer'
 
 type ChildrenProps = {
@@ -67,29 +67,18 @@ export const markdownComponents = {
     const language = match ? match[1] : ''
     const isInline = !className
 
-    return isInline ? (
-      <code className="bg-gray-700 px-1.5 py-0.5 rounded text-sm font-mono">
-        {children}
-      </code>
-    ) : (
-      <div className="my-4 rounded-lg border border-gray-700 overflow-hidden max-w-full">
-        {language && (
-          <div className="bg-gray-800 px-4 py-2 text-xs text-gray-400 font-mono border-b border-gray-700 flex items-center justify-between">
-            <span>{language}</span>
-            <CopyButton code={String(children).replace(/\n$/, '')} />
-          </div>
-        )}
-        <div className="bg-[#1a1a1a]">
-          {!language && (
-            <div className="flex justify-end px-4 pt-2">
-              <CopyButton code={String(children).replace(/\n$/, '')} />
-            </div>
-          )}
-          <pre className="text-gray-300 p-4 overflow-x-auto m-0 max-w-full">
-            <code className="text-sm font-mono whitespace-pre">{String(children).replace(/\n$/, '')}</code>
-          </pre>
-        </div>
-      </div>
+    if (isInline) {
+      return (
+        <code className="bg-gray-700 px-1.5 py-0.5 rounded text-sm font-mono">
+          {children}
+        </code>
+      )
+    }
+
+    return (
+      <CodeBlock language={language}>
+        {String(children).replace(/\n$/, '')}
+      </CodeBlock>
     )
   },
   
