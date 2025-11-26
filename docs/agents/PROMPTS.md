@@ -1329,3 +1329,23 @@ I'm not sure if it's related to using backticks (`) to render code blocks *insid
   - Added `inline-block` to SVG icon
 
 ---
+
+## Prompt 63
+**Date & Time:** 2025-11-26 20:24:34 UTC
+**Tool:** GitHub Copilot CLI v0.0.365
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+Please change the mobile ToC icon to look like this one from GitHub (or similar):
+
+[Screenshot of GitHub's table of contents icon showing a bulleted list]
+```
+
+**Changes:**
+- Modified `src/components/TableOfContents.tsx`:
+  - Changed icon from hamburger menu (three horizontal lines) to bulleted list style
+  - Icon now shows three bullet points (circles) with shorter lines
+  - Updated comment from "Hamburger button" to "Table of contents button"
+
+---
