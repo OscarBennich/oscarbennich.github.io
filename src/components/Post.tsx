@@ -188,10 +188,10 @@ function TableOfContents({ headings, isMobile = false }: { headings: TocItem[], 
   if (isMobile) {
     return (
       <>
-        {/* Hamburger button */}
+        {/* Hamburger button - positioned within viewport bounds */}
         <button
           onClick={() => setIsOpen(true)}
-          className="fixed bottom-6 left-6 md:bottom-8 md:left-8 z-40 p-2.5 md:p-3 bg-purple-600 hover:bg-purple-500 text-white rounded-full shadow-lg transition-colors cursor-pointer lg:hidden opacity-90 hover:opacity-100"
+          className="fixed bottom-6 left-6 md:bottom-8 md:left-8 z-40 p-2.5 md:p-3 bg-purple-600 hover:bg-purple-500 text-white rounded-full shadow-lg transition-colors cursor-pointer opacity-90 hover:opacity-100"
           aria-label="Open table of contents"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="md:w-6 md:h-6">
@@ -201,44 +201,52 @@ function TableOfContents({ headings, isMobile = false }: { headings: TocItem[], 
           </svg>
         </button>
 
-        {/* Slide-out menu from left */}
-        <nav
-          className={`fixed top-0 left-0 h-full w-80 max-w-[85vw] bg-gray-900 border-r border-gray-700 z-50 transform transition-transform duration-300 lg:hidden overflow-y-auto shadow-2xl ${
-            isOpen ? 'translate-x-0' : '-translate-x-full'
-          }`}
-        >
-          <div className="flex items-center justify-between p-4 border-b border-gray-700">
-            <h2 className="text-lg font-bold text-gray-100 font-mono">In this post</h2>
-            <button
+        {/* Slide-out menu from left - only render when needed */}
+        {isOpen && (
+          <nav
+            className="fixed inset-0 z-50"
+          >
+            {/* Backdrop */}
+            <div 
+              className="absolute inset-0 bg-black/50"
               onClick={() => setIsOpen(false)}
-              className="p-2 hover:bg-gray-800 rounded cursor-pointer transition-colors"
-              aria-label="Close table of contents"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-400">
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-              </svg>
-            </button>
-          </div>
-          <div className="p-4">
-            <ul className="space-y-2 font-mono text-sm">
-              {headings.map(({ text, slug, level }) => (
-                <li key={slug} style={{ paddingLeft: `${(level - 2) * 0.75}rem` }}>
-                  <a
-                    href={`#${slug}`}
-                    onClick={(e) => {
-                      e.preventDefault()
-                      handleClick(slug)
-                    }}
-                    className="block py-2 text-gray-400 hover:text-purple-400 transition-colors"
-                  >
-                    {text}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </nav>
+            />
+            {/* Menu panel */}
+            <div className="absolute top-0 left-0 h-full w-80 max-w-[85vw] bg-gray-900 border-r border-gray-700 overflow-y-auto shadow-2xl">
+              <div className="flex items-center justify-between p-4 border-b border-gray-700">
+                <h2 className="text-lg font-bold text-gray-100 font-mono">In this post</h2>
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="p-2 hover:bg-gray-800 rounded cursor-pointer transition-colors"
+                  aria-label="Close table of contents"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-400">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                  </svg>
+                </button>
+              </div>
+              <div className="p-4">
+                <ul className="space-y-2 font-mono text-sm">
+                  {headings.map(({ text, slug, level }) => (
+                    <li key={slug} style={{ paddingLeft: `${(level - 2) * 0.75}rem` }}>
+                      <a
+                        href={`#${slug}`}
+                        onClick={(e) => {
+                          e.preventDefault()
+                          handleClick(slug)
+                        }}
+                        className="block py-2 text-gray-400 hover:text-purple-400 transition-colors"
+                      >
+                        {text}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </nav>
+        )}
       </>
     )
   }
@@ -467,7 +475,7 @@ function Post(): React.ReactElement {
 
   return (
     <>
-      <div className="max-w-7xl mx-auto px-4 py-12">
+      <div className="max-w-4xl lg:max-w-7xl mx-auto px-4 py-12 w-full box-border">
         {/* Back button and header - full width */}
         <button
           onClick={() => navigate('/posts')}
@@ -477,7 +485,7 @@ function Post(): React.ReactElement {
         </button>
 
         <header className="mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-100 mb-4 font-mono">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-100 mb-4 font-mono break-words">
             {post.title}
           </h1>
           
@@ -499,11 +507,11 @@ function Post(): React.ReactElement {
           </div>
         </header>
 
-        {/* Content and ToC grid */}
+        {/* Content and ToC grid - only apply grid on lg screens */}
         <div className="lg:grid lg:grid-cols-[1fr_250px] lg:gap-8 lg:items-start">
           {/* Main content */}
-          <article className="min-w-0 w-full">
-            <div className="prose prose-invert prose-lg max-w-none bg-gray-800 backdrop-blur-sm rounded-lg p-6 md:p-8 border border-gray-800 w-full min-w-0">
+          <article className="min-w-0 max-w-full overflow-hidden">
+            <div className="prose prose-invert prose-lg max-w-none bg-gray-800 backdrop-blur-sm rounded-lg p-6 md:p-8 border border-gray-800 overflow-hidden">
               <ReactMarkdown
                 remarkPlugins={[remarkGfm]}
                 components={markdownComponents}
@@ -514,14 +522,16 @@ function Post(): React.ReactElement {
           </article>
 
           {/* Desktop ToC sidebar - explicitly hidden on mobile */}
-          <aside className="hidden lg:block w-[250px] flex-shrink-0">
+          <aside className="hidden lg:block flex-shrink-0">
             <TableOfContents headings={headings} isMobile={false} />
           </aside>
         </div>
       </div>
 
-      {/* Mobile ToC button and menu */}
-      <TableOfContents headings={headings} isMobile={true} />
+      {/* Mobile ToC - only render on non-lg screens */}
+      <div className="lg:hidden">
+        <TableOfContents headings={headings} isMobile={true} />
+      </div>
 
       {showBackToTop && (
         <button

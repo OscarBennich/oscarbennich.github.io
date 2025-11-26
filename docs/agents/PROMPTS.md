@@ -1258,3 +1258,29 @@ The "back to top" button seems to have broken the responsive design on mobile de
   - Added `overflow-x: hidden` to body element to prevent horizontal scrolling on mobile devices caused by the fixed-position button
 
 ---
+
+## Prompt 60
+**Date & Time:** 2025-11-26 19:32:13 UTC
+**Tool:** GitHub Copilot CLI v0.0.365
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+There's a problem in the @src\components\Post.tsx component that I need help fixing.
+
+The page is not rendered correctly in the mobile layout as the content overflows off the page. Additionally, the scrolling performance is significantly worse in the mobile layout compared to the desktop layout.
+
+The relevant changes where introduced in commit 8f8cc7e70982e as I tried resetting back to the previous commit (0bb9c202bd539a4609) and none of the problems are present there. In other words, it's related to the addition of the table of contents, specifically in the mobile layout.
+```
+
+**Changes:**
+- Modified `src/components/Post.tsx`:
+  - Changed container from `max-w-7xl` to `max-w-4xl lg:max-w-7xl` to use narrower width on mobile (matches original layout before ToC was added)
+  - Added `break-words` to h1 title to prevent long titles from overflowing
+  - Wrapped mobile ToC in `lg:hidden` div so it's not rendered at all on desktop
+  - Simplified mobile ToC menu to only render when open (conditional rendering instead of always-present off-screen transform)
+  - Added backdrop overlay to mobile menu for better UX
+  - Removed redundant `lg:hidden` classes from mobile ToC internal elements
+  - Fixed scrolling performance by avoiding complex transform animations on hidden elements
+
+---
