@@ -15,7 +15,6 @@ function Post(): React.ReactElement {
   const [post, setPost] = useState<PostType | null>(null)
   const [loading, setLoading] = useState(true)
 
-  // Extract headings for table of contents
   const headings = useMemo(() => {
     if (!post) return []
     return extractHeadings(post.content)
@@ -95,7 +94,7 @@ function Post(): React.ReactElement {
         </button>
 
         <header className="mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-100 mb-4 font-mono wrap-break-word">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-100 mb-4 font-mono break-words">
             {post.title}
           </h1>
           
