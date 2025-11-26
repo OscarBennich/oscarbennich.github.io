@@ -4,7 +4,6 @@ A personal portfolio and blog site built with React and Tailwind CSS, hosted on 
 
 ## TODO
 - Blog fixes:
-  - Fix layout on mobile for blog posts
   - Change font etc. to make it easier to read?
 - Add more post content
 - Update footer to include where to find more information about how the site was built and move GitHub + LinkedIn links to "About" page instead (I think...?)
