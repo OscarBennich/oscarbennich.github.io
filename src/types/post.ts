@@ -1,6 +1,7 @@
 export interface PostMetadata {
   title: string
   date: string
+  lastUpdated?: string
   tags: string[]
   excerpt: string
   slug: string

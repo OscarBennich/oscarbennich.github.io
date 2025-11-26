@@ -1396,3 +1396,21 @@ I would like to refactor the files in the @public\posts folder so that each post
   - Removed now-unnecessary image path transformation logic from `img` component
 
 ---
+
+## Prompt 66
+**Date & Time:** 2025-11-26 21:21:40 UTC
+**Tool:** GitHub Copilot CLI v0.0.365
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+I'd like to add a new property for a post which I can use to indicate when the latest update was. So if I go in and edit a post after publishing it I can modify this date to make it as clear as possible.
+```
+
+**Changes:**
+- Modified `src/types/post.ts`:
+  - Added optional `lastUpdated?: string` property to `PostMetadata` interface
+- Modified `src/components/Post.tsx`:
+  - Added conditional display of "Updated: {date}" after the publish date when `lastUpdated` is present
+
+---

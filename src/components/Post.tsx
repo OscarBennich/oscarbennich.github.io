@@ -100,6 +100,12 @@ function Post(): React.ReactElement {
           
           <div className="flex flex-wrap items-center gap-4 text-sm text-gray-400 font-mono">
             <time dateTime={post.date}>{formatDate(post.date)}</time>
+            {post.lastUpdated && (
+              <>
+                <span className="text-gray-500">•</span>
+                <span>Updated: {formatDate(post.lastUpdated)}</span>
+              </>
+            )}
             <span className="text-gray-500">•</span>
             <span>{calculateReadingTime(post.content)} min read</span>
             <span className="text-gray-500">•</span>

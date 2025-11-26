@@ -15,6 +15,7 @@ export const postsMetadata: Post[] = [
     slug: "windows-terminal-setup-guide",
     title: "Customizing Windows Terminal with Oh My Posh",
     date: "2023-10-01",
+    lastUpdated: "2025-11-24",
     tags: ["guide", "windows-terminal"],
     excerpt:
       "How to set up a custom version of Windows Terminal with Oh My Posh.",
