@@ -27,8 +27,15 @@ export const postsMetadata: Post[] = [
     date: "2024-03-19",
     lastUpdated: "2025-11-24",
     tags: ["tips & tricks", "git"],
-    excerpt:
-      "A collection of useful tips and tricks for using Git.",
+    excerpt: "A collection of useful tips and tricks for using Git.",
+    content: "", // Will be loaded dynamically
+  },
+  {
+    slug: "docker-tips-and-tricks",
+    title: "Docker Tips & Tricks",
+    date: "2025-01-14",
+    tags: ["tips & tricks", "docker"],
+    excerpt: "A collection of useful tips and tricks for using Docker.",
     content: "", // Will be loaded dynamically
   },
 ];
