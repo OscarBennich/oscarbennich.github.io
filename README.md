@@ -3,6 +3,7 @@
 A personal portfolio and blog site built with React and Tailwind CSS, hosted on GitHub Pages.
 
 ## TODO
+- Fix readability for posts => make constrast higher, make background opaque, potentially change font
 - Update footer to include where to find more information about how the site was built and move GitHub + LinkedIn links to "About" page instead (I think...?)
 - Idea: change the landing page to a terminal-like thing, add animation to write `whoami`, then print the information (could include much more than we have today), ending with the caret flashing animation we have today
   - Follow-up: Add some easter egg information? Allow the user to actually write some commands? Could add some fun interactivity to the site.
