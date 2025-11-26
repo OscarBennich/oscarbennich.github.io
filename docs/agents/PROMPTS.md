@@ -1349,3 +1349,25 @@ Please change the mobile ToC icon to look like this one from GitHub (or similar)
   - Updated comment from "Hamburger button" to "Table of contents button"
 
 ---
+
+## Prompt 64
+**Date & Time:** 2025-11-26 20:57:03 UTC
+**Tool:** GitHub Copilot CLI v0.0.365
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+In the post I just made, the scrolling performance in the desktop layout is a bit degraded. I think it is because of the amount of images in that post. Can you help me fix this?
+```
+
+**Changes:**
+- Modified `src/components/Post.tsx`:
+  - Removed `backdrop-blur-sm` from article container (main cause of poor scroll performance)
+- Modified `src/config/markdownComponents.tsx`:
+  - Added `loading="lazy"` and `decoding="async"` to images
+  - Added `contentVisibility: auto` style and `contain-paint` class to images
+- Modified `src/components/TableOfContents.tsx`:
+  - Removed unused IntersectionObserver that was triggering re-renders on scroll
+  - Added `will-change-transform` to sticky ToC sidebar for GPU acceleration
+
+---
