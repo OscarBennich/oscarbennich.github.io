@@ -1485,3 +1485,28 @@ For example, this makes it float on top of text, rather than being *behind* it.
 - Proper z-index stacking now ensures background renders behind all content
 
 ---
+
+## Prompt 70
+**Date & Time:** 2025-11-27 21:26:19 UTC
+**Tool:** GitHub Copilot CLI v0.0.365
+**Model:** Claude Sonnet 4
+
+**Prompt:**
+```
+Do you have any suggestions for a better way to handle the tags on the @src\pages\Posts.tsx page?
+
+I don't think it's super useful to just have them all stacked on top of each other like that? Maybe there's some way to integrate them into the search bar?
+```
+
+**Changes:**
+- Modified `src/components/PostList.tsx`:
+  - Replaced separate search bar and tag filter row with integrated search bar
+  - Added tag autocomplete triggered by typing `#` in the search field
+  - Implemented arrow key navigation (↑↓) and Enter to select from tag suggestions
+  - Selected tags appear as removable purple pills inside the search bar
+  - Click anywhere on a tag pill to remove it (not just the ✕)
+  - Support filtering by multiple tags simultaneously
+  - Added hint tooltip when input is focused and empty
+  - Changed from single tag selection to multi-tag selection
+
+---
