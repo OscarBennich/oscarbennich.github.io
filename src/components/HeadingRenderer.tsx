@@ -15,11 +15,11 @@ function HeadingRenderer({ level, children }: HeadingRendererProps): React.React
   
   const styles: Record<number, string> = {
     1: "text-3xl md:text-4xl font-bold text-gray-100 mb-4 font-sans",
-    2: "text-2xl md:text-3xl font-bold text-gray-100 mt-8 mb-4 font-sans",
-    3: "text-xl md:text-2xl font-bold text-gray-100 mt-6 mb-3 font-sans",
-    4: "text-lg md:text-xl font-bold text-gray-100 mt-6 mb-3 font-sans",
-    5: "text-base md:text-lg font-bold text-gray-100 mt-6 mb-3 font-sans",
-    6: "text-sm md:text-base font-bold text-gray-100 mt-6 mb-3 font-sans"
+    2: "text-2xl md:text-3xl font-bold text-gray-100 mt-12 mb-4 font-sans",
+    3: "text-xl md:text-2xl font-bold text-gray-100 mt-10 mb-3 font-sans",
+    4: "text-lg md:text-xl font-bold text-gray-100 mt-8 mb-3 font-sans",
+    5: "text-base md:text-lg font-bold text-gray-100 mt-8 mb-3 font-sans",
+    6: "text-sm md:text-base font-bold text-gray-100 mt-8 mb-3 font-sans"
   }
   const style = styles[level] || "font-bold text-gray-100 font-sans"
 
