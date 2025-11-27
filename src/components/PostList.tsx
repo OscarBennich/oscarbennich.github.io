@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Post } from "../types/post";
 
@@ -7,8 +7,11 @@ interface PostListProps {
 }
 
 function PostList({ posts }: PostListProps): React.ReactElement {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [selectedTag, setSelectedTag] = useState<string | null>(null);
+  const [inputValue, setInputValue] = useState("");
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const [showSuggestions, setShowSuggestions] = useState(false);
+  const [highlightedIndex, setHighlightedIndex] = useState(0);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
@@ -34,6 +37,29 @@ function PostList({ posts }: PostListProps): React.ReactElement {
     return Array.from(tagSet).sort();
   }, [posts]);
 
+  // Check if user is typing a tag (starts with #)
+  const tagMatch = inputValue.match(/#(\w*)$/);
+  const isTypingTag = tagMatch !== null;
+  const partialTag = tagMatch?.[1] || "";
+
+  // Filter tag suggestions based on partial tag
+  const suggestions = useMemo(() => {
+    if (!isTypingTag) return [];
+    return allTags.filter(
+      (tag) =>
+        tag.toLowerCase().startsWith(partialTag.toLowerCase()) &&
+        !selectedTags.includes(tag)
+    );
+  }, [allTags, isTypingTag, partialTag, selectedTags]);
+
+  // Reset highlighted index when suggestions change
+  useEffect(() => {
+    setHighlightedIndex(0);
+  }, [suggestions.length, partialTag]);
+
+  // Get search term (everything except the current #tag being typed)
+  const searchTerm = inputValue.replace(/#\w*$/, "").trim();
+
   // Sort posts by date (newest first) and filter
   const filteredPosts = useMemo(() => {
     let filtered = [...posts];
@@ -55,21 +81,49 @@ function PostList({ posts }: PostListProps): React.ReactElement {
       );
     }
 
-    // Filter by selected tag
-    if (selectedTag) {
-      filtered = filtered.filter((post) => post.tags.includes(selectedTag));
+    // Filter by selected tags
+    if (selectedTags.length > 0) {
+      filtered = filtered.filter((post) =>
+        selectedTags.every((tag) => post.tags.includes(tag))
+      );
     }
 
     return filtered;
-  }, [posts, searchTerm, selectedTag]);
+  }, [posts, searchTerm, selectedTags]);
 
-  const handleTagClick = (tag: string) => {
-    setSelectedTag(selectedTag === tag ? null : tag);
+  const handleSuggestionSelect = (tag: string) => {
+    const newValue = inputValue.replace(/#\w*$/, "").trim();
+    setInputValue(newValue);
+    setSelectedTags([...selectedTags, tag]);
+    setShowSuggestions(false);
+    setHighlightedIndex(0);
+    inputRef.current?.focus();
+  };
+
+  const handleTagRemove = (tag: string) => {
+    setSelectedTags(selectedTags.filter((t) => t !== tag));
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (isTypingTag && suggestions.length > 0) {
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        setHighlightedIndex((prev) => (prev + 1) % suggestions.length);
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        setHighlightedIndex((prev) => (prev - 1 + suggestions.length) % suggestions.length);
+      } else if (e.key === "Enter") {
+        e.preventDefault();
+        handleSuggestionSelect(suggestions[highlightedIndex]);
+      } else if (e.key === "Escape") {
+        setShowSuggestions(false);
+      }
+    }
   };
 
   const clearFilters = () => {
-    setSearchTerm("");
-    setSelectedTag(null);
+    setInputValue("");
+    setSelectedTags([]);
   };
 
   return (
@@ -83,43 +137,72 @@ function PostList({ posts }: PostListProps): React.ReactElement {
 
       {/* Search and Filter Section */}
       <div className="mb-8 space-y-4">
-        {/* Search Bar */}
+        {/* Combined Search Bar with Tag Pills */}
         <div className="relative">
-          <input
-            type="text"
-            placeholder="Search posts..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-gray-100 font-mono text-sm focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500 transition-colors"
-          />
-          {searchTerm && (
-            <button
-              onClick={() => setSearchTerm("")}
-              className="cursor-pointer absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-200 transition-colors"
-            >
-              ✕
-            </button>
-          )}
-        </div>
+          <div
+            className="flex flex-wrap items-center gap-2 px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg focus-within:border-purple-500 focus-within:ring-1 focus-within:ring-purple-500 transition-colors min-h-[48px]"
+            onClick={() => inputRef.current?.focus()}
+          >
+            {/* Selected tag pills */}
+            {selectedTags.map((tag) => (
+              <button
+                key={tag}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleTagRemove(tag);
+                }}
+                className="inline-flex items-center gap-1 px-2 py-1 bg-purple-600 text-white rounded text-xs font-mono hover:bg-purple-700 cursor-pointer transition-colors"
+              >
+                #{tag}
+                <span className="text-purple-300">✕</span>
+              </button>
+            ))}
 
-        {/* Tag Filter */}
-        <div className="flex flex-wrap items-center gap-2">
-          <span className="text-gray-400 font-mono text-sm">
-            Filter by tag:
-          </span>
-          {allTags.map((tag) => (
-            <button
-              key={tag}
-              onClick={() => handleTagClick(tag)}
-              className={`px-3 py-1.5 rounded-lg text-sm font-mono transition-all cursor-pointer ${
-                selectedTag === tag
-                  ? "bg-purple-600 text-white border border-purple-500"
-                  : "bg-gray-700 text-white border border-gray-700 hover:bg-gray-500"
-              }`}
-            >
-              #{tag}
-            </button>
-          ))}
+            {/* Search input */}
+            <input
+              ref={inputRef}
+              type="text"
+              placeholder={selectedTags.length ? "Search or type #..." : "Search posts or type # for tags..."}
+              value={inputValue}
+              onChange={(e) => {
+                setInputValue(e.target.value);
+                setShowSuggestions(true);
+              }}
+              onKeyDown={handleKeyDown}
+              onFocus={() => setShowSuggestions(true)}
+              onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
+              className="flex-1 min-w-[180px] bg-transparent text-gray-100 font-mono text-sm focus:outline-none"
+            />
+          </div>
+
+          {/* Tag suggestions dropdown */}
+          {showSuggestions && isTypingTag && suggestions.length > 0 && (
+            <div className="absolute z-10 w-full mt-1 bg-gray-800 border border-gray-700 rounded-lg shadow-lg overflow-hidden">
+              <div className="p-2 text-xs text-gray-400 font-mono border-b border-gray-700">
+                ↑↓ to navigate, Enter to select
+              </div>
+              {suggestions.map((tag, index) => (
+                <button
+                  key={tag}
+                  onClick={() => handleSuggestionSelect(tag)}
+                  className={`w-full px-3 py-2 text-left text-gray-100 font-mono text-sm hover:bg-gray-700 cursor-pointer transition-colors ${
+                    index === highlightedIndex ? "bg-purple-600/50" : ""
+                  }`}
+                >
+                  #{tag}
+                </button>
+              ))}
+            </div>
+          )}
+
+          {/* Hint when input is focused and empty */}
+          {showSuggestions && !isTypingTag && inputValue === "" && selectedTags.length === 0 && (
+            <div className="absolute z-10 w-full mt-1 bg-gray-800 border border-gray-700 rounded-lg shadow-lg p-3">
+              <p className="text-gray-400 font-mono text-xs">
+                💡 Type <code className="bg-gray-700 px-1 rounded">#</code> to filter by tag
+              </p>
+            </div>
+          )}
         </div>
 
         {/* Results count */}
