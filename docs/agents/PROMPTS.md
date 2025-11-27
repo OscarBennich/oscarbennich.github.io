@@ -1439,7 +1439,7 @@ The <details> sections from the "lessons-learned-az-pipelines-coverage-dotnet-sq
 ## Prompt 68
 **Date & Time:** 2025-11-26 22:19:57 UTC
 **Tool:** GitHub Copilot CLI v0.0.365
-**Model:** Claude Sonnet 4.5
+**Model:** Claude Opus 4.5
 
 **Prompt:**
 ```
@@ -1465,7 +1465,7 @@ Can you have a look at that and see if there is a better way to make that work w
 ## Prompt 69
 **Date & Time:** 2025-11-27 21:04:05 UTC
 **Tool:** GitHub Copilot CLI v0.0.365
-**Model:** Claude Sonnet 4
+**Model:** Claude Opus 4.5
 
 **Prompt:**
 ```
@@ -1489,7 +1489,7 @@ For example, this makes it float on top of text, rather than being *behind* it.
 ## Prompt 70
 **Date & Time:** 2025-11-27 21:26:19 UTC
 **Tool:** GitHub Copilot CLI v0.0.365
-**Model:** Claude Sonnet 4
+**Model:** Claude Opus 4.5
 
 **Prompt:**
 ```
