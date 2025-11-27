@@ -39,25 +39,25 @@ export const markdownComponents = {
   h6: ({ children }: ChildrenProps) => <HeadingRenderer level={6}>{children}</HeadingRenderer>,
   
   p: ({ children }: ChildrenProps) => (
-    <p className="text-gray-300 mb-4 leading-relaxed font-mono break-words">
+    <p className="text-gray-300 mb-4 leading-relaxed font-sans break-words">
       {children}
     </p>
   ),
   
   ul: ({ children }: ChildrenProps) => (
-    <ul className="list-disc list-outside ml-6 text-gray-300 mb-4 space-y-2 font-mono">
+    <ul className="list-disc list-outside ml-6 text-gray-300 mb-4 space-y-2 font-sans">
       {children}
     </ul>
   ),
   
   ol: ({ children }: ChildrenProps) => (
-    <ol className="list-decimal list-outside ml-6 text-gray-300 mb-4 space-y-2 font-mono">
+    <ol className="list-decimal list-outside ml-6 text-gray-300 mb-4 space-y-2 font-sans">
       {children}
     </ol>
   ),
   
   li: ({ children }: ChildrenProps) => (
-    <li className="text-gray-300 font-mono ml-2 break-words">
+    <li className="text-gray-300 font-sans ml-2 break-words">
       {children}
     </li>
   ),
@@ -96,7 +96,7 @@ export const markdownComponents = {
   ),
   
   blockquote: ({ children }: ChildrenProps) => (
-    <blockquote className="border-l-4 border-gray-700 pl-4 italic text-gray-400 my-4 font-mono">
+    <blockquote className="border-l-4 border-gray-700 pl-4 italic text-gray-400 my-4 font-sans">
       {children}
     </blockquote>
   ),

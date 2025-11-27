@@ -64,7 +64,7 @@ function TableOfContents({ headings, isMobile = false }: TableOfContentsProps): 
             {/* Menu panel */}
             <div className="absolute top-0 left-0 h-full w-80 max-w-[85vw] bg-gray-900 border-r border-gray-700 overflow-y-auto shadow-2xl">
               <div className="flex items-center justify-between p-4 border-b border-gray-700">
-                <h2 className="text-lg font-bold text-purple-400 font-mono">In this post</h2>
+                <h2 className="text-lg font-bold text-purple-400 font-sans">In this post</h2>
                 <button
                   onClick={() => setIsOpen(false)}
                   className="p-2 hover:bg-gray-800 rounded cursor-pointer transition-colors"
@@ -77,7 +77,7 @@ function TableOfContents({ headings, isMobile = false }: TableOfContentsProps): 
                 </button>
               </div>
               <div className="p-4">
-                <ul className="space-y-2 font-mono text-sm">
+                <ul className="space-y-2 font-sans text-sm">
                   {headings.map(({ text, slug, level }) => (
                     <li key={slug} style={{ paddingLeft: `${(level - 2) * 0.75}rem` }}>
                       <a
@@ -105,8 +105,8 @@ function TableOfContents({ headings, isMobile = false }: TableOfContentsProps): 
   return (
     <nav className="w-[250px]">
       <div className="sticky top-20 bg-gray-800 border border-gray-700 rounded-lg p-4 will-change-transform">
-        <h2 className="text-sm font-bold text-purple-400 mb-3 font-mono">In this post</h2>
-        <ul className="space-y-2 font-mono text-xs border-l-2 border-gray-700 overflow-x-hidden pr-2">
+        <h2 className="text-sm font-bold text-purple-400 mb-3 font-sans">In this post</h2>
+        <ul className="space-y-2 font-sans text-xs border-l-2 border-gray-700 overflow-x-hidden pr-2">
           {headings.map(({ text, slug, level }) => (
             <li key={slug} style={{ paddingLeft: `${(level - 2) * 0.75 + 0.75}rem` }}>
               <a
