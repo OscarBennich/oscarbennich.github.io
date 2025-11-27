@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 function Header(): React.ReactElement {
   return (
-    <header className="bg-gray-800 border-b border-gray-700">
+    <header className="relative z-10 bg-gray-800 border-b border-gray-700">
       <div className="max-w-6xl mx-auto px-4 py-6">
         <nav className="flex items-center justify-between">
           <Link to="/" className="flex items-center justify-center w-15 h-15 transition-all duration-300 hover:[box-shadow:2px_2px_0_rgba(168,85,247,0.8),-2px_-2px_0_rgba(16,185,129,0.8)]">

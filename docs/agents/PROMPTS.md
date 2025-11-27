@@ -1461,3 +1461,27 @@ Can you have a look at that and see if there is a better way to make that work w
   - Removed unused `CopyButton` import
 
 ---
+
+## Prompt 69
+**Date & Time:** 2025-11-27 21:04:05 UTC
+**Tool:** GitHub Copilot CLI v0.0.365
+**Model:** Claude Sonnet 4
+
+**Prompt:**
+```
+I'd like you to have a look at the @src\components\AnimatedBackground.tsx component and see if there is a better/easier/simpler way to achieve the same effect. I think the solution of having this floating on top of everything feels like a bad solution that will cause different issues.
+
+For example, this makes it float on top of text, rather than being *behind* it.
+```
+
+**Changes:**
+- Modified `src/components/Layout.tsx`:
+  - Added `z-0` to background container to explicitly set lowest layer
+  - Wrapped `<Outlet />` in `<main>` with `relative z-10` to ensure content appears above background
+- Modified `src/components/Header.tsx`:
+  - Added `relative z-10` to ensure header appears above background
+- Modified `src/components/Footer.tsx`:
+  - Added `relative z-10` to ensure footer appears above background
+- Proper z-index stacking now ensures background renders behind all content
+
+---

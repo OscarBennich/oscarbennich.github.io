@@ -1,6 +1,6 @@
 function Footer(): React.ReactElement {
   return (
-    <footer className="bg-gray-800 border-t border-gray-700">
+    <footer className="relative z-10 bg-gray-800 border-t border-gray-700">
       <div className="max-w-6xl mx-auto px-4 py-8">
         <div className="flex justify-center items-center gap-6">
           <a 
