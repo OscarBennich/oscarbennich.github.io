@@ -85,7 +85,7 @@ function Post(): React.ReactElement {
 
   return (
     <>
-      <div className="max-w-4xl lg:max-w-5xl mx-auto px-4 py-12 w-full box-border">
+      <div className="max-w-4xl lg:max-w-6xl mx-auto px-4 py-12 w-full box-border">
         {/* Back button and header - full width */}
         <button
           onClick={() => navigate('/posts')}
