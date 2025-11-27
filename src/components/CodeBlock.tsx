@@ -118,9 +118,9 @@ const CodeBlock = memo(function CodeBlock({ language, children }: CodeBlockProps
   }, [isVisible, language, code])
 
   return (
-    <div ref={ref} className="my-4 rounded-lg border border-gray-700 overflow-hidden max-w-full">
+    <div ref={ref} className="my-6 rounded-lg border border-gray-600 overflow-hidden max-w-full shadow-lg shadow-black/20">
       {language && (
-        <div className="bg-gray-800 px-4 py-2 text-xs text-gray-400 font-mono border-b border-gray-700 flex items-center justify-between">
+        <div className="bg-gray-700 px-4 py-2 text-xs text-gray-300 font-mono border-b border-gray-600 flex items-center justify-between">
           <span>{language}</span>
           <CopyButton code={code} />
         </div>
