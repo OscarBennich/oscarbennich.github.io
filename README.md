@@ -1,6 +1,5 @@
 # oscarbennich.github.io
-
-A personal portfolio and blog site built with React and Tailwind CSS, hosted on GitHub Pages.
+A site I made for myself to host my CV, random posts, and some general info about me. Built with React, TypeScript, Vite, and Tailwind CSS. Hosted on GitHub Pages.
 
 ## Why
 
@@ -17,13 +16,6 @@ This site was built almost entirely using agentic coding with [GitHub Copilot CL
 - Add page for projects
   - At that point, change side menu to a hamburger menu for mobile, as 3 links will be too many
 
-## Tech Stack
-
-- React
-- Tailwind CSS
-- Vite
-- GitHub Pages
-
 ## Development
 
 ```bash
@@ -39,4 +31,4 @@ npm run build
 
 ## Deployment
 
-The site is automatically deployed to GitHub Pages when changes are pushed to the main branch via GitHub Actions.
+The site is automatically deployed to GitHub Pages when changes are pushed to the main branch via GitHub Actions. See [deploy.yml](/.github/workflows/deploy.yml).
