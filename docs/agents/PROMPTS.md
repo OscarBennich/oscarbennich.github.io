@@ -1510,3 +1510,78 @@ I don't think it's super useful to just have them all stacked on top of each oth
   - Changed from single tag selection to multi-tag selection
 
 ---
+
+## Prompt 71
+**Date & Time:** 2026-02-22 19:57:26 UTC  
+**Tool:** GitHub Copilot CLI v0.0.414  
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+Can you review the content on the about page? What do you think of my introduction?
+```
+(followed by: "yes" to apply suggested revisions)
+
+**Changes:**
+- Modified `src/pages/About.tsx`:
+  - Revised introduction paragraph: removed "a friendly guy", tightened wording
+  - Revised second paragraph: streamlined language, replaced "And hopefully" with "Hopefully"
+  - Fixed non-breaking hyphen in "long‑distance" to standard hyphen
+
+---
+
+## Prompt 72
+**Date & Time:** 2026-02-22 20:06:58 UTC  
+**Tool:** GitHub Copilot CLI v0.0.414  
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+I want to update the README to add more context about why I build this site and how.
+
+- I want to have a personal site to share my resume + write posts and thoughts.
+- I want to have a project that I can use to try out new things outside of work and learn about them, especially frontend things.
+- It was built almost entierly using agentic coding (GitHub Copilot CLI), and link to the docs/agents/PROMPTS.md file. Explain the context of this file in the text in the README.
+```
+
+**Changes:**
+- Modified `README.md`:
+  - Added "Why" section explaining the motivation for the site
+  - Added "How it was built" section about agentic coding with link to `docs/agents/PROMPTS.md`
+  - Removed completed TODO items (footer update, README update)
+
+---
+
+## Prompt 73
+**Date & Time:** 2026-02-22 20:12:03 UTC  
+**Tool:** GitHub Copilot CLI v0.0.414  
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+I want to move the contact links from the footer to the about page and then change the footer to add some kind of message like "Curious how I built this site? Go here" with a link to https://github.com/OscarBennich/oscarbennich.github.io/blob/main/README.md.
+```
+
+**Changes:**
+- Modified `src/pages/About.tsx`:
+  - Added new `> contact` section with GitHub and LinkedIn links above the CV section
+- Modified `src/components/Footer.tsx`:
+  - Replaced GitHub/LinkedIn social links with "Curious how this site was built? Read more here" message linking to the README on GitHub
+
+---
+
+## Prompt 74
+**Date & Time:** 2026-02-22 20:18:28 UTC  
+**Tool:** GitHub Copilot CLI v0.0.414  
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+The clickable part of the contact links extend across the entire mid-part of the page instead of being only around the visual part of the link. Please fix this.
+```
+
+**Changes:**
+- Modified `src/pages/About.tsx`:
+  - Added `w-fit` class to GitHub and LinkedIn contact links to constrain clickable area to content width
+
+---
