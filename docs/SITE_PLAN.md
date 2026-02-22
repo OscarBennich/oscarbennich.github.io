@@ -206,37 +206,5 @@ A personal portfolio and blog site for a software engineer, built with React and
 
 ---
 
-## Milestone 12: Content & Launch
-**Goal**: Final content and polish before considering site complete
-
-### Tasks:
-1. Write initial blog posts (3-5 posts)
-2. Final content proofread
-3. Update README with site information
-4. Final cross-browser testing
-5. Announce/share the site
-
-### Deliverables:
-- Multiple blog posts published
-- All content proofread and polished
-- README updated
-- Site ready for public sharing
-
----
-
 ## Future Enhancements (Post-Launch)
-**Goal**: Ideas for future improvements (not in initial launch scope)
-
-### Potential Features:
-- RSS feed for blog
-- Newsletter subscription
-- Comments system for blog posts
-- Multi-language support
-- Blog series/collections
-- Related posts suggestions
-- Table of contents for long posts
-- Print-friendly CV version
-- Dark/light mode toggle
-- Analytics integration (Google Analytics or alternative)
-- Animated hero section
-- Project case studies with more detail
+- Add page for linking to different projects
