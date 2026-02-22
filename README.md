@@ -4,7 +4,7 @@ A site I made for myself to host my CV, random posts, and some general info abou
 
 ## Why
 
-I wanted a personal site where I can share my resume and write posts about things I'm learning and thinking about. It also serves as a playground — a project I can use to try out new things outside of work, especially on the frontend side, and learn by doing.
+I wanted a personal site where I can share my resume and write posts about things I'm learning and thinking about. It also serves as a playground — a project I can use to try out new things outside of work, especially related to agentic coding and frontend, and learn by doing.
 
 ## How it was built
 
