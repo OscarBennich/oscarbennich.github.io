@@ -1136,7 +1136,7 @@ Let me review this and accept the changes before you log the prompt and commit.
 ---
 
 ## Prompt 54
-**Date & Time:** 2025-11-24 21:09:00 UTC
+**Date & Time:** 2025-11-24 21:09:00 UTC  
 **Tool:** GitHub Copilot CLI v0.0.362
 **Model:** Claude Sonnet 4.5
 
@@ -1154,7 +1154,7 @@ Please fix the broken 404 page for this site. I just get an empty white screen a
 
 ---
 ## Prompt 55
-**Date & Time:** 2025-11-24 21:16:06 UTC
+**Date & Time:** 2025-11-24 21:16:06 UTC  
 **Tool:** GitHub Copilot CLI v0.0.362
 **Model:** Gemini 3 Pro (Preview)
 
@@ -1179,7 +1179,7 @@ Use the Playwright MCP server to troubleshoot the layout if needed.
 ---
 
 ## Prompt 56
-**Date & Time:** 2025-11-24 21:34:07 UTC
+**Date & Time:** 2025-11-24 21:34:07 UTC  
 **Tool:** GitHub Copilot CLI v0.0.362
 **Model:** Gemini 3 Pro (Preview)
 
@@ -1200,7 +1200,7 @@ For all headings (#, ##, etc.) in the markdown file that gets rendered, I want t
 ---
 
 ## Prompt 57
-**Date & Time:** 2025-11-24 22:10:25 UTC
+**Date & Time:** 2025-11-24 22:10:25 UTC  
 **Tool:** GitHub Copilot CLI v0.0.362
 **Model:** Claude Sonnet 4.5
 
@@ -1221,7 +1221,7 @@ I recently added functionality to the post component, @src\components\Post.tsx, 
 ---
 
 ## Prompt 58
-**Date & Time:** 2025-11-24 22:15:25 UTC
+**Date & Time:** 2025-11-24 22:15:25 UTC  
 **Tool:** GitHub Copilot CLI v0.0.362
 **Model:** Claude Sonnet 4.5
 
@@ -1241,7 +1241,7 @@ Now I want you to add a "back to top" button/link to the @src\components\Post.ts
 ---
 
 ## Prompt 59
-**Date & Time:** 2025-11-24 22:22:11 UTC
+**Date & Time:** 2025-11-24 22:22:11 UTC  
 **Tool:** GitHub Copilot CLI v0.0.362
 **Model:** Claude Sonnet 4.5
 
@@ -1260,7 +1260,7 @@ The "back to top" button seems to have broken the responsive design on mobile de
 ---
 
 ## Prompt 60
-**Date & Time:** 2025-11-26 19:32:13 UTC
+**Date & Time:** 2025-11-26 19:32:13 UTC  
 **Tool:** GitHub Copilot CLI v0.0.365
 **Model:** Claude Opus 4.5
 
@@ -1286,7 +1286,7 @@ The relevant changes where introduced in commit 8f8cc7e70982e as I tried resetti
 ---
 
 ## Prompt 61
-**Date & Time:** 2025-11-26 20:04:03 UTC
+**Date & Time:** 2025-11-26 20:04:03 UTC  
 **Tool:** GitHub Copilot CLI v0.0.365
 **Model:** Claude Opus 4.5
 
@@ -1310,7 +1310,7 @@ If there are any other code improvements you notice, go ahead and refactor that,
 ---
 
 ## Prompt 62
-**Date & Time:** 2025-11-26 20:11:15 UTC
+**Date & Time:** 2025-11-26 20:11:15 UTC  
 **Tool:** GitHub Copilot CLI v0.0.365
 **Model:** Claude Opus 4.5
 
@@ -1331,7 +1331,7 @@ I'm not sure if it's related to using backticks (`) to render code blocks *insid
 ---
 
 ## Prompt 63
-**Date & Time:** 2025-11-26 20:24:34 UTC
+**Date & Time:** 2025-11-26 20:24:34 UTC  
 **Tool:** GitHub Copilot CLI v0.0.365
 **Model:** Claude Opus 4.5
 
@@ -1351,7 +1351,7 @@ Please change the mobile ToC icon to look like this one from GitHub (or similar)
 ---
 
 ## Prompt 64
-**Date & Time:** 2025-11-26 20:57:03 UTC
+**Date & Time:** 2025-11-26 20:57:03 UTC  
 **Tool:** GitHub Copilot CLI v0.0.365
 **Model:** Claude Opus 4.5
 
@@ -1373,7 +1373,7 @@ In the post I just made, the scrolling performance in the desktop layout is a bi
 ---
 
 ## Prompt 65
-**Date & Time:** 2025-11-26 21:11:01 UTC
+**Date & Time:** 2025-11-26 21:11:01 UTC  
 **Tool:** GitHub Copilot CLI v0.0.365
 **Model:** Claude Opus 4.5
 
@@ -1398,7 +1398,7 @@ I would like to refactor the files in the @public\posts folder so that each post
 ---
 
 ## Prompt 66
-**Date & Time:** 2025-11-26 21:21:40 UTC
+**Date & Time:** 2025-11-26 21:21:40 UTC  
 **Tool:** GitHub Copilot CLI v0.0.365
 **Model:** Claude Opus 4.5
 
@@ -1416,7 +1416,7 @@ I'd like to add a new property for a post which I can use to indicate when the l
 ---
 
 ## Prompt 67
-**Date & Time:** 2025-11-26 22:07:04 UTC
+**Date & Time:** 2025-11-26 22:07:04 UTC  
 **Tool:** GitHub Copilot CLI v0.0.365
 **Model:** Claude Opus 4.5
 
@@ -1437,7 +1437,7 @@ The <details> sections from the "lessons-learned-az-pipelines-coverage-dotnet-sq
 ---
 
 ## Prompt 68
-**Date & Time:** 2025-11-26 22:19:57 UTC
+**Date & Time:** 2025-11-26 22:19:57 UTC  
 **Tool:** GitHub Copilot CLI v0.0.365
 **Model:** Claude Opus 4.5
 
@@ -1463,7 +1463,7 @@ Can you have a look at that and see if there is a better way to make that work w
 ---
 
 ## Prompt 69
-**Date & Time:** 2025-11-27 21:04:05 UTC
+**Date & Time:** 2025-11-27 21:04:05 UTC  
 **Tool:** GitHub Copilot CLI v0.0.365
 **Model:** Claude Opus 4.5
 
@@ -1487,7 +1487,7 @@ For example, this makes it float on top of text, rather than being *behind* it.
 ---
 
 ## Prompt 70
-**Date & Time:** 2025-11-27 21:26:19 UTC
+**Date & Time:** 2025-11-27 21:26:19 UTC  
 **Tool:** GitHub Copilot CLI v0.0.365
 **Model:** Claude Opus 4.5
 
@@ -1513,8 +1513,8 @@ I don't think it's super useful to just have them all stacked on top of each oth
 
 ## Prompt 71
 **Date & Time:** 2026-02-22 19:57:26 UTC  
-**Tool:** GitHub Copilot CLI v0.0.414  
-**Model:** Claude Sonnet 4.5
+**Tool:** GitHub Copilot CLI v0.0.414
+**Model:** Claude Opus 4.6
 
 **Prompt:**
 ```
@@ -1532,8 +1532,8 @@ Can you review the content on the about page? What do you think of my introducti
 
 ## Prompt 72
 **Date & Time:** 2026-02-22 20:06:58 UTC  
-**Tool:** GitHub Copilot CLI v0.0.414  
-**Model:** Claude Sonnet 4.5
+**Tool:** GitHub Copilot CLI v0.0.414
+**Model:** Claude Opus 4.6
 
 **Prompt:**
 ```
@@ -1554,8 +1554,8 @@ I want to update the README to add more context about why I build this site and 
 
 ## Prompt 73
 **Date & Time:** 2026-02-22 20:12:03 UTC  
-**Tool:** GitHub Copilot CLI v0.0.414  
-**Model:** Claude Sonnet 4.5
+**Tool:** GitHub Copilot CLI v0.0.414
+**Model:** Claude Opus 4.6
 
 **Prompt:**
 ```
@@ -1572,8 +1572,8 @@ I want to move the contact links from the footer to the about page and then chan
 
 ## Prompt 74
 **Date & Time:** 2026-02-22 20:18:28 UTC  
-**Tool:** GitHub Copilot CLI v0.0.414  
-**Model:** Claude Sonnet 4.5
+**Tool:** GitHub Copilot CLI v0.0.414
+**Model:** Claude Opus 4.6
 
 **Prompt:**
 ```
@@ -1588,8 +1588,8 @@ The clickable part of the contact links extend across the entire mid-part of the
 
 ## Prompt 75
 **Date & Time:** 2026-02-22 20:51:03 UTC  
-**Tool:** GitHub Copilot CLI v0.0.414  
-**Model:** Claude Sonnet 4.5
+**Tool:** GitHub Copilot CLI v0.0.414
+**Model:** Claude Opus 4.6
 
 **Prompt:**
 ```
@@ -1606,8 +1606,8 @@ I want to add something about agentic coding to the skills section (I have exper
 
 ## Prompt 76
 **Date & Time:** 2026-02-22 21:08:31 UTC  
-**Tool:** GitHub Copilot CLI v0.0.414  
-**Model:** Claude Sonnet 4.5
+**Tool:** GitHub Copilot CLI v0.0.414
+**Model:** Claude Opus 4.6
 
 **Prompt:**
 ```
@@ -1628,8 +1628,8 @@ I want to explore the idea described in the first TODO in README.md.
 
 ## Prompt 77
 **Date & Time:** 2026-02-22 21:21:24 UTC  
-**Tool:** GitHub Copilot CLI v0.0.414  
-**Model:** Claude Sonnet 4.5
+**Tool:** GitHub Copilot CLI v0.0.414
+**Model:** Claude Opus 4.6
 
 **Prompt:**
 ```
@@ -1651,8 +1651,8 @@ Two things:
 
 ## Prompt 78
 **Date & Time:** 2026-02-22 21:25:17 UTC  
-**Tool:** GitHub Copilot CLI v0.0.414  
-**Model:** Claude Sonnet 4.5
+**Tool:** GitHub Copilot CLI v0.0.414
+**Model:** Claude Opus 4.6
 
 **Prompt:**
 ```
@@ -1679,8 +1679,8 @@ Also, add suggestions for what other commands could be interesting to add.
 
 ## Prompt 79
 **Date & Time:** 2026-02-22 21:35:22 UTC  
-**Tool:** GitHub Copilot CLI v0.0.414  
-**Model:** Claude Sonnet 4.5
+**Tool:** GitHub Copilot CLI v0.0.414
+**Model:** Claude Opus 4.6
 
 **Prompt:**
 ```
@@ -1702,8 +1702,8 @@ It looks great! A few things:
 
 ## Prompt 80
 **Date & Time:** 2026-02-22 21:48:28 UTC  
-**Tool:** GitHub Copilot CLI v0.0.414  
-**Model:** Claude Sonnet 4.5
+**Tool:** GitHub Copilot CLI v0.0.414
+**Model:** Claude Opus 4.6
 
 **Prompt:**
 ```
@@ -1727,8 +1727,8 @@ Looks good. A few more things.
 
 ## Prompt 81
 **Date & Time:** 2026-02-22 22:13:00 UTC  
-**Tool:** GitHub Copilot CLI v0.0.414  
-**Model:** Claude Sonnet 4.5
+**Tool:** GitHub Copilot CLI v0.0.414
+**Model:** Claude Opus 4.6
 
 **Prompt:**
 ```
@@ -1748,8 +1748,8 @@ I want you to review milestone 10 and 11 in @docs\SITE_PLAN.md and see what rema
 
 ## Prompt 82
 **Date & Time:** 2026-02-22 22:34:52 UTC  
-**Tool:** GitHub Copilot CLI v0.0.414  
-**Model:** Claude Sonnet 4.5
+**Tool:** GitHub Copilot CLI v0.0.414
+**Model:** Claude Opus 4.6
 
 **Prompt:**
 ```
@@ -1766,3 +1766,5 @@ My phone is an Android, also running Chrome as a browser.
 - Modified `src/components/Hero.tsx`: fixed mobile Android Chrome bug where terminal input text was reversed and backspace didn't work, caused by the hidden input having zero dimensions (`w-0 h-0`). Changed to overlay the input line with real dimensions (`inset-0` + `relative` parent), added `dir="ltr"` to force left-to-right text direction, added `caret-transparent`, and disabled mobile keyboard auto-features (`autoComplete`, `autoCorrect`, `autoCapitalize`, `spellCheck`)
 
 ---
+
+> **Note:** As of Prompt 82 (2026-02-22), the site is considered feature complete and automatic prompt logging to this file has been discontinued. This file remains as a historical record of the prompts used to build the site.
