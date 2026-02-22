@@ -1585,3 +1585,21 @@ The clickable part of the contact links extend across the entire mid-part of the
   - Added `w-fit` class to GitHub and LinkedIn contact links to constrain clickable area to content width
 
 ---
+
+## Prompt 75
+**Date & Time:** 2026-02-22 20:51:03 UTC  
+**Tool:** GitHub Copilot CLI v0.0.414  
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+I want to add something about agentic coding to the skills section (I have experience with both Claude Code and GitHub Copilot)
+```
+
+**Changes:**
+- Created `src/assets/sparkles.svg`: new sparkles icon for the Agentic Coding skill
+- Modified `src/pages/About.tsx`:
+  - Added sparkles icon import
+  - Added "Agentic Coding" entry to the third row of the skills section alongside Docker and Git
+
+---

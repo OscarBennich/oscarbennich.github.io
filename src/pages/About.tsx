@@ -8,6 +8,7 @@ import javascriptIcon from '../assets/javascript.svg'
 import azureIcon from '../assets/azure.svg'
 import pielineIcon from '../assets/pipeline.svg'
 import dockerIcon from '../assets/docker.svg'
+import sparklesIcon from '../assets/sparkles.svg'
 import databaseIcon from '../assets/database.svg'
 import apiIcon from '../assets/api.svg'
 import pdfIcon from '../assets/pdf.svg'
@@ -40,7 +41,8 @@ function About(): React.ReactElement {
 
   const techStackThirdRow: TechItem[] = [
     { name: "Docker", icon: <img src={dockerIcon} alt="Docker" className="w-4 h-4" /> },
-    { name: "Git", icon: <img src={gitIcon} alt="Git" className="w-4 h-4" /> }
+    { name: "Git", icon: <img src={gitIcon} alt="Git" className="w-4 h-4" /> },
+    { name: "Agentic coding", icon: <img src={sparklesIcon} alt="Agentic coding" className="w-4 h-4" /> }
   ]
 
   return (
