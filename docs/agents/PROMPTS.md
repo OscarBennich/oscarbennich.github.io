@@ -1603,3 +1603,48 @@ I want to add something about agentic coding to the skills section (I have exper
   - Added "Agentic Coding" entry to the third row of the skills section alongside Docker and Git
 
 ---
+
+## Prompt 76
+**Date & Time:** 2026-02-22 21:08:31 UTC  
+**Tool:** GitHub Copilot CLI v0.0.414  
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+I want to explore the idea described in the first TODO in README.md.
+```
+(TODO: "Idea: change the landing page to a terminal-like thing, add animation to write `whoami`, then print the information, ending with the caret flashing animation we have today")
+
+**Changes:**
+- Modified `src/components/Hero.tsx`:
+  - Replaced simple name + title hero with a full terminal window UI
+  - Added macOS-style title bar with colored dots (red/yellow/green) and title
+  - Implemented multi-phase animation: blinking cursor → auto-types `whoami` → output lines appear one by one (name, title, location, company) → new prompt with blinking cursor
+  - Used React state + useEffect with timeouts for animation phases
+  - Removed old typewriter/border-effect CSS, replaced with simpler caret blink animation
+  - Responsive design with max-w-2xl container
+
+---
+
+## Prompt 77
+**Date & Time:** 2026-02-22 21:21:24 UTC  
+**Tool:** GitHub Copilot CLI v0.0.414  
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+Two things:
+1. I think we can remove the "@ Viedoc"
+2. The terminal is so small so there's a lot of dead space on the page. What is your suggestion for how to fix this?
+```
+
+**Changes:**
+- Modified `src/components/Hero.tsx`:
+  - Removed "@ Viedoc" from the output lines
+  - Increased terminal max-width from `max-w-2xl` (672px) to `max-w-4xl` (896px)
+  - Increased font size from `text-sm/text-base` to `text-base/text-lg/text-xl` (responsive)
+  - Increased padding from `p-4/p-6` to `p-6/p-8/p-10` (responsive)
+  - Increased min-height from 200px to 280px
+  - Added more vertical spacing between output lines and final prompt
+
+---

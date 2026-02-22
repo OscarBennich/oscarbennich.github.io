@@ -1,49 +1,115 @@
+import { useState, useEffect, useRef } from 'react'
+
+const PROMPT = 'oscar@site:~$ '
+const COMMAND = 'whoami'
+const OUTPUT_LINES = [
+  'Oscar Bennich-Björkman',
+  'Tech Lead && Full Stack Developer',
+  'Uppsala, Sweden',
+]
+
+const CHAR_DELAY = 80
+const INITIAL_PAUSE = 1000
+const POST_COMMAND_PAUSE = 500
+const LINE_DELAY = 300
+
+type Phase = 'waiting' | 'typing' | 'pausing' | 'output' | 'done'
+
 function Hero(): React.ReactElement {
+  const [phase, setPhase] = useState<Phase>('waiting')
+  const [typedChars, setTypedChars] = useState(0)
+  const [visibleLines, setVisibleLines] = useState(0)
+  const terminalRef = useRef<HTMLDivElement>(null)
+
+  // Phase 1: Initial pause with blinking cursor
+  useEffect(() => {
+    const timer = setTimeout(() => setPhase('typing'), INITIAL_PAUSE)
+    return () => clearTimeout(timer)
+  }, [])
+
+  // Phase 2: Type command character by character
+  useEffect(() => {
+    if (phase !== 'typing') return
+    if (typedChars >= COMMAND.length) {
+      setPhase('pausing')
+      return
+    }
+    const timer = setTimeout(() => setTypedChars((c) => c + 1), CHAR_DELAY)
+    return () => clearTimeout(timer)
+  }, [phase, typedChars])
+
+  // Phase 3: Pause after command is typed
+  useEffect(() => {
+    if (phase !== 'pausing') return
+    const timer = setTimeout(() => setPhase('output'), POST_COMMAND_PAUSE)
+    return () => clearTimeout(timer)
+  }, [phase])
+
+  // Phase 4: Show output lines one by one
+  useEffect(() => {
+    if (phase !== 'output') return
+    if (visibleLines >= OUTPUT_LINES.length) {
+      setPhase('done')
+      return
+    }
+    const timer = setTimeout(() => setVisibleLines((l) => l + 1), LINE_DELAY)
+    return () => clearTimeout(timer)
+  }, [phase, visibleLines])
+
+  const showCursorOnPrompt = phase === 'waiting' || phase === 'typing'
+  const showCursorOnNewLine = phase === 'done'
+
   return (
-    <section className="flex flex-col items-center justify-center min-h-screen text-center px-4">
-      <div className="relative z-10 inline-block p-4 sm:p-6 md:p-12 transition-all duration-300 max-w-full mx-4 border-effect">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-gray-100 mb-4 font-mono wrap-break-word">
-          Oscar Bennich-Björkman
-        </h1>
-        <p className="text-sm sm:text-base md:text-lg lg:text-xl font-mono text-gray-100">
-          <span className="typewriter">Tech Lead && Full Stack Developer<span className="caret">_</span></span>
-        </p>
+    <section className="flex flex-col items-center justify-center min-h-screen px-4">
+      <div
+        ref={terminalRef}
+        className="relative z-10 w-full max-w-4xl rounded-lg overflow-hidden border border-gray-700 shadow-2xl"
+      >
+        {/* Title bar */}
+        <div className="flex items-center gap-2 px-4 py-3 bg-gray-800 border-b border-gray-700">
+          <span className="w-3 h-3 rounded-full bg-red-500/80"></span>
+          <span className="w-3 h-3 rounded-full bg-yellow-500/80"></span>
+          <span className="w-3 h-3 rounded-full bg-green-500/80"></span>
+          <span className="flex-1 text-center text-xs text-gray-500 font-mono -ml-14">
+            oscar@site — bash
+          </span>
+        </div>
+
+        {/* Terminal body */}
+        <div className="bg-gray-950 p-6 sm:p-8 md:p-10 font-mono text-base sm:text-lg md:text-xl min-h-[280px]">
+          {/* Command line */}
+          <div className="flex">
+            <span className="text-green-400">{PROMPT}</span>
+            <span className="text-gray-100">
+              {COMMAND.slice(0, typedChars)}
+            </span>
+            {showCursorOnPrompt && <span className="caret text-gray-100">█</span>}
+          </div>
+
+          {/* Output lines */}
+          {OUTPUT_LINES.slice(0, visibleLines).map((line, i) => (
+            <div key={i} className="text-gray-300 mt-2">
+              {line}
+            </div>
+          ))}
+
+          {/* New prompt line */}
+          {showCursorOnNewLine && (
+            <div className="flex mt-4">
+              <span className="text-green-400">{PROMPT}</span>
+              <span className="caret text-gray-100">█</span>
+            </div>
+          )}
+        </div>
       </div>
 
       <style>{`
-        @keyframes typing {
-          from { width: 0; }
-          to { width: 100%; }
-        }
-        
         @keyframes blink {
           0%, 100% { opacity: 1; }
           50% { opacity: 0; }
         }
-        
-        .typewriter {
-          display: inline-block;
-          overflow: hidden;
-          white-space: nowrap;
-          animation: typing 3s steps(35, end) forwards;
-          width: 0;
-        }
-        
         .caret {
-          display: inline-block;
           animation: blink 1s step-end infinite;
-          opacity: 0;
-          animation-delay: 3s;
-        }
-        
-        .border-effect {
-          box-shadow: 2px 2px 0 rgba(168,85,247,0.8), -2px -2px 0 rgba(16,185,129,0.8);
-        }
-        
-        @media (min-width: 768px) {
-          .border-effect {
-            box-shadow: 3px 3px 0 rgba(168,85,247,0.8), -3px -3px 0 rgba(16,185,129,0.8);
-          }
         }
       `}</style>
     </section>
