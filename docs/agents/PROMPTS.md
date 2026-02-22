@@ -6,7 +6,7 @@ This file contains a chronological record of all prompts used to build this site
 
 ## Prompt 1
 **Date & Time:** 2025-10-26 20:03:47 UTC  
-**Tool:** GitHub Copilot CLI v0.0.354
+**Tool:** GitHub Copilot CLI v0.0.354  
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
@@ -26,7 +26,7 @@ After you've done that, let me know.
 
 ## Prompt 2
 **Date & Time:** 2025-10-26 20:12:36 UTC  
-**Tool:** GitHub Copilot CLI v0.0.354
+**Tool:** GitHub Copilot CLI v0.0.354  
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
@@ -42,7 +42,7 @@ Modify the instructions in AGENTS.md to only include prompts that lead to file c
 
 ## Prompt 3
 **Date & Time:** 2025-10-26 20:21:12 UTC  
-**Tool:** GitHub Copilot CLI v0.0.354
+**Tool:** GitHub Copilot CLI v0.0.354  
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
@@ -61,7 +61,7 @@ I want you to start with the simplest possible design and focus on the tech. Bre
 
 ## Prompt 4
 **Date & Time:** 2025-10-26 20:31:58 UTC  
-**Tool:** GitHub Copilot CLI v0.0.354
+**Tool:** GitHub Copilot CLI v0.0.354  
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
@@ -84,7 +84,7 @@ Okay, let's get started with milestone 1. Once that's done, stop and let me revi
 
 ## Prompt 5
 **Date & Time:** 2025-10-26 20:53:24 UTC  
-**Tool:** GitHub Copilot CLI v0.0.354
+**Tool:** GitHub Copilot CLI v0.0.354  
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
@@ -99,7 +99,7 @@ Deploying the site using the deploy.yml file seems to have been successful but w
 
 ## Prompt 6
 **Date & Time:** 2025-10-26 20:57:48 UTC  
-**Tool:** GitHub Copilot CLI v0.0.354
+**Tool:** GitHub Copilot CLI v0.0.354  
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
@@ -116,7 +116,7 @@ I want you to modify the PROMPTS.md file and the instructions in AGENTS.md to in
 
 ## Prompt 7
 **Date & Time:** 2025-10-26 20:58:56 UTC  
-**Tool:** GitHub Copilot CLI v0.0.354
+**Tool:** GitHub Copilot CLI v0.0.354  
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
@@ -771,7 +771,7 @@ Is there no "non-hacky" way that doesn't involve redirecting the user to solve t
 
 ## Prompt 40
 **Date & Time:** 2025-11-17 20:47:31 UTC  
-**Tool:** GitHub Copilot CLI v0.0.358
+**Tool:** GitHub Copilot CLI v0.0.358  
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
@@ -799,7 +799,7 @@ Remember to follow the instructions in @AGENTS.md.
 
 ## Prompt 41
 **Date & Time:** 2025-11-17 20:55:12 UTC  
-**Tool:** GitHub Copilot CLI v0.0.358
+**Tool:** GitHub Copilot CLI v0.0.358  
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
@@ -826,7 +826,7 @@ Please go ahead and implement milestone 8.
 
 ## Prompt 42
 **Date & Time:** 2025-11-17 21:06:45 UTC  
-**Tool:** GitHub Copilot CLI v0.0.358
+**Tool:** GitHub Copilot CLI v0.0.358  
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
@@ -856,7 +856,7 @@ Proceed with milestone 9, please.
 
 ## Prompt 43
 **Date & Time:** 2025-11-17 21:15:34 UTC  
-**Tool:** GitHub Copilot CLI v0.0.358
+**Tool:** GitHub Copilot CLI v0.0.358  
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
@@ -887,7 +887,7 @@ I'd like you to fix some things on the blog page:
 
 ## Prompt 44
 **Date & Time:** 2025-11-17 22:03:00 UTC  
-**Tool:** GitHub Copilot CLI v0.0.358
+**Tool:** GitHub Copilot CLI v0.0.358  
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
@@ -916,7 +916,7 @@ Is it possible to add the blog posts as pure markdown, rather than having it ins
 
 ## Prompt 45
 **Date & Time:** 2025-11-17 22:17:58 UTC  
-**Tool:** GitHub Copilot CLI v0.0.358
+**Tool:** GitHub Copilot CLI v0.0.358  
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
@@ -937,7 +937,7 @@ There's a UI bug/annoyance on the blog page where if the user filters the posts 
 
 ## Prompt 46
 **Date & Time:** 2025-11-23 21:47:51 UTC  
-**Tool:** GitHub Copilot CLI v0.0.358
+**Tool:** GitHub Copilot CLI v0.0.358  
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
@@ -963,7 +963,7 @@ Please ask me clarifiying questions if required.
 
 ## Prompt 47
 **Date & Time:** 2025-11-23 21:53:34 UTC  
-**Tool:** GitHub Copilot CLI v0.0.358
+**Tool:** GitHub Copilot CLI v0.0.358  
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
@@ -982,7 +982,7 @@ There is another issue I can see, where the bullet point list at the end of @pub
 
 ## Prompt 48
 **Date & Time:** 2025-11-23 21:57:39 UTC  
-**Tool:** GitHub Copilot CLI v0.0.358
+**Tool:** GitHub Copilot CLI v0.0.358  
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
@@ -1000,7 +1000,7 @@ Please change the styling of in-line code blocks (like `my code`) to look less l
 
 ## Prompt 49
 **Date & Time:** 2025-11-23 22:13:17 UTC  
-**Tool:** GitHub Copilot CLI v0.0.358
+**Tool:** GitHub Copilot CLI v0.0.358  
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
@@ -1019,7 +1019,7 @@ There is a noticable performance issue when rendering the @public\blog\azure-fun
 
 ## Prompt 50
 **Date & Time:** 2025-11-23 22:16:34 UTC  
-**Tool:** GitHub Copilot CLI v0.0.358
+**Tool:** GitHub Copilot CLI v0.0.358  
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
@@ -1039,7 +1039,7 @@ I can see that there are errors in the browser console, please use the Playwrigh
 
 ## Prompt 51
 **Date & Time:** 2025-11-23 22:27:22 UTC  
-**Tool:** GitHub Copilot CLI v0.0.358
+**Tool:** GitHub Copilot CLI v0.0.358  
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
@@ -1080,7 +1080,7 @@ installHook.js:1 React has detected a change in the order of Hooks called by Blo
 
 ## Prompt 52
 **Date & Time:** 2025-11-23 23:36:06 UTC  
-**Tool:** GitHub Copilot CLI v0.0.358
+**Tool:** GitHub Copilot CLI v0.0.358  
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
@@ -1104,7 +1104,7 @@ Please add a copy-button to the right corner of the code blocks in the rendered 
 
 ## Prompt 53
 **Date & Time:** 2025-11-23 23:49:44 UTC  
-**Tool:** GitHub Copilot CLI v0.0.358
+**Tool:** GitHub Copilot CLI v0.0.358  
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
@@ -1137,7 +1137,7 @@ Let me review this and accept the changes before you log the prompt and commit.
 
 ## Prompt 54
 **Date & Time:** 2025-11-24 21:09:00 UTC  
-**Tool:** GitHub Copilot CLI v0.0.362
+**Tool:** GitHub Copilot CLI v0.0.362  
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
@@ -1155,7 +1155,7 @@ Please fix the broken 404 page for this site. I just get an empty white screen a
 ---
 ## Prompt 55
 **Date & Time:** 2025-11-24 21:16:06 UTC  
-**Tool:** GitHub Copilot CLI v0.0.362
+**Tool:** GitHub Copilot CLI v0.0.362  
 **Model:** Gemini 3 Pro (Preview)
 
 **Prompt:**
@@ -1180,7 +1180,7 @@ Use the Playwright MCP server to troubleshoot the layout if needed.
 
 ## Prompt 56
 **Date & Time:** 2025-11-24 21:34:07 UTC  
-**Tool:** GitHub Copilot CLI v0.0.362
+**Tool:** GitHub Copilot CLI v0.0.362  
 **Model:** Gemini 3 Pro (Preview)
 
 **Prompt:**
@@ -1201,7 +1201,7 @@ For all headings (#, ##, etc.) in the markdown file that gets rendered, I want t
 
 ## Prompt 57
 **Date & Time:** 2025-11-24 22:10:25 UTC  
-**Tool:** GitHub Copilot CLI v0.0.362
+**Tool:** GitHub Copilot CLI v0.0.362  
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
@@ -1222,7 +1222,7 @@ I recently added functionality to the post component, @src\components\Post.tsx, 
 
 ## Prompt 58
 **Date & Time:** 2025-11-24 22:15:25 UTC  
-**Tool:** GitHub Copilot CLI v0.0.362
+**Tool:** GitHub Copilot CLI v0.0.362  
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
@@ -1242,7 +1242,7 @@ Now I want you to add a "back to top" button/link to the @src\components\Post.ts
 
 ## Prompt 59
 **Date & Time:** 2025-11-24 22:22:11 UTC  
-**Tool:** GitHub Copilot CLI v0.0.362
+**Tool:** GitHub Copilot CLI v0.0.362  
 **Model:** Claude Sonnet 4.5
 
 **Prompt:**
@@ -1261,7 +1261,7 @@ The "back to top" button seems to have broken the responsive design on mobile de
 
 ## Prompt 60
 **Date & Time:** 2025-11-26 19:32:13 UTC  
-**Tool:** GitHub Copilot CLI v0.0.365
+**Tool:** GitHub Copilot CLI v0.0.365  
 **Model:** Claude Opus 4.5
 
 **Prompt:**
@@ -1287,7 +1287,7 @@ The relevant changes where introduced in commit 8f8cc7e70982e as I tried resetti
 
 ## Prompt 61
 **Date & Time:** 2025-11-26 20:04:03 UTC  
-**Tool:** GitHub Copilot CLI v0.0.365
+**Tool:** GitHub Copilot CLI v0.0.365  
 **Model:** Claude Opus 4.5
 
 **Prompt:**
@@ -1311,7 +1311,7 @@ If there are any other code improvements you notice, go ahead and refactor that,
 
 ## Prompt 62
 **Date & Time:** 2025-11-26 20:11:15 UTC  
-**Tool:** GitHub Copilot CLI v0.0.365
+**Tool:** GitHub Copilot CLI v0.0.365  
 **Model:** Claude Opus 4.5
 
 **Prompt:**
@@ -1332,7 +1332,7 @@ I'm not sure if it's related to using backticks (`) to render code blocks *insid
 
 ## Prompt 63
 **Date & Time:** 2025-11-26 20:24:34 UTC  
-**Tool:** GitHub Copilot CLI v0.0.365
+**Tool:** GitHub Copilot CLI v0.0.365  
 **Model:** Claude Opus 4.5
 
 **Prompt:**
@@ -1352,7 +1352,7 @@ Please change the mobile ToC icon to look like this one from GitHub (or similar)
 
 ## Prompt 64
 **Date & Time:** 2025-11-26 20:57:03 UTC  
-**Tool:** GitHub Copilot CLI v0.0.365
+**Tool:** GitHub Copilot CLI v0.0.365  
 **Model:** Claude Opus 4.5
 
 **Prompt:**
@@ -1374,7 +1374,7 @@ In the post I just made, the scrolling performance in the desktop layout is a bi
 
 ## Prompt 65
 **Date & Time:** 2025-11-26 21:11:01 UTC  
-**Tool:** GitHub Copilot CLI v0.0.365
+**Tool:** GitHub Copilot CLI v0.0.365  
 **Model:** Claude Opus 4.5
 
 **Prompt:**
@@ -1399,7 +1399,7 @@ I would like to refactor the files in the @public\posts folder so that each post
 
 ## Prompt 66
 **Date & Time:** 2025-11-26 21:21:40 UTC  
-**Tool:** GitHub Copilot CLI v0.0.365
+**Tool:** GitHub Copilot CLI v0.0.365  
 **Model:** Claude Opus 4.5
 
 **Prompt:**
@@ -1417,7 +1417,7 @@ I'd like to add a new property for a post which I can use to indicate when the l
 
 ## Prompt 67
 **Date & Time:** 2025-11-26 22:07:04 UTC  
-**Tool:** GitHub Copilot CLI v0.0.365
+**Tool:** GitHub Copilot CLI v0.0.365  
 **Model:** Claude Opus 4.5
 
 **Prompt:**
@@ -1438,7 +1438,7 @@ The <details> sections from the "lessons-learned-az-pipelines-coverage-dotnet-sq
 
 ## Prompt 68
 **Date & Time:** 2025-11-26 22:19:57 UTC  
-**Tool:** GitHub Copilot CLI v0.0.365
+**Tool:** GitHub Copilot CLI v0.0.365  
 **Model:** Claude Opus 4.5
 
 **Prompt:**
@@ -1464,7 +1464,7 @@ Can you have a look at that and see if there is a better way to make that work w
 
 ## Prompt 69
 **Date & Time:** 2025-11-27 21:04:05 UTC  
-**Tool:** GitHub Copilot CLI v0.0.365
+**Tool:** GitHub Copilot CLI v0.0.365  
 **Model:** Claude Opus 4.5
 
 **Prompt:**
@@ -1488,7 +1488,7 @@ For example, this makes it float on top of text, rather than being *behind* it.
 
 ## Prompt 70
 **Date & Time:** 2025-11-27 21:26:19 UTC  
-**Tool:** GitHub Copilot CLI v0.0.365
+**Tool:** GitHub Copilot CLI v0.0.365  
 **Model:** Claude Opus 4.5
 
 **Prompt:**
@@ -1513,7 +1513,7 @@ I don't think it's super useful to just have them all stacked on top of each oth
 
 ## Prompt 71
 **Date & Time:** 2026-02-22 19:57:26 UTC  
-**Tool:** GitHub Copilot CLI v0.0.414
+**Tool:** GitHub Copilot CLI v0.0.414  
 **Model:** Claude Opus 4.6
 
 **Prompt:**
@@ -1532,7 +1532,7 @@ Can you review the content on the about page? What do you think of my introducti
 
 ## Prompt 72
 **Date & Time:** 2026-02-22 20:06:58 UTC  
-**Tool:** GitHub Copilot CLI v0.0.414
+**Tool:** GitHub Copilot CLI v0.0.414  
 **Model:** Claude Opus 4.6
 
 **Prompt:**
@@ -1554,7 +1554,7 @@ I want to update the README to add more context about why I build this site and 
 
 ## Prompt 73
 **Date & Time:** 2026-02-22 20:12:03 UTC  
-**Tool:** GitHub Copilot CLI v0.0.414
+**Tool:** GitHub Copilot CLI v0.0.414  
 **Model:** Claude Opus 4.6
 
 **Prompt:**
@@ -1572,7 +1572,7 @@ I want to move the contact links from the footer to the about page and then chan
 
 ## Prompt 74
 **Date & Time:** 2026-02-22 20:18:28 UTC  
-**Tool:** GitHub Copilot CLI v0.0.414
+**Tool:** GitHub Copilot CLI v0.0.414  
 **Model:** Claude Opus 4.6
 
 **Prompt:**
@@ -1588,7 +1588,7 @@ The clickable part of the contact links extend across the entire mid-part of the
 
 ## Prompt 75
 **Date & Time:** 2026-02-22 20:51:03 UTC  
-**Tool:** GitHub Copilot CLI v0.0.414
+**Tool:** GitHub Copilot CLI v0.0.414  
 **Model:** Claude Opus 4.6
 
 **Prompt:**
@@ -1606,7 +1606,7 @@ I want to add something about agentic coding to the skills section (I have exper
 
 ## Prompt 76
 **Date & Time:** 2026-02-22 21:08:31 UTC  
-**Tool:** GitHub Copilot CLI v0.0.414
+**Tool:** GitHub Copilot CLI v0.0.414  
 **Model:** Claude Opus 4.6
 
 **Prompt:**
@@ -1628,7 +1628,7 @@ I want to explore the idea described in the first TODO in README.md.
 
 ## Prompt 77
 **Date & Time:** 2026-02-22 21:21:24 UTC  
-**Tool:** GitHub Copilot CLI v0.0.414
+**Tool:** GitHub Copilot CLI v0.0.414  
 **Model:** Claude Opus 4.6
 
 **Prompt:**
@@ -1651,7 +1651,7 @@ Two things:
 
 ## Prompt 78
 **Date & Time:** 2026-02-22 21:25:17 UTC  
-**Tool:** GitHub Copilot CLI v0.0.414
+**Tool:** GitHub Copilot CLI v0.0.414  
 **Model:** Claude Opus 4.6
 
 **Prompt:**
@@ -1679,7 +1679,7 @@ Also, add suggestions for what other commands could be interesting to add.
 
 ## Prompt 79
 **Date & Time:** 2026-02-22 21:35:22 UTC  
-**Tool:** GitHub Copilot CLI v0.0.414
+**Tool:** GitHub Copilot CLI v0.0.414  
 **Model:** Claude Opus 4.6
 
 **Prompt:**
@@ -1702,7 +1702,7 @@ It looks great! A few things:
 
 ## Prompt 80
 **Date & Time:** 2026-02-22 21:48:28 UTC  
-**Tool:** GitHub Copilot CLI v0.0.414
+**Tool:** GitHub Copilot CLI v0.0.414  
 **Model:** Claude Opus 4.6
 
 **Prompt:**
@@ -1727,7 +1727,7 @@ Looks good. A few more things.
 
 ## Prompt 81
 **Date & Time:** 2026-02-22 22:13:00 UTC  
-**Tool:** GitHub Copilot CLI v0.0.414
+**Tool:** GitHub Copilot CLI v0.0.414  
 **Model:** Claude Opus 4.6
 
 **Prompt:**
@@ -1748,7 +1748,7 @@ I want you to review milestone 10 and 11 in @docs\SITE_PLAN.md and see what rema
 
 ## Prompt 82
 **Date & Time:** 2026-02-22 22:34:52 UTC  
-**Tool:** GitHub Copilot CLI v0.0.414
+**Tool:** GitHub Copilot CLI v0.0.414  
 **Model:** Claude Opus 4.6
 
 **Prompt:**
@@ -1770,7 +1770,7 @@ My phone is an Android, also running Chrome as a browser.
 ## Prompt 83
 **Date & Time:** 2026-02-22 22:55:09 UTC  
 **Tool:** GitHub Copilot CLI v0.0.414  
-**Model:** Claude Sonnet 4.5
+**Model:** Claude Opus 4.6
 
 **Prompt:**
 ```
@@ -1796,4 +1796,4 @@ ROLE: You are a frontend expert. You know best practices for React, TypeScript, 
 
 ---
 
-> **Note:** As of Prompt 82 (2026-02-22), the site is considered feature complete and automatic prompt logging to this file has been discontinued. This file remains as a historical record of the prompts used to build the site.
+> **Note:** As of Prompt 83 (2026-02-22), the site is considered feature complete and automatic prompt logging to this file has been discontinued. This file remains as a historical record of the prompts used to build the site.
