@@ -62,7 +62,7 @@ function About(): React.ReactElement {
           </h2>
           <p className="text-gray-300 font-mono text-sm leading-relaxed mb-3">
             Hi! 👋 I'm Oscar Bennich-Björkman, a software developer living in
-            Uppsala, Sweden. I'm currently working as a Tech Lead at{" "}
+            Uppsala, Sweden. My current role is Tech Lead at{" "}
             <a
               href="https://www.viedoc.com/"
               className="text-blue-400 hover:underline"
@@ -75,10 +75,10 @@ function About(): React.ReactElement {
           </p>
           <p className="text-gray-300 font-mono text-sm leading-relaxed mb-3">
             I'm passionate about software development and enjoy continuously
-            sharpening my skills and knowledge and to share it with others. I
+            sharpening my skills and knowledge and sharing it with others. I
             think it's deeply satisfying to use those skills to optimize systems
             and processes, and to solve complex problems in a simple way. I also
-            find that what I learn sticks better when I try to explain it —
+            find that I learn things better when I try to explain them —
             which is why I will sometimes share my thoughts as posts here.
             Hopefully you'll learn something, too!
           </p>

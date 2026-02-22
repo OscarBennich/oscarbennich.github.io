@@ -60,28 +60,7 @@ export function executeCommand(
     return {
       output: [
         line("Hi! 👋 I'm Oscar Bennich-Björkman, a software developer living in"),
-        line("Uppsala, Sweden. I'm currently working as a Tech Lead at Viedoc."),
-        line(''),
-        line(
-          "I'm passionate about software development and enjoy continuously"
-        ),
-        line(
-          'sharpening my skills and knowledge and to share it with others. I'
-        ),
-        line(
-          "think it's deeply satisfying to use those skills to optimize systems"
-        ),
-        line(
-          'and processes, and to solve complex problems in a simple way.'
-        ),
-        line(''),
-        line(
-          'Outside of work, I enjoy long-distance running, traveling, gaming'
-        ),
-        line(
-          '(D&D, video games, board games), and spending time with my wife,'
-        ),
-        line('friends, family, and my cat.'),
+        line("Uppsala, Sweden. My current role is Tech Lead at Viedoc."),
       ],
     }
   }
@@ -126,6 +105,7 @@ export function executeCommand(
         line(''),
         link('  GitHub     github.com/oscarbennich', 'https://github.com/oscarbennich', 'text-blue-400 hover:underline'),
         link('  LinkedIn   linkedin.com/in/oscar-bennich-bjorkman', 'https://www.linkedin.com/in/oscar-bennich-bjorkman/', 'text-blue-400 hover:underline'),
+        link('  Email      oscar.bennich@gmail.com', 'mailto:oscar.bennich@gmail.com', 'text-blue-400 hover:underline'),
       ],
     }
   }
