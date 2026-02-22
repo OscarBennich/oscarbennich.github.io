@@ -1745,3 +1745,24 @@ I want you to review milestone 10 and 11 in @docs\SITE_PLAN.md and see what rema
 - Modified `docs/SITE_PLAN.md`: marked milestones 10 and 11 as complete, removed cross-browser testing task
 
 ---
+
+## Prompt 82
+**Date & Time:** 2026-02-22 22:34:52 UTC  
+**Tool:** GitHub Copilot CLI v0.0.414  
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+There seems to be a very strange bug. When writing commands on the front page (hero section) in the "terminal UI" on my phone (mobile device), the text gets flipped. So "Help" becomes "pleH" and I am unable to delete any of the text.
+
+It is not just a visual bug, because if I press Enter, the command is not handled correctly and is read just like it is written.
+
+Strangely enough, this seems to be completely normal when emulating a phone UI in Chrome on my browser.
+
+My phone is an Android, also running Chrome as a browser.
+```
+
+**Changes:**
+- Modified `src/components/Hero.tsx`: fixed mobile Android Chrome bug where terminal input text was reversed and backspace didn't work, caused by the hidden input having zero dimensions (`w-0 h-0`). Changed to overlay the input line with real dimensions (`inset-0` + `relative` parent), added `dir="ltr"` to force left-to-right text direction, added `caret-transparent`, and disabled mobile keyboard auto-features (`autoComplete`, `autoCorrect`, `autoCapitalize`, `spellCheck`)
+
+---

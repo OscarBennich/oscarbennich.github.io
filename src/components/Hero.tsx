@@ -243,7 +243,7 @@ function Hero(): React.ReactElement {
 
           {/* Interactive input line */}
           {phase === 'interactive' && !exitEffect && (
-            <div className="flex mt-4 items-center">
+            <div className="flex mt-4 items-center relative">
               <span className="text-green-400 whitespace-pre">{PROMPT}</span>
               <span className="text-gray-100 whitespace-pre">{userInput}</span>
               <span className="caret text-gray-100">█</span>
@@ -253,8 +253,13 @@ function Hero(): React.ReactElement {
                 value={userInput}
                 onChange={(e) => setUserInput(e.target.value)}
                 onKeyDown={handleKeyDown}
-                className="absolute opacity-0 w-0 h-0"
+                dir="ltr"
+                className="absolute inset-0 opacity-0 caret-transparent"
                 autoFocus
+                autoComplete="off"
+                autoCorrect="off"
+                autoCapitalize="off"
+                spellCheck={false}
                 aria-label="Terminal input"
               />
             </div>
