@@ -1648,3 +1648,79 @@ Two things:
   - Added more vertical spacing between output lines and final prompt
 
 ---
+
+## Prompt 78
+**Date & Time:** 2026-02-22 21:25:17 UTC  
+**Tool:** GitHub Copilot CLI v0.0.414  
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+That looks good, let's commit this. After that, I want to explore the possibility of adding some kind of user interaction to the "terminal". So after the information has been printed, the user can write something. I want one of the things to be "Easter egg" and then something cool happens, add some suggestions for what that might be.
+
+Also, add suggestions for what other commands could be interesting to add.
+```
+
+**Changes:**
+- Created `src/utils/terminalCommands.ts`:
+  - Command handler module with `executeCommand` function
+  - Implemented commands: help, about, skills, posts, contact, cv, clear, date, history
+  - Implemented easter eggs: matrix (Matrix rain), party (confetti), sudo rm -rf / (glitch + denial), cowsay (ASCII cow), exit (close terminal)
+- Modified `src/components/Hero.tsx`:
+  - Added interactive input after whoami animation completes
+  - Added command history navigation with arrow up/down
+  - Added auto-scroll, click-to-focus, hidden input field
+  - Added MatrixRain canvas component for matrix easter egg
+  - Added Confetti component for party easter egg
+  - Added glitch and exit visual effects
+  - Added "Type help to see available commands" hint below terminal
+
+---
+
+## Prompt 79
+**Date & Time:** 2026-02-22 21:35:22 UTC  
+**Tool:** GitHub Copilot CLI v0.0.414  
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+It looks great! A few things:
+1. For the exit easter egg. I think we can literally just close the "terminal" and leave it blank until the user refreshes the page.
+2. For the sudo easter egg, we can remove the "just kidding" part, only keep the "permission denied" part.
+3. There is some sort of bug where the caret doesn't update correctly when pressing space. It will still take the space input into account, so writing something after pressing space will show up correctly, but the caret won't move when pressing space. Fix this issue please.
+```
+
+**Changes:**
+- Modified `src/components/Hero.tsx`:
+  - Exit now permanently closes the terminal (until page refresh)
+  - Added `whitespace-pre` to input display span to fix space/caret rendering bug
+  - Hidden help hint when terminal is exited
+- Modified `src/utils/terminalCommands.ts`:
+  - Simplified sudo output to just "Permission denied: you are not root."
+
+---
+
+## Prompt 80
+**Date & Time:** 2026-02-22 21:48:28 UTC  
+**Tool:** GitHub Copilot CLI v0.0.414  
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+Looks good. A few more things.
+
+- I think it's redundant to list the help command as a possible command when running 'help'
+- I want the CV link to open as a new tab
+- Update the about information to include the latest update from src/pages/About.tsx
+- Add the cowsay as a possible command with ??? when writing 'help'
+```
+
+**Changes:**
+- Modified `src/utils/terminalCommands.ts`:
+  - Removed `help` from its own command list
+  - Added `cowsay` with `???` description to command list
+  - Updated `about` command output to match latest About page text
+- Modified `src/components/Hero.tsx`:
+  - Changed link target logic so CV and external links open in new tab, internal hash routes don't
+
+---
