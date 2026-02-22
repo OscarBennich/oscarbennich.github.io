@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://oscarbennich.github.io/sitemap.xml

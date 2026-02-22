@@ -11,7 +11,7 @@ function Footer(): React.ReactElement {
             href="https://github.com/OscarBennich/oscarbennich.github.io/blob/main/README.md"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-400 hover:underline"
+            className="text-blue-400 underline hover:text-blue-300"
           >
             README
           </a>

@@ -1724,3 +1724,24 @@ Looks good. A few more things.
   - Changed link target logic so CV and external links open in new tab, internal hash routes don't
 
 ---
+
+## Prompt 81
+**Date & Time:** 2026-02-22 22:13:00 UTC  
+**Tool:** GitHub Copilot CLI v0.0.414  
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+I want you to review milestone 10 and 11 in @docs\SITE_PLAN.md and see what remains to be fixed. Then make a plan for how to implement that. If anything is unclear, ask me about it. This plan was created at the very beginning of the site's lifetime so some of the points might not be relevant anymore.
+```
+
+**Changes:**
+- Created `public/robots.txt` with crawler rules and sitemap reference
+- Created `public/sitemap.xml` with base URL
+- Modified `index.html`: added SEO meta tags (description, author, theme-color, canonical), Open Graph tags, and Twitter Card tags
+- Modified `src/pages/About.tsx`: added `loading="lazy"` and `decoding="async"` to profile picture, added email mailto link in contact section
+- Modified `src/components/Hero.tsx`: changed terminal title bar text from `text-gray-500` to `text-gray-400` for accessibility contrast fix
+- Modified `src/components/Footer.tsx`: made README link always underlined for link distinguishability (accessibility fix)
+- Modified `docs/SITE_PLAN.md`: marked milestones 10 and 11 as complete, removed cross-browser testing task
+
+---

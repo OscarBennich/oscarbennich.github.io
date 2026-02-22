@@ -179,7 +179,7 @@ function Hero(): React.ReactElement {
           <span className="w-3 h-3 rounded-full bg-red-500/80"></span>
           <span className="w-3 h-3 rounded-full bg-yellow-500/80"></span>
           <span className="w-3 h-3 rounded-full bg-green-500/80"></span>
-          <span className="flex-1 text-center text-xs text-gray-500 font-mono -ml-14">
+          <span className="flex-1 text-center text-xs text-gray-400 font-mono -ml-14">
             oscar@site — bash
           </span>
         </div>

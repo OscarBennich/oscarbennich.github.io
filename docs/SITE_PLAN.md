@@ -166,7 +166,7 @@ A personal portfolio and blog site for a software engineer, built with React and
 
 ---
 
-## Milestone 10: Enhanced Features
+## Milestone 10: Enhanced Features ✅
 **Goal**: Add polish and interactivity to the site
 
 ### Tasks:
@@ -184,7 +184,7 @@ A personal portfolio and blog site for a software engineer, built with React and
 
 ---
 
-## Milestone 11: SEO & Performance
+## Milestone 11: SEO & Performance ✅
 **Goal**: Optimize for search engines and performance
 
 ### Tasks:
@@ -195,14 +195,12 @@ A personal portfolio and blog site for a software engineer, built with React and
 5. Optimize images (lazy loading, compression)
 6. Run Lighthouse and fix performance issues
 7. Add 404 page
-8. Test across browsers
 
 ### Deliverables:
 - SEO meta tags in place
 - Good Lighthouse scores
 - Optimized images
 - 404 page
-- Cross-browser compatibility verified
 
 ---
 
