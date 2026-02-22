@@ -1,6 +1,7 @@
 import { useState, useMemo, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Post } from "../types/post";
+import { formatDate, calculateReadingTime } from "../utils/markdown";
 
 interface PostListProps {
   posts: Post[];
@@ -12,21 +13,6 @@ function PostList({ posts }: PostListProps): React.ReactElement {
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [highlightedIndex, setHighlightedIndex] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
-
-  const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    });
-  };
-
-  const calculateReadingTime = (content: string): number => {
-    const wordsPerMinute = 200;
-    const words = content.trim().split(/\s+/).length;
-    return Math.ceil(words / wordsPerMinute);
-  };
 
   // Get all unique tags from all posts
   const allTags = useMemo(() => {

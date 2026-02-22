@@ -1,5 +1,5 @@
 import { useEffect, useState, useMemo } from 'react'
-import { useParams, Link, useNavigate } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import rehypeRaw from 'rehype-raw'
@@ -12,7 +12,6 @@ import BackToTopButton from './BackToTopButton'
 
 function Post(): React.ReactElement {
   const { slug } = useParams<{ slug: string }>()
-  const navigate = useNavigate()
   const [post, setPost] = useState<PostType | null>(null)
   const [loading, setLoading] = useState(true)
 
@@ -87,12 +86,12 @@ function Post(): React.ReactElement {
     <>
       <div className="max-w-4xl lg:max-w-6xl mx-auto px-4 py-12 w-full box-border">
         {/* Back button and header - full width */}
-        <button
-          onClick={() => navigate('/posts')}
-          className="text-purple-400 hover:text-purple-300 font-mono mb-8 flex items-center gap-2 cursor-pointer"
+        <Link
+          to="/posts"
+          className="text-purple-400 hover:text-purple-300 font-mono mb-8 flex items-center gap-2"
         >
           ← Back to Posts
-        </button>
+        </Link>
 
         <header className="mb-8">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-100 mb-4 font-mono break-words">

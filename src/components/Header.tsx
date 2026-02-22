@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
 
+const navLinkClass = "px-4 py-2 text-gray-300 hover:text-gray-100 transition-all duration-300 inline-block hover:[box-shadow:3px_3px_0_rgba(168,85,247,0.8),-3px_-3px_0_rgba(16,185,129,0.8)]"
+
 function Header(): React.ReactElement {
   return (
     <header className="relative z-10 bg-gray-800 border-b border-gray-700">
@@ -10,12 +12,12 @@ function Header(): React.ReactElement {
           </Link>
           <ul className="flex gap-6 font-mono">
             <li>
-              <Link to="/about" className="px-4 py-2 text-gray-300 hover:text-gray-100 transition-all duration-300 inline-block hover:[box-shadow:3px_3px_0_rgba(168,85,247,0.8),-3px_-3px_0_rgba(16,185,129,0.8)]">
+              <Link to="/about" className={navLinkClass}>
                 /about
               </Link>
             </li>
             <li>
-              <Link to="/posts" className="px-4 py-2 text-gray-300 hover:text-gray-100 transition-all duration-300 inline-block hover:[box-shadow:3px_3px_0_rgba(168,85,247,0.8),-3px_-3px_0_rgba(16,185,129,0.8)]">
+              <Link to="/posts" className={navLinkClass}>
                 /posts
               </Link>
             </li>

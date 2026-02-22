@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { executeCommand, type TerminalLine } from '../utils/terminalCommands'
+import MatrixRain from './MatrixRain'
+import Confetti from './Confetti'
 
 const PROMPT = 'oscarbennich@site:~$ '
 const COMMAND = 'whoami'
@@ -273,116 +275,7 @@ function Hero(): React.ReactElement {
           Type <span className="text-gray-400">help</span> to see available commands
         </p>
       )}
-
-      <style>{`
-        @keyframes blink {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0; }
-        }
-        .caret {
-          animation: blink 1s step-end infinite;
-        }
-        @keyframes glitch {
-          0% { background: transparent; }
-          10% { background: rgba(255,0,0,0.1); transform: translate(-2px, 1px); }
-          20% { background: rgba(0,255,0,0.1); transform: translate(2px, -1px); }
-          30% { background: rgba(0,0,255,0.1); transform: translate(-1px, 2px); }
-          40% { background: transparent; transform: translate(0); }
-          100% { background: transparent; transform: translate(0); }
-        }
-        .animate-glitch {
-          animation: glitch 0.3s ease-in-out 3;
-        }
-      `}</style>
     </section>
-  )
-}
-
-function MatrixRain(): React.ReactElement {
-  const canvasRef = useRef<HTMLCanvasElement>(null)
-
-  useEffect(() => {
-    const canvas = canvasRef.current
-    if (!canvas) return
-    const ctx = canvas.getContext('2d')
-    if (!ctx) return
-
-    canvas.width = window.innerWidth
-    canvas.height = window.innerHeight
-
-    const chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789'
-    const fontSize = 14
-    const columns = Math.floor(canvas.width / fontSize)
-    const drops: number[] = Array(columns).fill(1)
-
-    const draw = () => {
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)'
-      ctx.fillRect(0, 0, canvas.width, canvas.height)
-      ctx.fillStyle = '#0F0'
-      ctx.font = `${fontSize}px monospace`
-
-      for (let i = 0; i < drops.length; i++) {
-        const text = chars[Math.floor(Math.random() * chars.length)]
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize)
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-          drops[i] = 0
-        }
-        drops[i]++
-      }
-    }
-
-    const interval = setInterval(draw, 33)
-    return () => clearInterval(interval)
-  }, [])
-
-  return (
-    <canvas
-      ref={canvasRef}
-      className="fixed inset-0 z-50 pointer-events-none opacity-70"
-    />
-  )
-}
-
-function Confetti(): React.ReactElement {
-  const pieces = Array.from({ length: 50 }, (_, i) => ({
-    id: i,
-    left: Math.random() * 100,
-    delay: Math.random() * 2,
-    duration: 2 + Math.random() * 3,
-    color: ['#f44336', '#e91e63', '#9c27b0', '#673ab7', '#3f51b5', '#2196f3', '#00bcd4', '#4caf50', '#ffeb3b', '#ff9800'][
-      Math.floor(Math.random() * 10)
-    ],
-    size: 6 + Math.random() * 8,
-  }))
-
-  return (
-    <div className="fixed inset-0 z-50 pointer-events-none overflow-hidden">
-      {pieces.map((p) => (
-        <div
-          key={p.id}
-          className="absolute animate-confetti"
-          style={{
-            left: `${p.left}%`,
-            top: '-10px',
-            width: `${p.size}px`,
-            height: `${p.size}px`,
-            backgroundColor: p.color,
-            borderRadius: Math.random() > 0.5 ? '50%' : '0',
-            animationDelay: `${p.delay}s`,
-            animationDuration: `${p.duration}s`,
-          }}
-        />
-      ))}
-      <style>{`
-        @keyframes confetti-fall {
-          0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-          100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
-        }
-        .animate-confetti {
-          animation: confetti-fall linear forwards;
-        }
-      `}</style>
-    </div>
   )
 }
 

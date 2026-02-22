@@ -1,7 +1,7 @@
-import { Post } from '../types/post'
+import { PostMetadata, Post } from '../types/post'
 
 // Post metadata - content will be loaded from markdown files
-export const postsMetadata: Post[] = [
+export const postsMetadata: PostMetadata[] = [
   {
     slug: "azure-function-app-logging-setup-guide",
     title: "Setting up logging in Azure Function Apps",
@@ -16,7 +16,6 @@ export const postsMetadata: Post[] = [
     ],
     excerpt:
       "A guide with best practices and gotchas to keep in mind when configuring logging for Azure Function Apps.",
-    content: "", // Will be loaded dynamically
   },
   {
     slug: "windows-terminal-setup-guide",
@@ -26,7 +25,6 @@ export const postsMetadata: Post[] = [
     tags: ["guide", "windows-terminal"],
     excerpt:
       "How to set up a custom version of Windows Terminal with Oh My Posh.",
-    content: "", // Will be loaded dynamically
   },
   {
     slug: "git-tips-and-tricks",
@@ -35,7 +33,6 @@ export const postsMetadata: Post[] = [
     lastUpdated: "2025-11-24",
     tags: ["tips & tricks", "git"],
     excerpt: "A collection of useful tips and tricks for using Git.",
-    content: "", // Will be loaded dynamically
   },
   {
     slug: "docker-tips-and-tricks",
@@ -43,7 +40,6 @@ export const postsMetadata: Post[] = [
     date: "2025-01-14",
     tags: ["tips & tricks", "docker"],
     excerpt: "A collection of useful tips and tricks for using Docker.",
-    content: "", // Will be loaded dynamically
   },
   {
     slug: "nuget-tips-and-tricks",
@@ -51,15 +47,13 @@ export const postsMetadata: Post[] = [
     date: "2024-11-05",
     tags: ["tips & tricks", "nuget", "dotnet"],
     excerpt: "A collection of useful tips and tricks for using NuGet.",
-    content: "", // Will be loaded dynamically
   },
   {
     slug: "lessons-learned-az-pipelines-coverage-dotnet-sq",
     title: "Lessons learned - Azure Pipelines, Code Coverage, .NET, SonarQube",
     date: "2023-12-18",
     tags: ["dotnet", "azure-devops", "sonarqube", "code-coverage", "pipelines"],
-    excerpt: "A collection of useful tips and tricks for using NuGet.",
-    content: "", // Will be loaded dynamically
+    excerpt: "Lessons learned from setting up code coverage reporting with Azure Pipelines, .NET, and SonarQube.",
   }
 ];
 

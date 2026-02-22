@@ -1,10 +1,12 @@
+import { lazy, Suspense } from 'react'
 import { HashRouter, Routes, Route } from 'react-router-dom'
 import Layout from './components/Layout'
-import Home from './pages/Home'
-import About from './pages/About'
-import Posts from './pages/Posts'
-import Post from './components/Post'
-import NotFound from './pages/NotFound'
+
+const Home = lazy(() => import('./pages/Home'))
+const About = lazy(() => import('./pages/About'))
+const Posts = lazy(() => import('./pages/Posts'))
+const Post = lazy(() => import('./components/Post'))
+const NotFound = lazy(() => import('./pages/NotFound'))
 
 function App(): React.ReactElement {
   return (
@@ -14,11 +16,11 @@ function App(): React.ReactElement {
     <HashRouter>
       <Routes>
         <Route element={<Layout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="about" element={<About />} />
-          <Route path="posts" element={<Posts />} />
-          <Route path="posts/:slug" element={<Post />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="/" element={<Suspense><Home /></Suspense>} />
+          <Route path="about" element={<Suspense><About /></Suspense>} />
+          <Route path="posts" element={<Suspense><Posts /></Suspense>} />
+          <Route path="posts/:slug" element={<Suspense><Post /></Suspense>} />
+          <Route path="*" element={<Suspense><NotFound /></Suspense>} />
         </Route>
       </Routes>
     </HashRouter>

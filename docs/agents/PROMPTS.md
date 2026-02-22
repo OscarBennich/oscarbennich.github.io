@@ -1767,4 +1767,33 @@ My phone is an Android, also running Chrome as a browser.
 
 ---
 
+## Prompt 83
+**Date & Time:** 2026-02-22 22:55:09 UTC  
+**Tool:** GitHub Copilot CLI v0.0.414  
+**Model:** Claude Sonnet 4.5
+
+**Prompt:**
+```
+ROLE: You are a frontend expert. You know best practices for React, TypeScript, Vite, and Tailwind CSS. CONTEXT: I've built this personal site mostly (99%) through prompting and using AI agents. It is now feature complete (more or less), but I want to review the code and see if there is anything we can fix. I want you to read through the code in this project and suggest improvements to it. This could be improvements to readability, keeping the code DRY, React rendering mistakes, anything really. I want the code to be as "clean" as possible once we're done, following frontend best practices.
+```
+
+**Changes:**
+- Fixed copy-paste excerpt bug in `src/data/posts.ts` (last post had wrong excerpt from NuGet post)
+- Fixed 3 ESLint `no-useless-escape` errors in `src/utils/markdown.ts` regex
+- Deleted `src/App.css` (unused Vite boilerplate)
+- Fixed `src/vite-env.d.ts` (added `vite/client` reference, removed redundant module declarations)
+- Modified `src/components/PostList.tsx`: removed duplicate `formatDate`/`calculateReadingTime`, imported from `utils/markdown.ts`
+- Modified `src/pages/About.tsx`: consolidated 3 tech stack arrays into single data structure at module scope, extracted `TechRow` component to eliminate repeated JSX
+- Modified `src/components/Header.tsx`: extracted shared nav link hover class to constant
+- Modified `src/data/posts.ts`: changed `postsMetadata` type from `Post[]` to `PostMetadata[]`, removed placeholder `content: ""` fields
+- Created `src/components/MatrixRain.tsx`: extracted from Hero.tsx
+- Created `src/components/Confetti.tsx`: extracted from Hero.tsx with `useMemo` for stable pieces array
+- Modified `src/components/Hero.tsx`: removed inline `MatrixRain`/`Confetti` components and inline `<style>` blocks (390→160 lines)
+- Modified `src/index.css`: added caret blink, glitch, and confetti-fall CSS animations
+- Modified `src/components/Post.tsx`: replaced `<button>` + `useNavigate` with `<Link>` for "← Back to Posts" navigation
+- Modified `src/App.tsx`: added `React.lazy` + `Suspense` for route code-splitting (main bundle 633KB→231KB)
+- Modified `package.json`: moved `@types/react-syntax-highlighter` from dependencies to devDependencies
+
+---
+
 > **Note:** As of Prompt 82 (2026-02-22), the site is considered feature complete and automatic prompt logging to this file has been discontinued. This file remains as a historical record of the prompts used to build the site.

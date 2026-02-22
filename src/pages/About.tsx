@@ -19,31 +19,47 @@ interface TechItem {
   icon: React.ReactNode
 }
 
+const techStack: TechItem[][] = [
+  [
+    { name: "C#", icon: <img src={csharpIcon} alt="C#" className="w-5 h-5" /> },
+    { name: "ASP.NET", icon: <img src={dotnetIcon} alt="ASP.NET" className="w-4 h-4" /> },
+    { name: "Azure", icon: <img src={azureIcon} alt="Azure" className="w-4 h-4" /> },
+    { name: "REST APIs", icon: <img src={apiIcon} alt="REST APIs" className="w-4 h-4" /> },
+    { name: "SQL", icon: <img src={databaseIcon} alt="SQL" className="w-4 h-4" /> },
+    { name: "CI/CD pipelines", icon: <img src={pielineIcon} alt="CI/CD pipelines" className="w-4 h-4" /> },
+  ],
+  [
+    { name: "React", icon: <img src={reactIcon} alt="React" className="w-4 h-4" /> },
+    { name: "TypeScript", icon: <img src={typescriptIcon} alt="TypeScript" className="w-4 h-4" /> },
+    { name: "JavaScript", icon: <img src={javascriptIcon} alt="JavaScript" className="w-4 h-4" /> },
+  ],
+  [
+    { name: "Docker", icon: <img src={dockerIcon} alt="Docker" className="w-4 h-4" /> },
+    { name: "Git", icon: <img src={gitIcon} alt="Git" className="w-4 h-4" /> },
+    { name: "Agentic coding", icon: <img src={sparklesIcon} alt="Agentic coding" className="w-4 h-4" /> },
+  ],
+]
+
+function TechRow({ items }: { items: TechItem[] }): React.ReactElement {
+  return (
+    <div className="flex flex-wrap gap-2">
+      {items.map((tech) => (
+        <span
+          key={tech.name}
+          className="px-3 py-1.5 text-sm font-mono bg-gray-900/50 border border-purple-500/30 text-gray-300 rounded-full hover:border-purple-500/60 hover:text-gray-100 transition-colors flex items-center gap-2"
+        >
+          <span className="text-base flex items-center">{tech.icon}</span>
+          <span>{tech.name}</span>
+        </span>
+      ))}
+    </div>
+  )
+}
+
 function About(): React.ReactElement {
   useEffect(() => {
     document.title = 'Oscar Bennich-Björkman | About'
   }, [])
-
-  const techStackFirstRow: TechItem[] = [
-    { name: "C#", icon: <img src={csharpIcon} alt="C#" className="w-5 h-5" /> },
-    { name: "ASP.NET", icon: <img src={dotnetIcon} alt="C#" className="w-4 h-4" /> },
-    { name: "Azure", icon: <img src={azureIcon} alt="Azure" className="w-4 h-4" /> },
-    { name: "REST APIs", icon: <img src={apiIcon} alt="REST APIs" className="w-4 h-4" /> },
-    { name: "SQL", icon: <img src={databaseIcon} alt="SQL" className="w-4 h-4" /> },
-    { name: "CI/CD pipelines", icon: <img src={pielineIcon} alt="CI/CD pipelines" className="w-4 h-4" /> }
-  ]
-
-  const techStackSecondRow: TechItem[] = [
-    { name: "React", icon: <img src={reactIcon} alt="React" className="w-4 h-4" /> },
-    { name: "TypeScript", icon: <img src={typescriptIcon} alt="TypeScript" className="w-4 h-4" /> },
-    { name: "JavaScript", icon: <img src={javascriptIcon} alt="JavaScript" className="w-4 h-4" /> },
-  ]
-
-  const techStackThirdRow: TechItem[] = [
-    { name: "Docker", icon: <img src={dockerIcon} alt="Docker" className="w-4 h-4" /> },
-    { name: "Git", icon: <img src={gitIcon} alt="Git" className="w-4 h-4" /> },
-    { name: "Agentic coding", icon: <img src={sparklesIcon} alt="Agentic coding" className="w-4 h-4" /> }
-  ]
 
   return (
     <div className="flex flex-col items-center min-h-screen px-4 py-12">
@@ -159,37 +175,9 @@ function About(): React.ReactElement {
           <h2 className="text-2xl font-bold text-gray-100 font-mono mb-6">
             &gt; skills
           </h2>
-          <div className="flex flex-wrap gap-2">
-            {techStackFirstRow.map((tech) => (
-              <span
-                key={tech.name}
-                className="px-3 py-1.5 text-sm font-mono bg-gray-900/50 border border-purple-500/30 text-gray-300 rounded-full hover:border-purple-500/60 hover:text-gray-100 transition-colors flex items-center gap-2"
-              >
-                <span className="text-base flex items-center">{tech.icon}</span>
-                <span>{tech.name}</span>
-              </span>
-            ))}
-          </div>
-          <div className="flex flex-wrap gap-2 mt-3">
-            {techStackSecondRow.map((tech) => (
-              <span
-                key={tech.name}
-                className="px-3 py-1.5 text-sm font-mono bg-gray-900/50 border border-purple-500/30 text-gray-300 rounded-full hover:border-purple-500/60 hover:text-gray-100 transition-colors flex items-center gap-2"
-              >
-                <span className="text-base flex items-center">{tech.icon}</span>
-                <span>{tech.name}</span>
-              </span>
-            ))}
-          </div>
-          <div className="flex flex-wrap gap-2 mt-3">
-            {techStackThirdRow.map((tech) => (
-              <span
-                key={tech.name}
-                className="px-3 py-1.5 text-sm font-mono bg-gray-900/50 border border-purple-500/30 text-gray-300 rounded-full hover:border-purple-500/60 hover:text-gray-100 transition-colors flex items-center gap-2"
-              >
-                <span className="text-base flex items-center">{tech.icon}</span>
-                <span>{tech.name}</span>
-              </span>
+          <div className="space-y-3">
+            {techStack.map((row, i) => (
+              <TechRow key={i} items={row} />
             ))}
           </div>
         </div>
