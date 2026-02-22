@@ -8,7 +8,7 @@ I wanted a personal site where I can share my resume and write posts about thing
 
 ## How it was built
 
-This site was built almost entirely using agentic coding with [GitHub Copilot CLI](https://githubnext.com/projects/copilot-cli). Every prompt used to build and iterate on the site is logged in [`docs/agents/PROMPTS.md`](docs/agents/PROMPTS.md). That file serves as a complete history of the instructions given to the agent and the resulting changes — a transparent look at what agentic coding looks like in practice.
+This site was built almost entirely using agentic coding with [GitHub Copilot CLI](https://github.com/github/copilot-cli). Every prompt used to build and iterate on the site is logged in [`docs/agents/PROMPTS.md`](docs/agents/PROMPTS.md). That file serves as a complete history of the instructions given to the agent and the resulting changes — a transparent look at what agentic coding looks like in practice.
 
 ## Running the site locally
 
