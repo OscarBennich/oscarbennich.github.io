@@ -6,14 +6,14 @@ function Footer(): React.ReactElement {
           Wondering how this site was built?
         </p>
         <p className="text-center text-gray-400 font-mono text-sm">
-          You can read about it {" "}
+          Check out the {" "}
           <a
             href="https://github.com/OscarBennich/oscarbennich.github.io/blob/main/README.md"
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-400 hover:underline"
           >
-            here
+            README
           </a>
           .
         </p>
