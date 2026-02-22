@@ -1,4 +1,5 @@
 # oscarbennich.github.io
+
 A site I made for myself to host my CV, random posts, and some general info about me. Built with React, TypeScript, Vite, and Tailwind CSS. Hosted on GitHub Pages.
 
 ## Why
@@ -9,26 +10,43 @@ I wanted a personal site where I can share my resume and write posts about thing
 
 This site was built almost entirely using agentic coding with [GitHub Copilot CLI](https://githubnext.com/projects/copilot-cli). Every prompt used to build and iterate on the site is logged in [`docs/agents/PROMPTS.md`](docs/agents/PROMPTS.md). That file serves as a complete history of the instructions given to the agent and the resulting changes — a transparent look at what agentic coding looks like in practice.
 
-## TODO
+## Running the site locally
 
-- Idea: change the landing page to a terminal-like thing, add animation to write `whoami`, then print the information (could include much more than we have today), ending with the caret flashing animation we have today
-  - Follow-up: Add some easter egg information? Allow the user to actually write some commands? Could add some fun interactivity to the site.
-- Add page for projects
-  - At that point, change side menu to a hamburger menu for mobile, as 3 links will be too many
+### Prerequisites
 
-## Development
+- [Node.js](https://nodejs.org/) (LTS recommended)
+- npm (comes with Node.js)
+
+### Install dependencies
 
 ```bash
 npm install
+```
+
+### Run the development server
+
+```bash
 npm run dev
 ```
 
-## Build
+### Build for production
 
 ```bash
 npm run build
 ```
 
-## Deployment
+### Preview the production build
+
+```bash
+npm run preview
+```
+
+### Lint
+
+```bash
+npm run lint
+```
+
+## Deploying the site
 
 The site is automatically deployed to GitHub Pages when changes are pushed to the main branch via GitHub Actions. See [deploy.yml](/.github/workflows/deploy.yml).
