@@ -57,28 +57,15 @@ function About(): React.ReactElement {
             &gt; whoami
           </h2>
           <p className="text-gray-300 font-mono text-sm leading-relaxed mb-3">
-            With over 7 years’ experience working on and leading software
-            development teams in both the finance and clinical research
-            industries, I help solve problems with a unique mix of technical
-            expertise, communication, and strong people skills.
+            Hi! 👋 I'm Oscar, a software developer living in Uppsala, Sweden. I'm currently working as a Tech Lead at <a href="https://www.viedoc.com/" className="text-blue-400 hover:underline">Viedoc</a>.
           </p>
           <p className="text-gray-300 font-mono text-sm leading-relaxed mb-3">
-            I’ve spent most of my career improving and modernizing systems and
-            processes. This usually means working on different parts of the
-            stack, but my core competency is C# and the .NET platform. I’ve also
-            worked a lot on non‑coding tasks such as streamlining onboarding,
-            writing documentation, and leading projects.
-          </p>
-          <p className="text-gray-300 font-mono text-sm leading-relaxed mb-3">
-            In my current role as Tech Lead, I value my ability to be a ”force
-            multiplier” for the people around me ‑ helping them improve, grow,
-            and become more efficient and productive. This also allows me to
-            affect the objectives and outcomes of my team in a much more
-            substantial way compared to what I’d be able to do as an individual
-            contributor.
+            I'm passionate about software development and enjoy continuously sharpening my skills.
+            I find it deeply satisfying to optimize systems and processes, and to solve complex problems in a simple way.
+            I also find that what I learn sticks better when I try to explain it — which is why I share insights as posts on this site. Hopefully you'll find something useful here, too!
           </p>
           <p className="text-gray-300 font-mono text-sm leading-relaxed">
-            Outside of work, I enjoy long‑distance running, traveling, gaming
+            Outside of work, I enjoy long-distance running, traveling, gaming
             (Dungeons & Dragons, video/computer games, board games), and
             spending time with my wife, friends, family, and my cat.
           </p>
