@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { executeCommand, type TerminalLine } from '../utils/terminalCommands'
 
-const PROMPT = 'oscar@site:~$ '
+const PROMPT = 'oscarbennich@site:~$ '
 const COMMAND = 'whoami'
 const WHOAMI_OUTPUT: TerminalLine[] = [
   { text: 'Oscar Bennich-Björkman' },
@@ -180,7 +180,7 @@ function Hero(): React.ReactElement {
           <span className="w-3 h-3 rounded-full bg-yellow-500/80"></span>
           <span className="w-3 h-3 rounded-full bg-green-500/80"></span>
           <span className="flex-1 text-center text-xs text-gray-400 font-mono -ml-14">
-            oscar@site — bash
+            oscarbennich@site — bash
           </span>
         </div>
 
