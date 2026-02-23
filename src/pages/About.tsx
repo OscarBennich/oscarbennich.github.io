@@ -77,8 +77,8 @@ function About(): React.ReactElement {
             &gt; whoami
           </h2>
           <p className="text-gray-300 font-mono text-sm leading-relaxed mb-3">
-            Hi! 👋 I'm Oscar Bennich-Björkman. Full Stack Developer & Tech
-            Lead @{" "}
+            Hi! 👋 I'm Oscar Bennich-Björkman. Tech Lead / Full-Stack Developer
+            @{" "}
             <a
               href="https://www.viedoc.com/"
               className="text-blue-400 hover:underline"
@@ -94,9 +94,9 @@ function About(): React.ReactElement {
             sharpening my skills and knowledge and sharing it with others. I
             find it deeply satisfying to use those skills to optimize systems
             and processes, and to solve complex problems in simple ways. I often
-            learn things best when I try to explain them —
-            which is why I will sometimes share my thoughts as posts here.
-            Hopefully you'll learn something, too!
+            learn things best when I try to explain them — which is why I will
+            sometimes share my thoughts as posts here. Hopefully you'll learn
+            something, too!
           </p>
           <p className="text-gray-300 font-mono text-sm leading-relaxed">
             Outside of work, I enjoy long-distance running, traveling, gaming

@@ -7,7 +7,7 @@ const PROMPT = 'guest@oscarbennich.github.io:~$ '
 const COMMAND = 'cat about.txt'
 const INTRO_OUTPUT: TerminalLine[] = [
   { text: "Hi! 👋 I'm Oscar Bennich-Björkman." },
-  { text: "Full Stack Developer & Tech Lead @ Viedoc in Uppsala, Sweden." },
+  { text: "Tech Lead / Full-Stack Developer @ Viedoc in Uppsala, Sweden." },
 ]
 
 const CHAR_DELAY = 80
