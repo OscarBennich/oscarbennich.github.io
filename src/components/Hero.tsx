@@ -3,12 +3,11 @@ import { executeCommand, type TerminalLine } from '../utils/terminalCommands'
 import MatrixRain from './MatrixRain'
 import Confetti from './Confetti'
 
-const PROMPT = 'oscarbennich@site:~$ '
-const COMMAND = 'whoami'
-const WHOAMI_OUTPUT: TerminalLine[] = [
-  { text: 'Oscar Bennich-Björkman' },
-  { text: 'Tech Lead && Full Stack Developer' },
-  { text: 'Uppsala, Sweden' },
+const PROMPT = 'guest@oscarbennich.github.io:~$ '
+const COMMAND = 'cat about.txt'
+const INTRO_OUTPUT: TerminalLine[] = [
+  { text: "Hi! 👋 I'm Oscar Bennich-Björkman." },
+  { text: "Full Stack Developer & Tech Lead @ Viedoc in Uppsala, Sweden." },
 ]
 
 const CHAR_DELAY = 80
@@ -64,7 +63,7 @@ function Hero(): React.ReactElement {
   // Phase 4: Show output lines one by one
   useEffect(() => {
     if (phase !== 'output') return
-    if (visibleLines >= WHOAMI_OUTPUT.length) {
+    if (visibleLines >= INTRO_OUTPUT.length) {
       setPhase('interactive')
       return
     }
@@ -182,7 +181,7 @@ function Hero(): React.ReactElement {
           <span className="w-3 h-3 rounded-full bg-yellow-500/80"></span>
           <span className="w-3 h-3 rounded-full bg-green-500/80"></span>
           <span className="flex-1 text-center text-xs text-gray-400 font-mono -ml-14">
-            oscarbennich@site — bash
+            guest@oscarbennich.github.io — bash
           </span>
         </div>
 
@@ -191,7 +190,7 @@ function Hero(): React.ReactElement {
           ref={bodyRef}
           className="bg-gray-950 p-6 sm:p-8 md:p-10 font-mono text-base sm:text-lg md:text-xl min-h-[280px] max-h-[60vh] overflow-y-auto cursor-text"
         >
-          {/* Initial whoami command line */}
+          {/* Initial cat about.txt command line */}
           <div className="flex">
             <span className="text-green-400 whitespace-pre">{PROMPT}</span>
             <span className="text-gray-100">
@@ -202,9 +201,9 @@ function Hero(): React.ReactElement {
             )}
           </div>
 
-          {/* whoami output lines */}
-          {WHOAMI_OUTPUT.slice(0, visibleLines).map((line, i) => (
-            <div key={`whoami-${i}`} className="text-gray-300 mt-2">
+          {/* about.txt output lines */}
+          {INTRO_OUTPUT.slice(0, visibleLines).map((line, i) => (
+            <div key={`intro-${i}`} className="text-gray-300 mt-2">
               {line.text}
             </div>
           ))}

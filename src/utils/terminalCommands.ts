@@ -14,7 +14,6 @@ export interface TerminalLine {
 }
 
 const COMMANDS: Record<string, string> = {
-  about: 'About me',
   skills: 'View my tech stack',
   posts: 'List recent blog posts',
   contact: 'Get in touch',
@@ -52,15 +51,6 @@ export function executeCommand(
         ),
         line(''),
         line('Try typing a command and pressing Enter.', 'text-gray-500'),
-      ],
-    }
-  }
-
-  if (trimmed === 'about') {
-    return {
-      output: [
-        line("Hi! 👋 I'm Oscar Bennich-Björkman, a software developer living in"),
-        line("Uppsala, Sweden. My current role is Tech Lead at Viedoc."),
       ],
     }
   }

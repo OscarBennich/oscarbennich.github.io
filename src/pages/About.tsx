@@ -74,11 +74,11 @@ function About(): React.ReactElement {
             className="w-40 h-40 object-cover border-2 border-purple-500/30 float-left mt-13 mr-6 mb-4"
           />
           <h2 className="text-2xl font-bold text-gray-100 font-mono mb-4">
-            &gt; whoami
+            &gt; cat about.txt
           </h2>
           <p className="text-gray-300 font-mono text-sm leading-relaxed mb-3">
-            Hi! 👋 I'm Oscar Bennich-Björkman, a software developer living in
-            Uppsala, Sweden. My current role is Tech Lead at{" "}
+            Hi! 👋 I'm Oscar Bennich-Björkman. Full Stack Developer & Tech
+            Lead @{" "}
             <a
               href="https://www.viedoc.com/"
               className="text-blue-400 hover:underline"
@@ -86,8 +86,8 @@ function About(): React.ReactElement {
               rel="noopener noreferrer"
             >
               Viedoc
-            </a>
-            .
+            </a>{" "}
+            in Uppsala, Sweden.
           </p>
           <p className="text-gray-300 font-mono text-sm leading-relaxed mb-3">
             I'm passionate about software development and enjoy continuously
