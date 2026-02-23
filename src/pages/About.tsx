@@ -92,9 +92,9 @@ function About(): React.ReactElement {
           <p className="text-gray-300 font-mono text-sm leading-relaxed mb-3">
             I'm passionate about software development and enjoy continuously
             sharpening my skills and knowledge and sharing it with others. I
-            think it's deeply satisfying to use those skills to optimize systems
-            and processes, and to solve complex problems in a simple way. I also
-            find that I learn things better when I try to explain them —
+            find it deeply satisfying to use those skills to optimize systems
+            and processes, and to solve complex problems in simple ways. I often
+            learn things best when I try to explain them —
             which is why I will sometimes share my thoughts as posts here.
             Hopefully you'll learn something, too!
           </p>
