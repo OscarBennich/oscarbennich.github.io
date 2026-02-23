@@ -103,8 +103,6 @@ export function executeCommand(
   if (trimmed === 'cv') {
     return {
       output: [
-        line('CV:', 'text-green-400'),
-        line(''),
         link('  📄 View CV', '/CV_OscarBennichBjorkman_2026_en.pdf', 'text-blue-400 hover:underline'),
       ],
     }
