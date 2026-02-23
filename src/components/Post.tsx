@@ -23,8 +23,8 @@ function Post(): React.ReactElement {
   useEffect(() => {
     const postMetadata = postsMetadata.find(p => p.slug === slug)
     
-    if (postMetadata && slug) {
-      loadPost(slug).then((content) => {
+    if (postMetadata) {
+      loadPost(postMetadata.slug).then((content) => {
         setPost({ ...postMetadata, content })
         setLoading(false)
         document.title = `Oscar Bennich-Björkman | ${postMetadata.title}`

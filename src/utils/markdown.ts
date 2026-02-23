@@ -1,15 +1,12 @@
-// Helper to generate slug from text
 export const slugify = (text: string): string => {
   return text
-    .toString()
     .toLowerCase()
     .trim()
-    .replace(/\s+/g, '-')     // Replace spaces with -
-    .replace(/[^\w-]+/g, '')  // Remove all non-word chars
-    .replace(/--+/g, '-')     // Replace multiple - with single -
+    .replace(/\s+/g, '-')
+    .replace(/[^\w-]+/g, '')
+    .replace(/--+/g, '-')
 }
 
-// Helper to extract text from React children
 export const getText = (node: React.ReactNode): string => {
   if (typeof node === 'string') return node
   if (typeof node === 'number') return node.toString()
@@ -18,14 +15,12 @@ export const getText = (node: React.ReactNode): string => {
   return ''
 }
 
-// Type for table of contents item
 export type TocItem = {
   text: string
   slug: string
   level: number
 }
 
-// Helper to extract headings from markdown content
 export const extractHeadings = (content: string): TocItem[] => {
   const headingRegex = /^(#{1,6})\s+(.+)$/gm
   const headings: TocItem[] = []
@@ -34,7 +29,7 @@ export const extractHeadings = (content: string): TocItem[] => {
   while ((match = headingRegex.exec(content)) !== null) {
     const level = match[1].length
     const text = match[2].trim()
-    // Skip h1 as it's the post title
+
     if (level > 1) {
       headings.push({
         text,
@@ -47,7 +42,6 @@ export const extractHeadings = (content: string): TocItem[] => {
   return headings
 }
 
-// Format date string to localized display format
 export const formatDate = (dateString: string): string => {
   const date = new Date(dateString)
   return date.toLocaleDateString('en-US', { 
@@ -57,7 +51,6 @@ export const formatDate = (dateString: string): string => {
   })
 }
 
-// Calculate estimated reading time in minutes
 export const calculateReadingTime = (content: string): number => {
   const wordsPerMinute = 200
   const words = content.trim().split(/\s+/).length

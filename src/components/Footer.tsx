@@ -19,7 +19,7 @@ function Footer(): React.ReactElement {
         </p>
       </div>
     </footer>
-  );
+  )
 }
 
 export default Footer

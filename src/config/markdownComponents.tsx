@@ -20,16 +20,10 @@ type ImageProps = {
   alt?: string
 }
 
-type DetailsProps = {
-  children?: React.ReactNode
+type DetailsProps = ChildrenProps & {
   open?: boolean
 }
 
-type SummaryProps = {
-  children?: React.ReactNode
-}
-
-// Markdown component renderers for ReactMarkdown
 export const markdownComponents = {
   h1: ({ children }: ChildrenProps) => <HeadingRenderer level={1}>{children}</HeadingRenderer>,
   h2: ({ children }: ChildrenProps) => <HeadingRenderer level={2}>{children}</HeadingRenderer>,
@@ -121,7 +115,7 @@ export const markdownComponents = {
     </details>
   ),
 
-  summary: ({ children }: SummaryProps) => (
+  summary: ({ children }: ChildrenProps) => (
     <summary className="cursor-pointer px-4 py-3 font-mono text-gray-200 hover:bg-gray-700/50 select-none list-none flex items-center gap-3 marker:hidden [&::-webkit-details-marker]:hidden">
       <span className="text-gray-400 transition-transform details-open:rotate-90">▶</span>
       <span>{children}</span>

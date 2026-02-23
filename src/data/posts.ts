@@ -1,6 +1,5 @@
 import { PostMetadata, Post } from '../types/post'
 
-// Post metadata - content will be loaded from markdown files
 export const postsMetadata: PostMetadata[] = [
   {
     slug: "azure-function-app-logging-setup-guide",
@@ -57,7 +56,6 @@ export const postsMetadata: PostMetadata[] = [
   }
 ];
 
-// Function to load post content from markdown file
 export async function loadPost(slug: string): Promise<string> {
   try {
     const response = await fetch(`/posts/${slug}/${slug}.md`)
@@ -65,17 +63,15 @@ export async function loadPost(slug: string): Promise<string> {
       throw new Error(`Failed to load post: ${slug}`)
     }
     const text = await response.text()
-    
-    // Remove frontmatter (everything between --- markers)
+
     const contentWithoutFrontmatter = text.replace(/^---[\s\S]*?---\n/, '')
-    
+
     // Transform relative image paths to absolute paths within the post folder
-    // Matches ![alt](filename.ext) where filename doesn't start with http/https or /
     const contentWithFixedImages = contentWithoutFrontmatter.replace(
       /!\[([^\]]*)\]\((?!https?:\/\/)(?!\/)([^)]+)\)/g,
       `![$1](/posts/${slug}/$2)`
     )
-    
+
     return contentWithFixedImages
   } catch (error) {
     console.error('Error loading post:', error)
@@ -83,7 +79,6 @@ export async function loadPost(slug: string): Promise<string> {
   }
 }
 
-// Function to get all posts with content loaded
 export async function getAllPosts(): Promise<Post[]> {
   const postsWithContent = await Promise.all(
     postsMetadata.map(async (post) => ({

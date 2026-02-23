@@ -23,16 +23,19 @@ function HeadingRenderer({ level, children }: HeadingRendererProps): React.React
   }
   const style = styles[level] || "font-bold text-gray-100 font-sans"
 
-  const handleCopy = (e: React.MouseEvent) => {
+  const handleCopy = async (e: React.MouseEvent) => {
     e.preventDefault()
-    // Get the route hash without any existing section anchor (remove anything after second #)
     const routeHash = window.location.hash.split('#').slice(0, 2).join('#')
     const url = `${window.location.origin}${window.location.pathname}${routeHash}#${slug}`
-    navigator.clipboard.writeText(url)
-    setShowCopied(true)
-    setTimeout(() => setShowCopied(false), 2000)
-    
-    // Update the browser URL to include the section anchor
+
+    try {
+      await navigator.clipboard.writeText(url)
+      setShowCopied(true)
+      setTimeout(() => setShowCopied(false), 2000)
+    } catch {
+      // Clipboard API may not be available in all contexts
+    }
+
     window.history.pushState(null, '', `${routeHash}#${slug}`)
     document.getElementById(slug)?.scrollIntoView({ behavior: 'smooth' })
   }

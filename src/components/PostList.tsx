@@ -261,7 +261,7 @@ function PostList({ posts }: PostListProps): React.ReactElement {
         </div>
       )}
     </div>
-  );
+  )
 }
 
-export default PostList;
+export default PostList

@@ -8,9 +8,13 @@ function CopyButton({ code }: CopyButtonProps): React.ReactElement {
   const [copied, setCopied] = useState(false)
 
   const handleCopy = async () => {
-    await navigator.clipboard.writeText(code)
-    setCopied(true)
-    setTimeout(() => setCopied(false), 5000)
+    try {
+      await navigator.clipboard.writeText(code)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 5000)
+    } catch {
+      // Clipboard API may not be available in all contexts
+    }
   }
 
   return copied ? (

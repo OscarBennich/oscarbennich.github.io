@@ -15,7 +15,7 @@ function Layout(): React.ReactElement {
       </main>
       <Footer />
     </div>
-  );
+  )
 }
 
 export default Layout

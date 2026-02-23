@@ -95,9 +95,7 @@ function Hero(): React.ReactElement {
 
   const handleCommand = useCallback(
     (input: string) => {
-      const trimmed = input.trim().toLowerCase()
-
-      if (trimmed === 'clear') {
+      if (input.trim().toLowerCase() === 'clear') {
         setHistory([])
         setUserInput('')
         return

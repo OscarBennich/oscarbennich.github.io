@@ -208,7 +208,7 @@ function About(): React.ReactElement {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 export default About
