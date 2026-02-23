@@ -88,7 +88,7 @@ function Hero(): React.ReactElement {
   // Clear special effects after a duration
   useEffect(() => {
     if (!specialEffect) return
-    const duration = specialEffect === 'matrix' ? 5000 : specialEffect === 'party' ? 4000 : 2000
+    const duration = specialEffect === 'matrix' ? 10000 : specialEffect === 'party' ? 7000 : 4000
     const timer = setTimeout(() => setSpecialEffect(null), duration)
     return () => clearTimeout(timer)
   }, [specialEffect])
