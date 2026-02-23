@@ -190,7 +190,7 @@ function About(): React.ReactElement {
               <img src={pdfIcon} alt="PDF Icon" className="w-6 h-6" />
             </span>
             <a
-              href="/CV_OscarBennichBjorkman_2025_en.pdf"
+              href="/CV_OscarBennichBjorkman_2026_en.pdf"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -201,7 +201,7 @@ function About(): React.ReactElement {
             <span>
               <img src={pdfIcon} alt="PDF Icon" className="w-6 h-6" />
             </span>
-            <a href="/CV_OscarBennichBjorkman_2025_en.pdf" download>
+            <a href="/CV_OscarBennichBjorkman_2026_en.pdf" download>
               Download
             </a>
           </div>
