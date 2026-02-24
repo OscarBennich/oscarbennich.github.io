@@ -39,6 +39,16 @@ body {
   animation: glitch 0.3s ease-in-out 3;
 }
 
+/* Hide scrollbar on small screens (touch scrolling still works) */
+@media (max-width: 639px) {
+  .terminal-body {
+    scrollbar-width: none;
+  }
+  .terminal-body::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 /* Confetti fall animation */
 @keyframes confetti-fall {
   0% { transform: translateY(0) rotate(0deg); opacity: 1; }

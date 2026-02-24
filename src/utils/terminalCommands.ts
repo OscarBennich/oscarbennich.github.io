@@ -15,12 +15,12 @@ export interface TerminalLine {
 
 const COMMANDS: Record<string, string> = {
   skills: 'View my tech stack',
-  posts: 'List recent blog posts',
+  posts: 'List blog posts',
   contact: 'Get in touch',
-  cv: 'View or download my CV',
+  cv: 'Download my CV',
   clear: 'Clear the terminal',
-  date: 'Show current date and time',
-  history: 'Show command history',
+  date: 'Show date & time',
+  history: 'Command history',
   cowsay: '???',
   matrix: '???',
   party: '???',
@@ -47,7 +47,7 @@ export function executeCommand(
         line('Available commands:', 'text-green-400'),
         line(''),
         ...Object.entries(COMMANDS).map(([cmd, desc]) =>
-          line(`  ${cmd.padEnd(12)} ${desc}`, 'text-gray-400')
+          line(`  ${cmd.padEnd(10)} ${desc}`, 'text-gray-400')
         ),
         line(''),
         line('Try typing a command and pressing Enter.', 'text-gray-500'),
@@ -60,11 +60,11 @@ export function executeCommand(
       output: [
         line('Tech Stack:', 'text-green-400'),
         line(''),
-        line('  Backend      C#, ASP.NET, REST APIs, SQL', 'text-gray-300'),
-        line('  Frontend     React, TypeScript, JavaScript', 'text-gray-300'),
-        line('  Cloud        Azure', 'text-gray-300'),
-        line('  DevOps       CI/CD pipelines, Docker, Git', 'text-gray-300'),
-        line('  AI/Agents    GitHub Copilot, Claude Code', 'text-gray-300'),
+        line('  Backend    C#, ASP.NET, REST APIs, SQL', 'text-gray-300'),
+        line('  Frontend   React, TypeScript, JavaScript', 'text-gray-300'),
+        line('  Cloud      Azure', 'text-gray-300'),
+        line('  DevOps     CI/CD, Docker, Git', 'text-gray-300'),
+        line('  AI/Agents  GitHub Copilot, Claude Code', 'text-gray-300'),
       ],
     }
   }
@@ -93,9 +93,9 @@ export function executeCommand(
       output: [
         line('Get in touch:', 'text-green-400'),
         line(''),
-        link('  GitHub     github.com/oscarbennich', 'https://github.com/oscarbennich', 'text-blue-400 hover:underline'),
-        link('  LinkedIn   linkedin.com/in/oscar-bennich-bjorkman', 'https://www.linkedin.com/in/oscar-bennich-bjorkman/', 'text-blue-400 hover:underline'),
-        link('  Email      oscar.bennich@gmail.com', 'mailto:oscar.bennich@gmail.com', 'text-blue-400 hover:underline'),
+        link('  GitHub    github.com/oscarbennich', 'https://github.com/oscarbennich', 'text-blue-400 hover:underline'),
+        link('  LinkedIn  linkedin.com/in/oscar-bennich-bjorkman', 'https://www.linkedin.com/in/oscar-bennich-bjorkman/', 'text-blue-400 hover:underline'),
+        link('  Email     oscar.bennich@gmail.com', 'mailto:oscar.bennich@gmail.com', 'text-blue-400 hover:underline'),
       ],
     }
   }

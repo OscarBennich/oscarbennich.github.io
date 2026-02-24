@@ -4,6 +4,7 @@ import MatrixRain from './MatrixRain'
 import Confetti from './Confetti'
 
 const PROMPT = 'guest@oscarbennich.github.io:~$ '
+const PROMPT_SHORT = 'guest:~$ '
 const COMMAND = 'cat about.txt'
 const INTRO_OUTPUT: TerminalLine[] = [
   { text: "Hi! 👋 I'm Oscar Bennich-Björkman." },
@@ -22,7 +23,22 @@ interface HistoryEntry {
   output: TerminalLine[]
 }
 
+function useIsSmallScreen() {
+  const [isSmall, setIsSmall] = useState(() =>
+    typeof window !== 'undefined' ? window.innerWidth < 640 : false
+  )
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 639px)')
+    const handler = (e: MediaQueryListEvent) => setIsSmall(e.matches)
+    mq.addEventListener('change', handler)
+    return () => mq.removeEventListener('change', handler)
+  }, [])
+  return isSmall
+}
+
 function Hero(): React.ReactElement {
+  const isSmallScreen = useIsSmallScreen()
+  const prompt = isSmallScreen ? PROMPT_SHORT : PROMPT
   const [phase, setPhase] = useState<Phase>('waiting')
   const [typedChars, setTypedChars] = useState(0)
   const [visibleLines, setVisibleLines] = useState(0)
@@ -154,7 +170,7 @@ function Hero(): React.ReactElement {
   const showCursorOnPrompt = phase === 'waiting' || phase === 'typing'
 
   return (
-    <section className="flex flex-col items-center justify-center min-h-screen px-4">
+    <section className="flex flex-col items-center justify-center min-h-screen px-2 sm:px-4">
       {/* Matrix effect */}
       {specialEffect === 'matrix' && <MatrixRain />}
 
@@ -178,19 +194,19 @@ function Hero(): React.ReactElement {
           <span className="w-3 h-3 rounded-full bg-red-500/80"></span>
           <span className="w-3 h-3 rounded-full bg-yellow-500/80"></span>
           <span className="w-3 h-3 rounded-full bg-green-500/80"></span>
-          <span className="flex-1 text-center text-xs text-gray-400 font-mono -ml-14">
-            guest@oscarbennich.github.io — bash
+          <span className="flex-1 text-center text-xs text-gray-400 font-mono -ml-14 truncate">
+            {isSmallScreen ? 'guest — bash' : 'guest@oscarbennich.github.io — bash'}
           </span>
         </div>
 
         {/* Terminal body */}
         <div
           ref={bodyRef}
-          className="bg-gray-950 p-6 sm:p-8 md:p-10 font-mono text-base sm:text-lg md:text-xl min-h-[280px] max-h-[60vh] overflow-y-auto cursor-text"
+          className="terminal-body bg-gray-950 p-3 sm:p-8 md:p-10 font-mono text-sm sm:text-lg md:text-xl min-h-[280px] max-h-[60vh] overflow-y-auto cursor-text"
         >
           {/* Initial cat about.txt command line */}
           <div className="flex">
-            <span className="text-green-400 whitespace-pre">{PROMPT}</span>
+            <span className="text-green-400 whitespace-pre">{prompt}</span>
             <span className="text-gray-100">
               {COMMAND.slice(0, typedChars)}
             </span>
@@ -213,7 +229,7 @@ function Hero(): React.ReactElement {
                 {entry.command !== '' && (
                   <div className="flex">
                     <span className="text-green-400 whitespace-pre">
-                      {PROMPT}
+                      {prompt}
                     </span>
                     <span className="text-gray-100">{entry.command}</span>
                   </div>
@@ -233,7 +249,7 @@ function Hero(): React.ReactElement {
                         {line.text}
                       </a>
                     ) : (
-                      <span className="whitespace-pre">{line.text}</span>
+                      <span className="whitespace-pre-wrap break-words">{line.text}</span>
                     )}
                   </div>
                 ))}
@@ -243,7 +259,7 @@ function Hero(): React.ReactElement {
           {/* Interactive input line */}
           {phase === 'interactive' && !exitEffect && (
             <div className="flex mt-4 items-center relative">
-              <span className="text-green-400 whitespace-pre">{PROMPT}</span>
+              <span className="text-green-400 whitespace-pre">{prompt}</span>
               <span className="text-gray-100 whitespace-pre">{userInput}</span>
               <span className="caret text-gray-100">█</span>
               <input
