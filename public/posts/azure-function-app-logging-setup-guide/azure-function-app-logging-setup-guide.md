@@ -74,9 +74,6 @@ Finally, add this to the `host.json` file of your Function App:
       "Host.Aggregator": "Trace",
       "Host.Results": "Information",
       "Function": "Information",
-      
-      // For logging during local development
-      "FunctionAppProject.Namespace": "Information"
     },
     "applicationInsights": {
       "samplingSettings": {
@@ -243,9 +240,6 @@ Taking all this into account, a sensible default `host.json` setup could look li
       "Host.Aggregator": "Trace",
       "Host.Results": "Information",
       "Function": "Information",
-
-      // For logging during local development
-      "FunctionAppProject.Namespace": "Information"
     },
     "applicationInsights": {
       "samplingSettings": {
@@ -258,8 +252,7 @@ Taking all this into account, a sensible default `host.json` setup could look li
 }
 ```
 
-Three things to note here:
-1. Emitting the logs directly to Application Insights instead of relaying them through the host does not work for console logs during local debugging. So if you don't want to rely on the default log level, you need to set a new log level using the namespace of the Function App project.
+Two things to note here:
 1. It's better to leave the *default* log level to Warning and then adjust specific log categories based on your needs, otherwise it's easy to drown in logs.
 1. You can exclude certain types of telemetry from sampling. In this example, data of type `Request` and `Exception` is excluded from sampling. It ensures that _all_ function executions (requests) and exceptions are logged while other types of telemetry remain subject to sampling.
 ### Adjusting the default logging filter
