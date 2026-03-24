@@ -57,9 +57,10 @@ export const postsMetadata: PostMetadata[] = [
   }
 ];
 
-export async function loadPost(slug: string): Promise<string> {
+export async function loadPost(slug: string, lastUpdated?: string): Promise<string> {
   try {
-    const response = await fetch(`/posts/${slug}/${slug}.md`)
+    const cacheBuster = lastUpdated ?? Date.now().toString()
+    const response = await fetch(`/posts/${slug}/${slug}.md?v=${cacheBuster}`)
     if (!response.ok) {
       throw new Error(`Failed to load post: ${slug}`)
     }
@@ -84,7 +85,7 @@ export async function getAllPosts(): Promise<Post[]> {
   const postsWithContent = await Promise.all(
     postsMetadata.map(async (post) => ({
       ...post,
-      content: await loadPost(post.slug)
+      content: await loadPost(post.slug, post.lastUpdated ?? post.date)
     }))
   )
   return postsWithContent

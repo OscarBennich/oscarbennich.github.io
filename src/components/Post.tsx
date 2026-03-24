@@ -24,7 +24,7 @@ function Post(): React.ReactElement {
     const postMetadata = postsMetadata.find(p => p.slug === slug)
     
     if (postMetadata) {
-      loadPost(postMetadata.slug).then((content) => {
+      loadPost(postMetadata.slug, postMetadata.lastUpdated ?? postMetadata.date).then((content) => {
         setPost({ ...postMetadata, content })
         setLoading(false)
         document.title = `Oscar Bennich-Björkman | ${postMetadata.title}`
