@@ -255,7 +255,7 @@ Taking all this into account, a sensible default `host.json` setup could look li
 Three things to note here:
 1. It's better to leave the *default* log level to Warning and then adjust specific log categories based on your needs, otherwise it's easy to drown in logs.
 1. You can exclude certain types of telemetry from sampling. In this example, data of type `Request` and `Exception` is excluded from sampling. It ensures that _all_ function executions (requests) and exceptions are logged while other types of telemetry remain subject to sampling.
-1. Normally, the "Function" category in `host.json` cascades to all functions unless overriden (see below), but when running directly through the CLI using `fun start` (at least as of Core Tools v4.7.0) this does not happen as expected. What this means is that the **default** log level will be used instead, which in the example above would mean information-level logs are suppressed. You can fix this by either adding explicit log levels per function, `Function.<FunctionName>.User` (again, see below), or by adding a override via a `local.settings.json` and adding:
+1. Normally, the "Function" category in `host.json` cascades to *all* functions unless overriden (see below), but when running directly through the CLI using `fun start` (at least as of Core Tools v4.7.0) this does not happen as expected. What this means is that the **default** log level will be used instead, which in the example above would mean information-level logs are suppressed. You can fix this by either adding explicit log levels per function, `Function.<FunctionName>.User` (again, see below), or by adding a override via a `local.settings.json` and adding:
 
    ```json
    { 
