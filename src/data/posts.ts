@@ -5,6 +5,7 @@ export const postsMetadata: PostMetadata[] = [
     slug: "azure-function-app-logging-setup-guide",
     title: "Setting up logging in Azure Function Apps",
     date: "2025-11-14",
+    lastUpdated: "2026-03-24",
     tags: [
       "guide",
       "azure",
